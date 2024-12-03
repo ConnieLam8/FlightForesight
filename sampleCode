@@ -1,0 +1,60 @@
+# Train run of code and how to process data for a machine learning model on a simple data set (anotherTest.csv)
+from sklearn.preprocessing import LabelEncoder
+from sklearn.ensemble import RandomForestRegressor
+import pandas as pd
+
+# Load the data (ensure your CSV file has 'flight_route' without spaces)
+df = pd.read_csv('sampleCode.csv')
+
+# Label Encoding for 'flight_route'
+label_encoder = LabelEncoder()
+df['flight_route_encoded'] = label_encoder.fit_transform(df['flight_route'])
+
+# Step 1: Train a Departure Delay Model (Model 1)
+X_train_departure = df[['scheduled_departure_hour', 'flight_route_encoded', 'weather', 'time_of_day']]
+y_train_departure = df['departure_delay']  # Actual departure delay from historical data
+
+# Train the model to predict departure delay
+model_departure = RandomForestRegressor(n_estimators=100)
+model_departure.fit(X_train_departure, y_train_departure)
+
+# Step 2: Train Arrival Delay Model (Model 2)
+X_train_arrival = df[['flight_route_encoded', 'weather', 'time_of_day', 'predicted_departure_delay']]
+y_train_arrival = df['arrival_delay']  # Actual arrival delay from historical data
+
+# Train the model to predict arrival delay
+model_arrival = RandomForestRegressor(n_estimators=100)
+model_arrival.fit(X_train_arrival, y_train_arrival)
+
+# For Prediction:
+
+# User input (this is what the user will input)
+user_input = {'scheduled_departure_hour': 10, 'flight_route': 1, 'weather': 2, 'time_of_day': 2}
+
+# Step 1: Convert user input to DataFrame
+user_input_df = pd.DataFrame([user_input])
+
+# Step 2: Make the departure delay prediction using model_departure
+# Predict departure delay (model expects a DataFrame with the correct features)
+predicted_departure_delay = model_departure.predict(user_input_df[['scheduled_departure_hour', 'flight_route', 'weather', 'time_of_day']])[0]
+
+# Add predicted_departure_delay to user input DataFrame
+user_input_df['predicted_departure_delay'] = predicted_departure_delay
+
+# **Check if predicted_departure_delay has been added correctly**
+print("User Input DataFrame after adding predicted_departure_delay:")
+print(user_input_df)
+
+# Step 3: Prepare the DataFrame for arrival delay prediction
+# We will create a new DataFrame for arrival delay prediction with only the required columns
+arrival_input_df = user_input_df[['flight_route', 'weather', 'time_of_day', 'predicted_departure_delay']]
+
+# **Check the columns of the arrival input DataFrame to confirm it's correct**
+print("Arrival Input DataFrame Columns:")
+print(arrival_input_df)
+
+# Step 4: Make the arrival delay prediction
+predicted_arrival_delay = model_arrival.predict(arrival_input_df)
+
+# Print the predicted arrival delay
+print(f"Predicted Arrival Delay: {predicted_arrival_delay[0]} minutes")
