@@ -30,58 +30,54 @@ connection.connect((err) => {
 
 
 
-
 function saveToJSON(data) {
-    // First, ensure that the JSON file exists, and create it if it doesn't
-    fs.readFile('airportData.json', 'utf8', (err, fileData) => {
-        let jsonData = [];
+    return new Promise((resolve, reject) => {
+        // First, ensure that the JSON file exists, and create it if it doesn't
+        fs.readFile('airportData.json', 'utf8', (err, fileData) => {
+            let jsonData = [];
 
-        if (err) {
-            if (err.code === 'ENOENT') {  // File doesn't exist
-                console.log('File not found, creating new one.');
-            } else {
-                console.error('Error reading JSON file:', err);
-                return;
-            }
-        } else {
-            try {
-                // Parse the existing data or initialize an empty array if it's not valid
-                jsonData = JSON.parse(fileData) || [];
-            } catch (parseErr) {
-                console.error('Error parsing JSON file:', parseErr);
-                return;
-            }
-        }
-
-        // Only store specific fields
-        const filteredData = {
-            DOT_CODE: data.DOT_Code,
-            ORIGIN: data.Origin_Airport_Code,
-            DEST: data.Dest_Airport_Code,
-            crs_dep_military_time: data.crs_dep_military_date,
-            crs_arr_military_time: data.crs_arr_military_date
-
-        };
-
-        // Add the new data to the array
-        jsonData.push(filteredData);
-
-        // Ensure the JSON structure is still an array and save it back to the file
-        fs.writeFile('airportData.json', JSON.stringify(jsonData, null, 2), (err) => {
             if (err) {
-                console.error('Error saving JSON file:', err);
+                if (err.code === 'ENOENT') {  // File doesn't exist
+                    console.log('File not found, creating new one.');
+                } else {
+                    console.error('Error reading JSON file:', err);
+                    return reject(err);
+                }
             } else {
-
-                console.log('Final data saved to airportData.json');
-
-                sendDataToResultsAPI(jsonData); // Send the data to the other API
-
+                try {
+                    // Parse the existing data or initialize an empty array if it's not valid
+                    jsonData = JSON.parse(fileData) || [];
+                } catch (parseErr) {
+                    console.error('Error parsing JSON file:', parseErr);
+                    return reject(parseErr);
+                }
             }
 
+            // Only store specific fields
+            const filteredData = {
+                DOT_CODE: data.DOT_Code,
+                ORIGIN: data.Origin_Airport_Code,
+                DEST: data.Dest_Airport_Code,
+                crs_dep_military_time: data.crs_dep_military_date,
+                crs_arr_military_time: data.crs_arr_military_date
+            };
+
+            // Add the new data to the array
+            jsonData.push(filteredData);
+
+            // Ensure the JSON structure is still an array and save it back to the file
+            fs.writeFile('airportData.json', JSON.stringify(jsonData, null, 2), (err) => {
+                if (err) {
+                    console.error('Error saving JSON file:', err);
+                    return reject(err);
+                } else {
+                    console.log('Final data saved to airportData.json');
+                    resolve(jsonData); // Resolve the promise with the updated JSON data
+                }
+            });
         });
     });
 }
-
 
 
 async function sendDataToResultsAPI(data) {
@@ -98,8 +94,10 @@ async function sendDataToResultsAPI(data) {
             }
         });
 
+        return response.data; // Return the results
     } catch (error) {
         console.error('Error sending data to Results API:', error);
+        throw error; // Propagate the error
     }
 }
 
@@ -284,32 +282,36 @@ app.post('/verifyDepdate', (req, res) => {
 });
 
 /////////////////// VERIFY ARRIVAL DATE /////////////////////////////////
-
-app.post('/verifyArrdate', (req, res) => {
+app.post('/verifyArrdate', async (req, res) => {
     const { crs_arr_military_date } = req.body;
-    console.log('Received arr date :', crs_arr_military_date);  // Log the airline name to ensure it's being sent correctly
-    // Check if the crs_dep_military_date is provided
+    console.log('Received arr date:', crs_arr_military_date);
+
+    // Check if the crs_arr_military_date is provided
     if (!crs_arr_military_date) {
-        return res.status(400).json({ error: 'Departure date is required' });
+        return res.status(400).json({ error: 'Arrival date is required' });
     }
+
     // Regex to validate HH:MM format (24-hour time)
     const timeFormatRegex = /^([01]?[0-9]|2[0-3]):([0-5][0-9])$/;
-    // Validate if crs_dep_military_date matches the HH:MM format
+
+    // Validate if crs_arr_military_date matches the HH:MM format
     if (!timeFormatRegex.test(crs_arr_military_date)) {
         return res.status(400).json({ error: 'Invalid time format. Please use HH:MM format.' });
     }
 
+    try {
+        // Save the arrival date to the JSON file
+        const jsonData = await saveToJSON({ crs_arr_military_date });
 
+        // After saving, send the data to the Results API
+        await sendDataToResultsAPI(jsonData);
 
-    saveToJSON({crs_arr_military_date});
-
-
-
-    res.status(200).json({ valid: true, message: 'Departure time validated successfully' });
-
-
+        res.status(200).json({ valid: true, message: 'Arrival time validated successfully' });
+    } catch (error) {
+        console.error('Error processing arrival date:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 });
-
 
 
 
