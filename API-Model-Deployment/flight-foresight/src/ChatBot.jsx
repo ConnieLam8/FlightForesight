@@ -56,6 +56,7 @@ const ChatBot = () => {
             setSuggestions([]);
         }
     };
+    const [results, setResults] = useState(null);
 
 
     const handleUserResponse = async (input) => {
@@ -75,8 +76,6 @@ const ChatBot = () => {
                     if (currentStep < steps.length - 1) {
                         setCurrentStep((prev) => prev + 1);
                         setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
-                        console.log("test");
-
                     }
                 } else {
                     setMessages((prev) => [
@@ -90,9 +89,7 @@ const ChatBot = () => {
                     { text: "Error verifying airline name. Please try again.", isBot: true }
                 ]);
             }
-
-        }
-        else if (currentKey === "Origin_Airport_Name") {
+        } else if (currentKey === "Origin_Airport_Name") {
             try {
                 const response1 = await axios.post("http://localhost:5001/verifyOriginAirportName", { Origin_Airport_Name: input });
                 if (response1.data.valid) {
@@ -113,8 +110,7 @@ const ChatBot = () => {
                     { text: "Error verifying airport name. Please try again.", isBot: true }
                 ]);
             }
-        }
-        else if (currentKey === "Dest_Airport_Name") {
+        } else if (currentKey === "Dest_Airport_Name") {
             try {
                 const response2 = await axios.post("http://localhost:5001/verifyDestAirportName", { Dest_Airport_Name: input });
                 if (response2.data.valid) {
@@ -135,9 +131,7 @@ const ChatBot = () => {
                     { text: "Error verifying airport name. Please try again.", isBot: true }
                 ]);
             }
-        }
-
-        else if (currentKey === "crs_dep_military_date") {
+        } else if (currentKey === "crs_dep_military_date") {
             try {
                 const response3 = await axios.post("http://localhost:5001/verifyDepdate", { crs_dep_military_date: input });
                 if (response3.data.valid) {
@@ -158,21 +152,21 @@ const ChatBot = () => {
                     { text: "Error verifying Date. Please try again.", isBot: true }
                 ]);
             }
-        }
-
-        else if (currentKey === "crs_arr_military_date") {
+        } else if (currentKey === "crs_arr_military_date") {
             try {
                 const response4 = await axios.post("http://localhost:5001/verifyArrdate", { crs_arr_military_date: input });
                 if (response4.data.valid) {
-                    // Proceed to the next step
-                    if (currentStep < steps.length - 1) {
-                        setCurrentStep((prev) => prev + 1);
-                        setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
-                    }
+                    // Display the results in the chatbot
+                    setResults(response4.data.results);
+                    setMessages((prev) => [
+                        ...prev,
+                        // { text: "Here are the results:", isBot: true },
+                        // { text: JSON.stringify(response4.data.results, null, 2), isBot: true }
+                    ]);
                 } else {
                     setMessages((prev) => [
                         ...prev,
-                        { text: response4.data.message, isBot: true }
+                         { text: response4.data.message, isBot: true }
                     ]);
                 }
             } catch (error) {
@@ -181,10 +175,7 @@ const ChatBot = () => {
                     { text: "Error verifying Date. Please try again.", isBot: true }
                 ]);
             }
-        }
-
-
-        else {
+        } else {
             // Proceed to the next step without verification
             if (currentStep < steps.length - 1) {
                 setCurrentStep((prev) => prev + 1);
@@ -192,6 +183,7 @@ const ChatBot = () => {
             }
         }
     };
+
 
 
     const handleSubmit = (e) => {
@@ -203,6 +195,17 @@ const ChatBot = () => {
         }
     };
 
+
+    const formatResults = (results) => {
+        const { regression_result } = results;
+        if (regression_result < 0) {
+            return `The flight will be ${Math.abs(regression_result).toFixed(2)} minutes early.`;
+        } else if (regression_result > 0) {
+            return `The flight will be ${regression_result.toFixed(2)} minutes late.`;
+        } else {
+            return "The flight is on time.";
+        }
+    };
     return (
         <div className="chatbot-container">
             <div className="chatbot-window">
@@ -212,6 +215,11 @@ const ChatBot = () => {
                             <p>{msg.text}</p>
                         </div>
                     ))}
+                    {results && (
+                        <div className="message bot">
+                            <p>{formatResults(results)}</p>
+                        </div>
+                    )}
                 </div>
 
                 <form onSubmit={handleSubmit} className="chatbot-form">
@@ -240,7 +248,6 @@ const ChatBot = () => {
 
                     <button type="submit">Send</button>
                 </form>
-
             </div>
         </div>
     );

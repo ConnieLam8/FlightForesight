@@ -28,7 +28,7 @@ connection.connect((err) => {
 
 
 
-
+/////////////JsON STUFF /////////////////////////////////
 
 function saveToJSON(data) {
     return new Promise((resolve, reject) => {
@@ -78,7 +78,7 @@ function saveToJSON(data) {
         });
     });
 }
-
+///////////////////CALL FOR API/////////////////////////
 
 async function sendDataToResultsAPI(data) {
     try {
@@ -100,6 +100,8 @@ async function sendDataToResultsAPI(data) {
         throw error; // Propagate the error
     }
 }
+
+
 
 ////////////////////// VERIFY AIRLINE NAMEE ///////////////////////
 app.post('/verifyAirlineName', (req, res) => {
@@ -304,21 +306,15 @@ app.post('/verifyArrdate', async (req, res) => {
         const jsonData = await saveToJSON({ crs_arr_military_date });
 
         // After saving, send the data to the Results API
-        await sendDataToResultsAPI(jsonData);
+        const results = await sendDataToResultsAPI(jsonData);
 
-        res.status(200).json({ valid: true, message: 'Arrival time validated successfully' });
+        // Send the results back to the frontend
+        res.status(200).json({ valid: true, message: 'Arrival time validated successfully', results });
     } catch (error) {
         console.error('Error processing arrival date:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
-
-
-
-
-
-
-
 
 const port = 5001;
 app.listen(port, () => {
