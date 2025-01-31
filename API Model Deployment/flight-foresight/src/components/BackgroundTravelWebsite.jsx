@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import planeImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/airplane-7-64.png';
-import signInLogo from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/—Pngtree—avatar icon profile icon member_5247852.png';
-import likedFlights from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/610189e478192d00042edc31.png'; 
-import jetsetAI from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/askAI.png';
-import timeToTravel from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/bestTimetoTravel.png';
-import exploreImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/explore.png';
-import priceChange from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/priceChange.png';
-import flightTrackerImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/flightTrackerImage.png'; 
-import tripImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/tripsImage.png'; 
-import arrowImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/arrow.png';
-import searchIcon from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/magnifying-glass-3-64.png';
+import planeImage from '../images/airplane-7-64.png';
+import signInLogo from '../images/—Pngtree—avatar icon profile icon member_5247852.png';
+import likedFlights from '../images/610189e478192d00042edc31.png'; 
+import jetsetAI from '../images/askAI.png';
+import timeToTravel from '../images/bestTimetoTravel.png';
+import exploreImage from '../images/explore.png';
+import priceChange from '../images/priceChange.png';
+import flightTrackerImage from '../images/flightTrackerImage.png'; 
+import tripImage from '../images/tripsImage.png'; 
+import arrowImage from '../images/arrow.png';
+import searchIcon from '../images/magnifying-glass-3-64.png';
 
 const BackgroundTravelWebsite = () => {
     const [isHovered1, setIsHovered1] = React.useState (false);
