@@ -23,7 +23,7 @@ const BackgroundTravelWebsite = () => {
     // Apply body styles on mount
     useEffect(() => {
         document.body.style.backgroundColor = 'rgb(241, 241, 244)'; // White
-        document.body.style.fontFamily = 'Arial, sans-serif';
+        document.body.style.fontFamily = 'Bebas Neue, sans-serif';
         document.body.style.margin = '0';
         document.body.style.padding = '0';
         document.body.style.color = '#333';
@@ -64,8 +64,9 @@ const BackgroundTravelWebsite = () => {
                 <div style={{
                     display: 'flex', // Use flexbox for alignment
                     alignItems: 'center', // Vertically align items
-                    gap: '10px' // Space between the images
+                    gap: '40px' // Space between the images
                 }}>
+                    <h1 style={{ fontSize: '25px', color: 'rgb(0, 0, 0)' }}>$CAD</h1>    
                     <img 
                         src={likedFlights} 
                         alt="Liked Flights" 
@@ -182,8 +183,26 @@ const BackgroundTravelWebsite = () => {
                         />
                     </button>      
                 </div>
+
             </div>
-            
+            {/* Light Grey Rectangle below the search box */}
+                <div style={{
+                    backgroundColor: 'rgb(226, 226, 228)', // Light Grey
+                    height: '300px',            // Height of the rectangle (increased to accommodate search boxes)
+                    marginTop: '50px',          // Adds some space between the header and the rectangle
+                    marginRight: '0px', 
+                    marginLeft: '0px',
+                    width: '100%',              // Full width of the screen
+                    padding: '20px',            // Adds padding inside the rectangle
+                    textAlign: 'center',
+                    display: 'flex',           // Flexbox to align elements
+                    flexDirection: 'column',   // Align items in a column
+                    justifyContent: 'center',   // Vertically center the content inside the rectangle
+                }}>
+                <h1 style={{ fontSize: '22px', color: 'rgb(0,0,128)', textAlign: 'left', marginTop: '-200px'}}>EXPLORE FLIGHTS</h1>    
+
+            </div>
+
             <div> 
                 {/* PopUps Background */}
                 <div style={{
@@ -422,7 +441,7 @@ const BackgroundTravelWebsite = () => {
 
                 </div>
             </div>
- 
+
         </div>
     );
 };
