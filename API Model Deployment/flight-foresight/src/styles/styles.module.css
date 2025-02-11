@@ -1,0 +1,11 @@
+.paddingX {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+@media (min-width: 640px) {
+    .paddingX {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
