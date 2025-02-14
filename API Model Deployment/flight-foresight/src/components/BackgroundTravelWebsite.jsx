@@ -1,4 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import '../App.css';
+
 import planeImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/airplane-7-64.png';
 import signInLogo from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/—Pngtree—avatar icon profile icon member_5247852.png';
 import likedFlights from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/610189e478192d00042edc31.png'; 
@@ -40,13 +44,16 @@ const BackgroundTravelWebsite = () => {
         }
     };
 
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null); 
+
     // Apply body styles on mount
     useEffect(() => {
         document.body.style.backgroundColor = 'rgb(241, 241, 244)'; // White
-        document.body.style.fontFamily = 'Arial, sans-serif';
+        // document.body.style.fontFamily = 'Arial, sans-serif';
         document.body.style.margin = '0';
         document.body.style.padding = '0';
-        document.body.style.color = '#333';
+        // document.body.style.color = '#ccc';
 
     }, []); // Empty dependency array means it runs only once when the component mounts
 
@@ -61,12 +68,15 @@ const BackgroundTravelWebsite = () => {
             {/* Header section */}
             <div style={{
                 backgroundColor: 'rgb(251, 251, 251)',  
-                color: '#000000',            
+                // color: '#000000',            
                 display: 'flex',             // Use flexbox for alignment
                 justifyContent: 'space-between', // Spread items to opposite ends
                 alignItems: 'center',        // Vertically align items
                 padding: '10px 20px',        // Add padding for spacing
-                borderBottom: '15px solid #000080' // Thin black line under the header
+                borderBottom: '3px solid #000080', // Thin black line under the header
+                boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)', // Soft shadow
+                overflow: 'hidden',
+
             }}>
                 {/* Left section (Logo and Title) */}
                 <div style={{
@@ -139,7 +149,7 @@ const BackgroundTravelWebsite = () => {
                         fontSize: '60px',
                         textAlign: 'left',
                         marginRight: '10px',
-                        fontFamily: 'Bebas Neue' // Applying the font
+                        fontFamily: 'Space Grotesk' // Applying the font
                     }}>
                         explore the world with
                     </h2>
@@ -147,7 +157,7 @@ const BackgroundTravelWebsite = () => {
                         color: 'rgb(0,0,128)',
                         fontSize: '60px',
                         textAlign: 'left',
-                        fontFamily: 'Bebas Neue' // Applying the font
+                        fontFamily: 'Space Grotesk' // Applying the font
                     }}>
                         jetSet.
                     </h2>
@@ -158,7 +168,7 @@ const BackgroundTravelWebsite = () => {
                 <button 
                     onClick={toggleDropdown} 
                     style={{
-                        marginTop: '65px',
+                        marginTop: '55px',
                         padding: "10px 15px",
                         backgroundColor: 'rgb(0,0,128)',
                         color: "white",
@@ -201,9 +211,9 @@ const BackgroundTravelWebsite = () => {
                             width: '45%',         // Adjusted width to fit side-by-side
                             padding: '10px',      
                             borderRadius: '5px',  
-                            border: '3px solid #ccc', 
+                            border: '3px solid #000080', 
                             fontSize: '16px',
-                            color: 'rgb(255, 255, 255)'
+                            color: 'rgb(0,0,128)'
                         }} 
                     />
                     <img 
@@ -221,23 +231,47 @@ const BackgroundTravelWebsite = () => {
                             width: '45%',         // Adjusted width to fit side-by-side
                             padding: '10px',      
                             borderRadius: '5px',  
-                            border: '3px solid #ccc', 
+                            border: '3px solid #000080', 
                             fontSize: '16px',
-                            color: 'rgb(255, 255, 255)'
+                            color: 'rgb(0,0,128)'
                         }} 
                     />
-                    <input 
-                        type="text" 
-                        placeholder="dates" 
-                        style={{
-                            width: '45%',         // Adjusted width to fit side-by-side
-                            padding: '10px',      
-                            borderRadius: '5px',  
-                            border: '3px solid #ccc', 
-                            fontSize: '16px',
-                            color: 'rgb(255, 255, 255)'
-                        }} 
-                    />
+                    <div style={{ display: "flex", flexDirection: "column", gap: '2px' }}>
+                    <div style={{ position: "relative"}}>
+                        <DatePicker 
+                            selected={startDate} 
+                            onChange={(date) => setStartDate(date)}
+                            placeholderText="start date"
+                            dateFormat="MM/dd/yyyy"
+                            minDate={new Date()} 
+                            className="custom-datepicker"
+                            style={{
+                                padding: "10px",
+                                borderRadius: "10px",
+                                cursor: "pointer",
+                            }}
+                        />
+                    </div>
+
+                    <div style={{ position: "relative"}}>
+                        <DatePicker 
+                            selected={endDate} 
+                            onChange={(date) => setEndDate(date)}
+                            placeholderText="end date"
+                            dateFormat="MM/dd/yyyy"
+                            minDate={new Date()} // Prevent past dates
+                            className="custom-datepicker"
+                            style={{
+                                padding: "10px",
+                                border: '3px solid #000080',
+                                borderRadius: "10px",
+                                cursor: "pointer",
+                            }}
+                        />
+                    </div>
+                
+                    </div>
+
                     <button onClick={() => alert('Button Clicked!')} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
                         <img 
                             src={searchIcon} 
@@ -253,7 +287,7 @@ const BackgroundTravelWebsite = () => {
             <div
                 style={{
                     backgroundColor: "rgb(226, 226, 228)", 
-                    height: "350px", 
+                    height: "400px", 
                     marginTop: "70px", 
                     marginRight: "20px", 
                     marginLeft: "20px",
@@ -275,7 +309,7 @@ const BackgroundTravelWebsite = () => {
                         fontSize: "30px",
                         textAlign: "center",
                         marginBottom: "20px",
-                        fontFamily: "Bebas Neue",
+                        // fontFamily: 'PT Sans Narrow'
                     }}
                 >
                     cheap travel flight deals
@@ -379,8 +413,8 @@ const BackgroundTravelWebsite = () => {
                         left: '10%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '200px',          // Popup height
-                        width: '200px',           // Popup width
+                        height: '230px',          // Popup height
+                        width: '230px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -394,16 +428,14 @@ const BackgroundTravelWebsite = () => {
                         onMouseEnter={() => setIsHovered2(true)} // Trigger shadow on hover
                         onMouseLeave={() => setIsHovered2(false)} // Remove shadow when not hovering
                         >
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-                    </style>
+
                     <h1 style={{ margin: 0, fontSize: '18px', color: 'rgb(0,0,128)',}}>ask jetSet AI</h1>
                     <img 
                         src={jetsetAI} 
                         alt="AI for jetSet" 
                         style={{
                             marginLeft: '20px',
-                            width: '190px', 
+                            width: '180px', 
                             height: 'auto'
                         }}    
                     />
@@ -416,8 +448,8 @@ const BackgroundTravelWebsite = () => {
                         left: '25.5%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '200px',          // Popup height
-                        width: '200px',           // Popup width
+                        height: '230px',          // Popup height
+                        width: '230px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -440,7 +472,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Best time to Travel" 
                         style={{
                             marginLeft: '0px',
-                            width: '160px', 
+                            width: '150px', 
                             height: 'auto'
                         }}    
                     />
@@ -453,8 +485,8 @@ const BackgroundTravelWebsite = () => {
                         left: '41%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '200px',          // Popup height
-                        width: '200px',           // Popup width
+                        height: '230px',          // Popup height
+                        width: '230px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -477,7 +509,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Explore" 
                         style={{
                             marginLeft: '20px',
-                            width: '170px', 
+                            width: '160px', 
                             height: 'auto'
                         }}    
                     />
@@ -490,8 +522,8 @@ const BackgroundTravelWebsite = () => {
                         left: '56.5%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '200px',          // Popup height
-                        width: '200px',           // Popup width
+                        height: '230px',          // Popup height
+                        width: '230px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -514,7 +546,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Price Change" 
                         style={{
                             marginLeft: '20px',
-                            width: '160px', 
+                            width: '125px', 
                             height: 'auto'
                         }}    
                     />
@@ -527,8 +559,8 @@ const BackgroundTravelWebsite = () => {
                         left: '72%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '200px',          // Popup height
-                        width: '200px',           // Popup width
+                        height: '230px',          // Popup height
+                        width: '230px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -543,7 +575,6 @@ const BackgroundTravelWebsite = () => {
                     onMouseLeave={() => setIsHovered6(false)} // Remove shadow when not hovering
                     >
                     <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
                     </style>
                     <h1 style={{ margin: 0, fontSize: '18px', color: 'rgb(0,0,128)',}}>trips</h1>
                     <img 
@@ -551,7 +582,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Liked Flights" 
                         style={{
                             marginLeft: '0px',
-                            width: '210px', 
+                            width: '200px', 
                             height: 'auto'
                         }}    
                     />
@@ -564,8 +595,8 @@ const BackgroundTravelWebsite = () => {
                         left: '87.5%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '200px',          // Popup height
-                        width: '200px',           // Popup width
+                        height: '230px',          // Popup height
+                        width: '230px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -588,7 +619,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Liked Flights" 
                         style={{
                             marginLeft: '0px',
-                            width: '200px', 
+                            width: '190px', 
                             height: 'auto'
                         }}    
                     />
