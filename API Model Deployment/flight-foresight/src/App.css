@@ -1,0 +1,81 @@
+element {
+  background-color: #61dafb;
+}
+
+.App {
+  text-align: center;
+  background-image: url('assets/blue_gradient_background.webp');
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.react-datepicker__input-container input {
+  height: 0.01px;
+  padding: 15px;
+  margin-top: '70px';
+  border: 2px solid #000080;
+  border-radius: 5px;
+
+}
+.react-datepicker__header {
+  background-color: hwb(0 89% 11%); 
+  border-bottom: 1px solid #d3d3d3;
+  padding: 8px;
+  border-radius: 12px 12px 0 0;
+}
+
+.react-datepicker__day {
+  margin: 5px;
+  font-size: 14px;
+  
+}
+
+.react-datepicker__day:hover {
+  background-color: #000080;
+  border-radius: 50%;
+}
+
+.react-datepicker__day--selected {
+  background-color: #000080;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.react-datepicker__day--today {
+  font-weight: bold;
+  color: #000080;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
