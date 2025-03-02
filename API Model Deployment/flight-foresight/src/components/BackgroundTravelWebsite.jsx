@@ -139,7 +139,7 @@ const BackgroundTravelWebsite = () => {
                             borderRadius: '5px',  
                             border: '3px solid #ccc', 
                             fontSize: '16px',
-                            color: 'rgb(255, 255, 255)'
+                            color: 'rgb(0, 0, 0)'
                         }} 
                     />
                     <img 
@@ -159,7 +159,7 @@ const BackgroundTravelWebsite = () => {
                             borderRadius: '5px',  
                             border: '3px solid #ccc', 
                             fontSize: '16px',
-                            color: 'rgb(255, 255, 255)'
+                            color: 'rgb(0, 0, 0)'
                         }} 
                     />
                     <input 
@@ -171,13 +171,13 @@ const BackgroundTravelWebsite = () => {
                             borderRadius: '5px',  
                             border: '3px solid #ccc', 
                             fontSize: '16px',
-                            color: 'rgb(255, 255, 255)'
+                            color: 'rgb(0, 0, 0)'
                         }} 
                     />
                     <button onClick={() => alert('Button Clicked!')} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
                         <img 
                             src={searchIcon} 
-                            alt="Clickable Button" 
+                            alt="Search Flights Button" 
                             style={{ width: '50px', height: '50px' }}
                         />
                     </button>      
