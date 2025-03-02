@@ -1,3 +1,11 @@
+#how to run Bot
+ terminal 1: run- python3 api.py 
+terminal 2: run-  npm start
+terminal 3: run- node awsconnect.js
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,19 +1,19 @@
-import { BrowserRouter } from 'react-router-dom';
-import NavigationBar from './components/NavigationBar';
-import BackgroundTravelWebsite from './components/BackgroundTravelWebsite';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import FlightChatbot from "./ChatBot";
 
 function App() {
-  return ( 
-    <BrowserRouter> {/* Wrap the entire app in BrowserRouter */}
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-          {/* <NavigationBar /> */}
-          <BackgroundTravelWebsite />
-          {/* <Hero /> */}
-        </div>
-      </div>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <div className="relative z-0 bg-primary">
+                <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+                    <Routes>
+                        <Route path="/" element={<FlightChatbot />} />
+                    </Routes>
+                </div>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;

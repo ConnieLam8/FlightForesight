@@ -1,0 +1,122 @@
+/* General container styling */
+.chatbot-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat window styling */
+.chatbot-window {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Messages container */
+.chatbot-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+/* Styling for individual messages */
+.message {
+    margin: 8px 0;
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    line-height: 1.4;
+}
+
+.message.bot {
+    background-color: #e0f7fa;
+    align-self: flex-start;
+}
+
+.message.user {
+    background-color: #d1c4e9;
+    align-self: flex-end;
+}
+
+/* Chat form styling */
+.chatbot-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
+}
+
+.chatbot-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.2s ease;
+}
+
+.chatbot-form input:focus {
+    border-color: #6200ea;
+    outline: none;
+}
+
+.chatbot-form button {
+    padding: 10px 15px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.chatbot-form button:hover {
+    background-color: #3700b3;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .chatbot-container {
+        padding: 15px;
+    }
+
+    .chatbot-window {
+        height: 400px;
+    }
+
+
+    .suggestions-dropdown {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        background: white;
+        border: 1px solid #ccc;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .suggestions-dropdown li {
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+
+    .suggestions-dropdown li:hover {
+        background-color: #f0f0f0;
+    }
+
+}
