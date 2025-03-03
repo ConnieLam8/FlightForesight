@@ -2,6 +2,7 @@
   "name": "flight-foresight",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -17,6 +18,19 @@
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
     "tailwindcss": "^4.0.0",
+=======
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cra-template": "1.2.0",
+    "mysql2": "^3.12.0",
+    "node": "^18.20.6",
+    "python": "^0.0.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1",
+    "react-scripts": "5.0.1",
+    "react-simple-chatbot": "^0.6.1",
+>>>>>>> main
     "web-vitals": "^4.2.4"
   },
   "scripts": {
@@ -27,8 +41,12 @@
   },
   "eslintConfig": {
     "extends": [
+<<<<<<< HEAD
       "react-app",
       "react-app/jest"
+=======
+      "react-app"
+>>>>>>> main
     ]
   },
   "browserslist": {
@@ -42,9 +60,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.1"
+=======
+>>>>>>> main
   }
 }
