@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../App.css';
+import ChatBot from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/ChatBot.jsx';
 
 import planeImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/airplane-7-64.png';
 import signInLogo from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/—Pngtree—avatar icon profile icon member_5247852.png';
@@ -29,7 +30,8 @@ const BackgroundTravelWebsite = () => {
     const [isHovered6, setIsHovered6] = React.useState (false);
     const [isHovered7, setIsHovered7] = React.useState (false);
     const [isHovered8, setIsHovered8] = React.useState (false);
-    
+    const [showChat, setShowChat] = useState(false);
+
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
@@ -413,8 +415,8 @@ const BackgroundTravelWebsite = () => {
                         left: '10%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
+                        height: '200px',          // Popup height
+                        width: '200px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -448,8 +450,8 @@ const BackgroundTravelWebsite = () => {
                         left: '25.5%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
+                        height: '200px',          // Popup height
+                        width: '200px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -485,8 +487,8 @@ const BackgroundTravelWebsite = () => {
                         left: '41%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
+                        height: '200px',          // Popup height
+                        width: '200px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -522,8 +524,8 @@ const BackgroundTravelWebsite = () => {
                         left: '56.5%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
+                        height: '200px',          // Popup height
+                        width: '200px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -559,8 +561,8 @@ const BackgroundTravelWebsite = () => {
                         left: '72%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
+                        height: '200px',          // Popup height
+                        width: '200px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -595,8 +597,8 @@ const BackgroundTravelWebsite = () => {
                         left: '87.5%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
+                        height: '200px',          // Popup height
+                        width: '200px',           // Popup width
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -627,7 +629,19 @@ const BackgroundTravelWebsite = () => {
 
                 </div>
             </div>
- 
+                <div className="background-container">
+                {/* Toggle Button */}
+                <button className="chat-toggle-btn" onClick={() => setShowChat(!showChat)}>
+                    {showChat ? "Close Chat" : "Ask JetSet AI"}
+                </button>
+
+                {/* Chatbot on the Right Side */}
+                {showChat && (
+                    <div className="chatbot-wrapper">
+                        <ChatBot />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

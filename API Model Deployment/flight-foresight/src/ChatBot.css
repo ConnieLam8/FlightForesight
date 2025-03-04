@@ -1,25 +1,15 @@
-/* General container styling */
-.chatbot-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+
 
 /* Chat window styling */
 .chatbot-window {
     display: flex;
     flex-direction: column;
-    height: 500px;
-    border: 1px solid #ddd;
+    height: 495px;
     border-radius: 12px;
     overflow: hidden;
     background-color: #fff;
+    border: 3px solid #000080; /* Navy blue border with 2px solid style */
+
 }
 
 /* Messages container */
@@ -39,16 +29,21 @@
     border-radius: 8px;
     line-height: 1.4;
 }
-
 .message.bot {
-    background-color: #e0f7fa;
+    background-color: rgb(241, 241, 244);
     align-self: flex-start;
+    /* border: 2px solid #000080;  */
+
 }
 
 .message.user {
-    background-color: #d1c4e9;
+    background-color: rgb(226, 226, 228);
     align-self: flex-end;
+    /* border: 2px solid #000080;  */
+    padding: 5px; /* Optional: adds some padding for spacing inside the border */
+    border-radius: 8px; /* Optional: rounds the corners of the border */
 }
+
 
 /* Chat form styling */
 .chatbot-form {
@@ -69,13 +64,13 @@
 }
 
 .chatbot-form input:focus {
-    border-color: #6200ea;
+    border-color: #000080;
     outline: none;
 }
 
 .chatbot-form button {
     padding: 10px 15px;
-    background-color: #6200ea;
+    background-color: #000080;
     color: white;
     border: none;
     border-radius: 6px;
@@ -85,7 +80,7 @@
 }
 
 .chatbot-form button:hover {
-    background-color: #3700b3;
+    background-color:  #000080;
 }
 
 /* Responsive styling */
