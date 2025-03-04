@@ -10,18 +10,18 @@ const ChatBot = () => {
     const [currentStep, setCurrentStep] = useState(0);
     const [flightDetails, setFlightDetails] = useState({
         Airline_Name: "",
-        Origin_Airport_Name: "",
-        Dest_Airport_Name: "",
+        full_Origin_Airport_Name: "",
+        full_Dest_Airport_Name: "",
         crs_dep_military_date: "",
         crs_arr_military_date: ""
     });
 
     const steps = [
         { key: "Airline_Name", prompt: "Please provide the Airline Name." },
-        { key: "Origin_Airport_Name", prompt: "What is the origin airport code?" },
-        { key: "Dest_Airport_Name", prompt: "What is the destination airport code?" },
-        { key: "crs_dep_military_date", prompt: "What is the scheduled departure time? (Format: DD/MM/YYYY HH:MM)" },
-        { key: "crs_arr_military_date", prompt: "What is the scheduled arrival time? (Format: DD/MM/YYYY HH:MM)" }
+        { key: "full_Origin_Airport_Name", prompt: "What is the origin airport Name?" },
+        { key: "full_Dest_Airport_Name", prompt: "What is the destination airport Name?" },
+        { key: "crs_dep_military_date", prompt: "What is the scheduled departure time? (Format:HH:MM)" },
+        { key: "crs_arr_military_date", prompt: "What is the scheduled arrival time? (Format:HH:MM)" }
     ];
 
 
@@ -32,7 +32,7 @@ const ChatBot = () => {
     const fetchSuggestions = async (input, stepKey) => {
         const endpoint = stepKey === "Airline_Name"
             ? "http://localhost:5001/autocompleteAirline"
-            : stepKey === "Origin_Airport_Name"
+            : stepKey === "full_Origin_Airport_Name"
                 ? "http://localhost:5001/autocompleteOriginAirport"
                 : "http://localhost:5001/autocompleteDestAirport"; // default for other cases (e.g., Dest_Airport_Name)
 
@@ -89,9 +89,9 @@ const ChatBot = () => {
                     { text: "Error verifying airline name. Please try again.", isBot: true }
                 ]);
             }
-        } else if (currentKey === "Origin_Airport_Name") {
+        } else if (currentKey === "full_Origin_Airport_Name") {
             try {
-                const response1 = await axios.post("http://localhost:5001/verifyOriginAirportName", { Origin_Airport_Name: input });
+                const response1 = await axios.post("http://localhost:5001/verifyOriginAirportName", { full_Origin_Airport_Name: input });
                 if (response1.data.valid) {
                     // Proceed to the next step
                     if (currentStep < steps.length - 1) {
@@ -110,9 +110,9 @@ const ChatBot = () => {
                     { text: "Error verifying airport name. Please try again.", isBot: true }
                 ]);
             }
-        } else if (currentKey === "Dest_Airport_Name") {
+        } else if (currentKey === "full_Dest_Airport_Name") {
             try {
-                const response2 = await axios.post("http://localhost:5001/verifyDestAirportName", { Dest_Airport_Name: input });
+                const response2 = await axios.post("http://localhost:5001/verifyDestAirportName", { full_Dest_Airport_Name: input });
                 if (response2.data.valid) {
                     // Proceed to the next step
                     if (currentStep < steps.length - 1) {

@@ -16,24 +16,24 @@ import React, { useRef, useEffect, useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../App.css';
+import ChatBot from "../ChatBot";
 
-import planeImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/airplane-7-64.png';
-import signInLogo from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/—Pngtree—avatar icon profile icon member_5247852.png';
-import likedFlights from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/610189e478192d00042edc31.png'; 
-import jetsetAI from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/askAI.png';
-import timeToTravel from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/bestTimetoTravel.png';
-import exploreImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/explore.png';
-import priceChange from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/priceChange.png';
-import flightTrackerImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/flightTrackerImage.png'; 
-import tripImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/tripsImage.png'; 
-import arrowImage from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/arrow.png';
-import searchIcon from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/magnifying-glass-3-64.png';
-import cancunInfo from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/cancun.png';
-import floridaInfo from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/maimi.png';
-import losAngelesInfo from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/losangeles.png';
-import vancouverInfo from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/vancouver.png'; 
-import newyorkInfo from '/Users/mehreenaiman/Documents/GitHub/FlightForesight/API Model Deployment/flight-foresight/src/images/newyork.png'; 
->>>>>>> main
+import planeImage from '../images/airplane-7-64.png';
+import signInLogo from '../images/—Pngtree—avatar icon profile icon member_5247852.png';
+import likedFlights from '../images/610189e478192d00042edc31.png';
+import jetsetAI from '../images/askAI.png';
+import timeToTravel from '../images/bestTimetoTravel.png';
+import exploreImage from '../images/explore.png';
+import priceChange from '../images/priceChange.png';
+import flightTrackerImage from '../images/flightTrackerImage.png';
+import tripImage from '../images/tripsImage.png';
+import arrowImage from '../images/arrow.png';
+import searchIcon from '../images/magnifying-glass-3-64.png';
+import cancunInfo from '../images/cancun.png';
+import floridaInfo from '../images/maimi.png';
+import losAngelesInfo from '../images/losangeles.png';
+import vancouverInfo from '../images/vancouver.png';
+import newyorkInfo from '../images/newyork.png';
 
 const BackgroundTravelWebsite = () => {
     const [isHovered1, setIsHovered1] = React.useState (false);
@@ -46,7 +46,8 @@ const BackgroundTravelWebsite = () => {
 <<<<<<< HEAD
 =======
     const [isHovered8, setIsHovered8] = React.useState (false);
-    
+    const [showChat, setShowChat] = useState(false);
+
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
@@ -494,13 +495,8 @@ const BackgroundTravelWebsite = () => {
                         left: '10%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-<<<<<<< HEAD
                         height: '200px',          // Popup height
                         width: '200px',           // Popup width
-=======
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
->>>>>>> main
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -544,13 +540,8 @@ const BackgroundTravelWebsite = () => {
                         left: '25.5%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-<<<<<<< HEAD
                         height: '200px',          // Popup height
                         width: '200px',           // Popup width
-=======
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
->>>>>>> main
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -590,13 +581,8 @@ const BackgroundTravelWebsite = () => {
                         left: '41%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-<<<<<<< HEAD
                         height: '200px',          // Popup height
                         width: '200px',           // Popup width
-=======
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
->>>>>>> main
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -636,13 +622,8 @@ const BackgroundTravelWebsite = () => {
                         left: '56.5%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-<<<<<<< HEAD
                         height: '200px',          // Popup height
                         width: '200px',           // Popup width
-=======
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
->>>>>>> main
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -682,13 +663,8 @@ const BackgroundTravelWebsite = () => {
                         left: '72%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-<<<<<<< HEAD
                         height: '200px',          // Popup height
                         width: '200px',           // Popup width
-=======
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
->>>>>>> main
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -731,13 +707,8 @@ const BackgroundTravelWebsite = () => {
                         left: '87.5%',              // Center horizontally
                         transform: 'translate(-50%, -50%)', // Align center precisely
                         backgroundColor: 'rgb(255, 255, 255)', // White
-<<<<<<< HEAD
                         height: '200px',          // Popup height
                         width: '200px',           // Popup width
-=======
-                        height: '230px',          // Popup height
-                        width: '230px',           // Popup width
->>>>>>> main
                         padding: '20px',          // Adds padding inside the rectangle
                         borderRadius: '20px',     // Rounded corners for the popup
                         boxShadow: '15px 15px 15px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
@@ -772,7 +743,19 @@ const BackgroundTravelWebsite = () => {
 
                 </div>
             </div>
- 
+                <div className="background-container">
+                {/* Toggle Button */}
+                <button className="chat-toggle-btn" onClick={() => setShowChat(!showChat)}>
+                    {showChat ? "Close Chat" : "Ask JetSet AI"}
+                </button>
+
+                {/* Chatbot on the Right Side */}
+                {showChat && (
+                    <div className="chatbot-wrapper">
+                        <ChatBot />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
