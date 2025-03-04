@@ -151,16 +151,16 @@ app.post('/autocompleteAirline', (req, res) => {
 
 /////////////////// VERIFY ORIGIN AIRPORT /////////////////////////////////
 app.post('/verifyOriginAirportName', (req, res) => {
-    const { Origin_Airport_Name } = req.body;
-    console.log('Received airlineName:', Origin_Airport_Name);  // Log the airline name to ensure it's being sent correctly
+    const { full_Origin_Airport_Name } = req.body;
+    console.log('Received airlineName:', full_Origin_Airport_Name);  // Log the airline name to ensure it's being sent correctly
 
-    if (!Origin_Airport_Name) {
+    if (!full_Origin_Airport_Name) {
         return res.status(400).json({ error: 'Origin Airport Name is required' });
     }
 
-    const query = 'SELECT Origin_Airport_Code FROM Origin_Airport WHERE LOWER(Origin_Airport_Name) = LOWER(?)';
+    const query = 'SELECT Origin_Airport_Code FROM Origin_Airport WHERE LOWER(full_Origin_Airport_Name) = LOWER(?)';
 
-    connection.execute(query, [Origin_Airport_Name], (err, results) => {
+    connection.execute(query, [full_Origin_Airport_Name], (err, results) => {
         if (err) {
             console.error('Database error:', err);  // Log any database errors
             res.status(500).json({ error: 'Database error' });
@@ -169,7 +169,7 @@ app.post('/verifyOriginAirportName', (req, res) => {
             if (results.length > 0) {
                 const Origin_Airport_Code = results[0].Origin_Airport_Code;
                 // Save to JSON file
-                saveToJSON({ Origin_Airport_Name, Origin_Airport_Code });
+                saveToJSON({ full_Origin_Airport_Name, Origin_Airport_Code });
 
                 res.json({ valid: true, Origin_Airport_Code: results[0].Origin_Airport_Code }); // Send the DOT_Code if found
             } else {
@@ -186,7 +186,7 @@ app.post('/autocompleteOriginAirport', (req, res) => {
         return res.status(400).json({ error: 'Query is required' });
     }
 
-    const sqlQuery = 'SELECT Origin_Airport_Name FROM Origin_Airport WHERE LOWER(Origin_Airport_Name) LIKE LOWER(?) LIMIT 10';
+    const sqlQuery = 'SELECT full_Origin_Airport_Name FROM Origin_Airport WHERE LOWER(full_Origin_Airport_Name) LIKE LOWER(?) LIMIT 10';
     const searchTerm = `%${query}%`;
 
     connection.execute(sqlQuery, [searchTerm], (err, results) => {
@@ -194,7 +194,7 @@ app.post('/autocompleteOriginAirport', (req, res) => {
             console.error('Database error:', err);
             res.status(500).json({ error: 'Database error' });
         } else {
-            const suggestions = results.map(row => row.Origin_Airport_Name);
+            const suggestions = results.map(row => row.full_Origin_Airport_Name);
             res.json({ suggestions });
             // console.error("IM HERE");
 
@@ -205,16 +205,16 @@ app.post('/autocompleteOriginAirport', (req, res) => {
 
 /////////////////// VERIFY DEST AIRPORT /////////////////////////////////
 app.post('/verifyDestAirportName', (req, res) => {
-    const { Dest_Airport_Name } = req.body;
-    console.log('Received airlineName:', Dest_Airport_Name);  // Log the airline name to ensure it's being sent correctly
+    const { full_Dest_Airport_Name } = req.body;
+    console.log('Received airlineName:', full_Dest_Airport_Name);  // Log the airline name to ensure it's being sent correctly
 
-    if (!Dest_Airport_Name) {
+    if (!full_Dest_Airport_Name) {
         return res.status(400).json({ error: 'Origin Airport Name is required' });
     }
 
-    const query = 'SELECT Dest_Airport_Code FROM Dest_Airport WHERE LOWER(Dest_Airport_Name) = LOWER(?)';
+    const query = 'SELECT Dest_Airport_Code FROM Dest_Airport WHERE LOWER(full_Dest_Airport_Name) = LOWER(?)';
 
-    connection.execute(query, [Dest_Airport_Name], (err, results) => {
+    connection.execute(query, [full_Dest_Airport_Name], (err, results) => {
         if (err) {
             console.error('Database error:', err);  // Log any database errors
             res.status(500).json({ error: 'Database error' });
@@ -223,7 +223,7 @@ app.post('/verifyDestAirportName', (req, res) => {
             if (results.length > 0) {
                 const Dest_Airport_Code = results[0].Dest_Airport_Code;
                 // Save to JSON file
-                saveToJSON({ Dest_Airport_Name, Dest_Airport_Code });
+                saveToJSON({ full_Dest_Airport_Name, Dest_Airport_Code });
 
                 res.json({ valid: true, Dest_Airport_Code: results[0].Dest_Airport_Code }); // Send the DOT_Code if found
             } else {
@@ -240,7 +240,7 @@ app.post('/autocompleteDestAirport', (req, res) => {
         return res.status(400).json({ error: 'Query is required' });
     }
 
-    const sqlQuery = 'SELECT Dest_Airport_Name FROM Dest_Airport WHERE LOWER(Dest_Airport_Name) LIKE LOWER(?) LIMIT 10';
+    const sqlQuery = 'SELECT full_Dest_Airport_Name FROM Dest_Airport WHERE LOWER(full_Dest_Airport_Name) LIKE LOWER(?) LIMIT 10';
     const searchTerm = `%${query}%`;
 
     connection.execute(sqlQuery, [searchTerm], (err, results) => {
@@ -248,7 +248,7 @@ app.post('/autocompleteDestAirport', (req, res) => {
             console.error('Database error:', err);
             res.status(500).json({ error: 'Database error' });
         } else {
-            const suggestions = results.map(row => row.Dest_Airport_Name);
+            const suggestions = results.map(row => row.full_Dest_Airport_Name);
             res.json({ suggestions });
             // console.error("IM HERE");
 
