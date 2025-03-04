@@ -20,8 +20,8 @@ const ChatBot = () => {
         { key: "Airline_Name", prompt: "Please provide the Airline Name." },
         { key: "full_Origin_Airport_Name", prompt: "What is the origin airport Name?" },
         { key: "full_Dest_Airport_Name", prompt: "What is the destination airport Name?" },
-        { key: "crs_dep_military_date", prompt: "What is the scheduled departure time? (Format: DD/MM/YYYY HH:MM)" },
-        { key: "crs_arr_military_date", prompt: "What is the scheduled arrival time? (Format: DD/MM/YYYY HH:MM)" }
+        { key: "crs_dep_military_date", prompt: "What is the scheduled departure time? (Format:HH:MM)" },
+        { key: "crs_arr_military_date", prompt: "What is the scheduled arrival time? (Format:HH:MM)" }
     ];
 
 

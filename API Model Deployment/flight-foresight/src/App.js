@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import BackgroundWebsite from './components/BackgroundTravelWebsite.jsx'; 
+import BackgroundWebsite from './components/BackgroundTravelWebsite.jsx';
 
 function App() {
     return (
