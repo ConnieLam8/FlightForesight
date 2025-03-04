@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from 'react';
-import planeImage from '../images/airplane-7-64.png';
-import signInLogo from '../images/—Pngtree—avatar icon profile icon member_5247852.png';
-import likedFlights from '../images/610189e478192d00042edc31.png'; 
-import jetsetAI from '../images/askAI.png';
-import timeToTravel from '../images/bestTimetoTravel.png';
-import exploreImage from '../images/explore.png';
-import priceChange from '../images/priceChange.png';
-import flightTrackerImage from '../images/flightTrackerImage.png'; 
-import tripImage from '../images/tripsImage.png'; 
-import arrowImage from '../images/arrow.png';
-import searchIcon from '../images/magnifying-glass-3-64.png';
-=======
 import React, { useRef, useEffect, useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -43,8 +29,6 @@ const BackgroundTravelWebsite = () => {
     const [isHovered5, setIsHovered5] = React.useState (false);
     const [isHovered6, setIsHovered6] = React.useState (false);
     const [isHovered7, setIsHovered7] = React.useState (false);
-<<<<<<< HEAD
-=======
     const [isHovered8, setIsHovered8] = React.useState (false);
     const [showChat, setShowChat] = useState(false);
 
@@ -64,20 +48,10 @@ const BackgroundTravelWebsite = () => {
 
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null); 
->>>>>>> main
 
     // Apply body styles on mount
     useEffect(() => {
         document.body.style.backgroundColor = 'rgb(241, 241, 244)'; // White
-<<<<<<< HEAD
-        document.body.style.fontFamily = 'Arial, sans-serif';
-        document.body.style.margin = '0';
-        document.body.style.padding = '0';
-        document.body.style.color = '#333';
-
-    }, []); // Empty dependency array means it runs only once when the component mounts
-
-=======
         // document.body.style.fontFamily = 'Arial, sans-serif';
         document.body.style.margin = '0';
         document.body.style.padding = '0';
@@ -91,29 +65,20 @@ const BackgroundTravelWebsite = () => {
         setIsOpen(!isOpen);
     };
 
->>>>>>> main
     return (
         <div>
             {/* Header section */}
             <div style={{
                 backgroundColor: 'rgb(251, 251, 251)',  
-<<<<<<< HEAD
-                color: '#000000',            
-=======
                 // color: '#000000',            
->>>>>>> main
                 display: 'flex',             // Use flexbox for alignment
                 justifyContent: 'space-between', // Spread items to opposite ends
                 alignItems: 'center',        // Vertically align items
                 padding: '10px 20px',        // Add padding for spacing
-<<<<<<< HEAD
-                borderBottom: '10px solid #000080' // Thin black line under the header
-=======
                 borderBottom: '3px solid #000080', // Thin black line under the header
                 boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)', // Soft shadow
                 overflow: 'hidden',
 
->>>>>>> main
             }}>
                 {/* Left section (Logo and Title) */}
                 <div style={{
@@ -186,11 +151,7 @@ const BackgroundTravelWebsite = () => {
                         fontSize: '60px',
                         textAlign: 'left',
                         marginRight: '10px',
-<<<<<<< HEAD
-                        fontFamily: 'Bebas Neue' // Applying the font
-=======
                         fontFamily: 'Space Grotesk' // Applying the font
->>>>>>> main
                     }}>
                         explore the world with
                     </h2>
@@ -198,18 +159,11 @@ const BackgroundTravelWebsite = () => {
                         color: 'rgb(0,0,128)',
                         fontSize: '60px',
                         textAlign: 'left',
-<<<<<<< HEAD
-                        fontFamily: 'Bebas Neue' // Applying the font
-=======
                         fontFamily: 'Space Grotesk' // Applying the font
->>>>>>> main
                     }}>
                         jetSet.
                     </h2>
                 </div>
-<<<<<<< HEAD
-
-=======
                 
                 <div style={{ position: "absolute", display: "inline-block" }}>
                 {/* Dropdown Button */}
@@ -249,7 +203,6 @@ const BackgroundTravelWebsite = () => {
                     </div>
                 )}
                 </div>
->>>>>>> main
 
                 {/* Search Boxes inside the grey rectangle */}
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -260,15 +213,9 @@ const BackgroundTravelWebsite = () => {
                             width: '45%',         // Adjusted width to fit side-by-side
                             padding: '10px',      
                             borderRadius: '5px',  
-<<<<<<< HEAD
-                            border: '3px solid #ccc', 
-                            fontSize: '16px',
-                            color: 'rgb(0, 0, 0)'
-=======
                             border: '3px solid #000080', 
                             fontSize: '16px',
                             color: 'rgb(0,0,128)'
->>>>>>> main
                         }} 
                     />
                     <img 
@@ -286,29 +233,6 @@ const BackgroundTravelWebsite = () => {
                             width: '45%',         // Adjusted width to fit side-by-side
                             padding: '10px',      
                             borderRadius: '5px',  
-<<<<<<< HEAD
-                            border: '3px solid #ccc', 
-                            fontSize: '16px',
-                            color: 'rgb(0, 0, 0)'
-                        }} 
-                    />
-                    <input 
-                        type="text" 
-                        placeholder="dates" 
-                        style={{
-                            width: '45%',         // Adjusted width to fit side-by-side
-                            padding: '10px',      
-                            borderRadius: '5px',  
-                            border: '3px solid #ccc', 
-                            fontSize: '16px',
-                            color: 'rgb(0, 0, 0)'
-                        }} 
-                    />
-                    <button onClick={() => alert('Button Clicked!')} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-                        <img 
-                            src={searchIcon} 
-                            alt="Search Flights Button" 
-=======
                             border: '3px solid #000080', 
                             fontSize: '16px',
                             color: 'rgb(0,0,128)'
@@ -354,14 +278,11 @@ const BackgroundTravelWebsite = () => {
                         <img 
                             src={searchIcon} 
                             alt="Clickable Button" 
->>>>>>> main
                             style={{ width: '50px', height: '50px' }}
                         />
                     </button>      
                 </div>
             </div>
-<<<<<<< HEAD
-=======
 
             <div>
             {/* Light Grey Rectangle */}
@@ -472,7 +393,6 @@ const BackgroundTravelWebsite = () => {
             </div>
         </div>
 
->>>>>>> main
             
             <div> 
                 {/* PopUps Background */}
@@ -510,24 +430,13 @@ const BackgroundTravelWebsite = () => {
                         onMouseEnter={() => setIsHovered2(true)} // Trigger shadow on hover
                         onMouseLeave={() => setIsHovered2(false)} // Remove shadow when not hovering
                         >
-<<<<<<< HEAD
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-                    </style>
-=======
-
->>>>>>> main
                     <h1 style={{ margin: 0, fontSize: '18px', color: 'rgb(0,0,128)',}}>ask jetSet AI</h1>
                     <img 
                         src={jetsetAI} 
                         alt="AI for jetSet" 
                         style={{
                             marginLeft: '20px',
-<<<<<<< HEAD
-                            width: '190px', 
-=======
                             width: '180px', 
->>>>>>> main
                             height: 'auto'
                         }}    
                     />
@@ -564,11 +473,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Best time to Travel" 
                         style={{
                             marginLeft: '0px',
-<<<<<<< HEAD
-                            width: '160px', 
-=======
                             width: '150px', 
->>>>>>> main
                             height: 'auto'
                         }}    
                     />
@@ -605,11 +510,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Explore" 
                         style={{
                             marginLeft: '20px',
-<<<<<<< HEAD
-                            width: '170px', 
-=======
                             width: '160px', 
->>>>>>> main
                             height: 'auto'
                         }}    
                     />
@@ -646,11 +547,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Price Change" 
                         style={{
                             marginLeft: '20px',
-<<<<<<< HEAD
-                            width: '160px', 
-=======
                             width: '125px', 
->>>>>>> main
                             height: 'auto'
                         }}    
                     />
@@ -679,10 +576,6 @@ const BackgroundTravelWebsite = () => {
                     onMouseLeave={() => setIsHovered6(false)} // Remove shadow when not hovering
                     >
                     <style>
-<<<<<<< HEAD
-                        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-=======
->>>>>>> main
                     </style>
                     <h1 style={{ margin: 0, fontSize: '18px', color: 'rgb(0,0,128)',}}>trips</h1>
                     <img 
@@ -690,11 +583,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Liked Flights" 
                         style={{
                             marginLeft: '0px',
-<<<<<<< HEAD
-                            width: '210px', 
-=======
                             width: '200px', 
->>>>>>> main
                             height: 'auto'
                         }}    
                     />
@@ -731,11 +620,7 @@ const BackgroundTravelWebsite = () => {
                         alt="Liked Flights" 
                         style={{
                             marginLeft: '0px',
-<<<<<<< HEAD
-                            width: '200px', 
-=======
                             width: '190px', 
->>>>>>> main
                             height: 'auto'
                         }}    
                     />
@@ -760,8 +645,4 @@ const BackgroundTravelWebsite = () => {
     );
 };
 
-<<<<<<< HEAD
 export default BackgroundTravelWebsite;
-=======
-export default BackgroundTravelWebsite;
->>>>>>> main
