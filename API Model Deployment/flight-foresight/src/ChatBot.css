@@ -104,12 +104,12 @@
         z-index: 1000;
     }
 
-    .suggestions-dropdown li {
+    .suggestions-dropdown p {
         padding: 8px 12px;
         cursor: pointer;
     }
 
-    .suggestions-dropdown li:hover {
+    .suggestions-dropdown p:hover {
         background-color: #f0f0f0;
     }
 

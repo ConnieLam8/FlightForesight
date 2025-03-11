@@ -231,9 +231,9 @@ const ChatBot = () => {
                         required
                     />
                     {suggestions.length > 0 && (
-                        <ul className="suggestions-dropdown">
+                        <div className="suggestions-dropdown">
                             {suggestions.map((suggestion, index) => (
-                                <li
+                                <p
                                     key={index}
                                     onClick={() => {
                                         handleUserResponse(suggestion); // Handle suggestion click
@@ -241,9 +241,9 @@ const ChatBot = () => {
                                     }}
                                 >
                                     {suggestion}
-                                </li>
+                                </p>
                             ))}
-                        </ul>
+                        </div>
                     )}
 
                     <button type="submit">Send</button>
