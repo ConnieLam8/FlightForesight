@@ -29,7 +29,7 @@
     line-height: 1.4;
 }
 .message.bot {
-    background-color: rgb(241, 241, 244);
+    background-color: rgba(0, 153, 255, 0.67);
     align-self: flex-start;
     /* border: 2px solid #000080;  */
 
@@ -104,13 +104,6 @@
         z-index: 1000;
     }
 
-    .suggestions-dropdown p {
-        padding: 8px 12px;
-        cursor: pointer;
-    }
 
-    .suggestions-dropdown p:hover {
-        background-color: #f0f0f0;
-    }
 
 }
