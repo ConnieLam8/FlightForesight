@@ -1,5 +1,61 @@
+.suggestions-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: calc(100% - 20px); /* Adjust width to match input field */
+    max-height: 200px; /* Increased height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    z-index: 1000; /* Ensure it appears above other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+}
 
-/* Chat window styling */
+.suggestions-dropdown p {
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.suggestions-dropdown p:hover {
+    background-color: rgba(0, 153, 255, 0.67); /* Light blue background on hover */
+}
+
+/* Close button styling */
+.close-button {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    text-align: right;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it appears above the suggestions */
+}
+
+.close-button:hover {
+    background-color: #e0e0e0; /* Light gray background on hover */
+}
+/*!* Chat window styling *!*/
+/* Custom scrollbar styling */
+.suggestions-dropdown::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.suggestions-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+    border-radius: 4px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 4px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+}
 .chatbot-window {
     display: flex;
     flex-direction: column;
@@ -29,7 +85,7 @@
     line-height: 1.4;
 }
 .message.bot {
-    background-color: rgba(0, 153, 255, 0.67);
+    background-color: rgb(226, 226, 228);
     align-self: flex-start;
     /* border: 2px solid #000080;  */
 
@@ -37,6 +93,8 @@
 
 .message.user {
     background-color: rgb(226, 226, 228);
+    background-color: rgba(0, 153, 255, 0.67);
+
     align-self: flex-end;
     /* border: 2px solid #000080;  */
     padding: 5px; /* Optional: adds some padding for spacing inside the border */
@@ -58,7 +116,7 @@
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 12px;
     transition: border-color 0.2s ease;
 }
 
@@ -68,7 +126,7 @@
 }
 
 .chatbot-form button {
-    padding: 10px 15px;
+    padding: 15px 15px;
     background-color: #000080;
     color: white;
     border: none;
@@ -83,27 +141,14 @@
 }
 
 /* Responsive styling */
-@media (max-width: 768px) {
-    .chatbot-container {
-        padding: 15px;
-    }
+/*@media (max-width: 800px) {*/
+/*    .chatbot-container {*/
+/*        padding: 15px;*/
+/*    }*/
 
-    .chatbot-window {
-        height: 400px;
-    }
-
-
-    .suggestions-dropdown {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        position: absolute;
-        background: white;
-        border: 1px solid #ccc;
-        width: 100%;
-        z-index: 1000;
-    }
+/*    .chatbot-window {*/
+/*        height: 400px;*/
+/*    }*/
 
 
-
-}
+/*}*/

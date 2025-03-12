@@ -222,7 +222,7 @@ const ChatBot = () => {
                     )}
                 </div>
 
-                <form onSubmit={handleSubmit} className="chatbot-form">
+                <div className="chatbot-form">
                     <input
                         type="text"
                         name="userInput"
@@ -232,6 +232,9 @@ const ChatBot = () => {
                     />
                     {suggestions.length > 0 && (
                         <div className="suggestions-dropdown">
+                            <div className="close-button" onClick={() => setSuggestions([])}>
+                                × {/* "X" symbol for close */}
+                            </div>
                             {suggestions.map((suggestion, index) => (
                                 <p
                                     key={index}
@@ -245,9 +248,8 @@ const ChatBot = () => {
                             ))}
                         </div>
                     )}
-
                     <button type="submit">Send</button>
-                </form>
+                </div>
             </div>
         </div>
     );
