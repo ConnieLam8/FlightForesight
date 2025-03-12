@@ -15,7 +15,8 @@ app.use(express.json());
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Load environment variables
-dotenv.config({path:__dirname+'/./../../.env'});
+// dotenv.config({path:__dirname+'/./../../.env'});
+dotenv.config({path:__dirname+'\\.env'});
 
 // Get the database credentials from the env file
 const hostKey = process.env.MYSQL_HOST;

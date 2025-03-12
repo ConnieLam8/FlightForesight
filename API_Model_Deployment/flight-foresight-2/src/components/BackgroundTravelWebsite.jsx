@@ -262,7 +262,10 @@ const BackgroundTravelWebsite = () => {
         const queryString = new URLSearchParams(params).toString();
         console.log(`Full Request URL: http://localhost:5001/fetch-flights?${queryString}`);
 
-        axios.get('http://localhost:5001/fetch-flights', { params })
+        const serverUrl = "";
+
+        // axios.get('http://localhost:5001/fetch-flights', { params })
+        axios.get(`${serverUrl}/fetch-flights`, { params })
             .then(response => {
                 // Get the best flight results from the API call
                 setResults(response.data.best_flights);
