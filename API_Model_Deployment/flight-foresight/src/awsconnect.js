@@ -4,17 +4,27 @@ const mysql = require('mysql2');
 const app = express();
 const cors = require('cors');
 const axios = require('axios');  // Import axios to make HTTP requests
+const path = require('path');
 
 app.use(cors());
 app.use(express.json());
 const fs = require('fs');
 
+// Load environment variables
+require('dotenv').config({path:__dirname+'/./../../.env'});
+
+// Get the database credentials from the env file
+const hostKey = process.env.MYSQL_HOST;
+const userKey = process.env.MYSQL_USER;
+const passwordKey = process.env.MYSQL_PASSWORD;
+const databaseKey = process.env.MYSQL_DATABASE;
+
 /////////////////////COONECTION STUFF//////////////////////////
 const connection = mysql.createConnection({
-    host: 'database-1.ctg0mogw08vy.us-east-2.rds.amazonaws.com',  // Replace with your RDS instance endpoint
-    user: 'admin',  // Replace with your DB username
-    password: 'FLIGHTFORESIGHT123!',  // Replace with your DB password
-    database: 'flights',  // Replace with your DB name
+    host: hostKey,  // Replace with your RDS instance endpoint
+    user: userKey,  // Replace with your DB username
+    password: passwordKey,  // Replace with your DB password
+    database: databaseKey,  // Replace with your DB name
 });
 
 connection.connect((err) => {

@@ -8,14 +8,13 @@ const PORT = 5000;      // Switch to the correct port of the site
 
 const cors = require('cors');
 
-require('dotenv').config();
+require('dotenv').config({path:__dirname+'/./../../.env'});
 
 // Set the app headers below to prevent network errors
 app.use(cors());
 app.use(express.json());
 
-// const flightApiKey = process.env.FLIGHT_API_KEY;
-const flightApiKey = "6700939c5f01b59f217b907b0ad519ab96796e5cca998e789c5d3332342506da"
+const flightApiKey = process.env.FLIGHT_API_KEY;
 
 // console.log("Loaded Environment Variables:", process.env);
 console.log("API Key: ", flightApiKey);
