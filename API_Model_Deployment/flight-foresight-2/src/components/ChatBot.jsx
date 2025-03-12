@@ -32,7 +32,7 @@ const ChatBot = () => {
 
     const fetchSuggestions = async (input, stepKey) => {
         const endpoint = stepKey === "Airline_Name"
-            ? "http://localhost:5001/autocompleteAirline"
+            ? 'http://localhost:5001/autocompleteAirline'
             : stepKey === "full_Origin_Airport_Name"
                 ? "http://localhost:5001/autocompleteOriginAirport"
                 : "http://localhost:5001/autocompleteDestAirport"; // default for other cases (e.g., Dest_Airport_Name)

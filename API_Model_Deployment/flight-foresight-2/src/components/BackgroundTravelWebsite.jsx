@@ -260,9 +260,9 @@ const BackgroundTravelWebsite = () => {
 
         // Debugging
         const queryString = new URLSearchParams(params).toString();
-        console.log(`Full Request URL: http://localhost:5000/fetch-flights?${queryString}`);
+        console.log(`Full Request URL: http://localhost:5001/fetch-flights?${queryString}`);
 
-        axios.get('http://localhost:5000/fetch-flights', { params })
+        axios.get('http://localhost:5001/fetch-flights', { params })
             .then(response => {
                 // Get the best flight results from the API call
                 setResults(response.data.best_flights);
@@ -548,11 +548,15 @@ const BackgroundTravelWebsite = () => {
 
             {/* Display the returned flights in an accordian style result */}
             <div className="mt-20 w-[80%] mx-auto"> {/* This pushes the entire section down */}
-                <h1 className="mb-5 text-5xl font-bold">Best Flight Results</h1>
+                {/* <h1 className="mb-5 text-5xl font-bold">Best Flight Results</h1> */}
                 {error && <p style={{ color: 'red' }}>{error}</p>}
 
                 <div>
                     {/* {results && results.length > 0 ? ( */}
+                    {results && results.length > 0 && (
+                        <h1 className="mb-5 text-5xl font-bold">Best Flight Results</h1>
+                    )}
+
                     {results ? (
                     results.map((flight, index) => (
                         <div key={index} className="collapse collapse-arrow bg-base-200 rounded-lg shadow-lg mb-4">
@@ -640,28 +644,15 @@ const BackgroundTravelWebsite = () => {
 
                     ))
                     ) : (
-                    <p>No flights available.</p>
+                    // <p>No flights available.</p>
+                        <p></p>
                     )}
                 </div>
                 
             </div>
 
-            {/* New Image Carousel */}
-            {/* <h1 className="mt-20 mb-5 text-3xl font-bold text-center">Cheap Flight Deals</h1>
-            <div className="mt-5 carousel carousel-center rounded-box w-[80%] mx-auto flex">
-                    {[cancunInfo, losAngelesInfo, vancouverInfo, newyorkInfo, floridaInfo].map((image, index) => (
-                        <div key={index} className="carousel-item">
-                        <img
-                            src={image}
-                            alt="destination"
-                            className="w-[400px] h-auto rounded-[30px] border-4 border-navy-800"
-                        />
-                        </div>
-                    ))}
-            </div> */}
-
             {/* Create a div for the Popups cards */}
-            <div className='mt-20 flex flex-wrap gap-6 justify-center'>
+            <div className='mt-40 flex flex-wrap gap-6 justify-center'>
                 {/* Ask Jetset AI Popup */}
                 <Tilt className='w-[200px] sm:w-[220px]'>
                     <motion.div
@@ -673,7 +664,7 @@ const BackgroundTravelWebsite = () => {
                                 scale: 1,
                                 speed: 200
                             }}
-                            className='bg-white rounded-[20px] py-5 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
+                            className='bg-white rounded-[20px] py-12 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
                         >
                             <img src={jetsetAI} alt="AI for jetSet" className='w-25 h-25 object-contain' />
                             <h3 className='text-black text-[20px] font-bold text-center'>ask jetSet AI</h3>
@@ -692,7 +683,7 @@ const BackgroundTravelWebsite = () => {
                                 scale: 1,
                                 speed: 200
                             }}
-                            className='bg-white rounded-[20px] py-5 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
+                            className='bg-white rounded-[20px] py-8 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
                         >
                             <img src={timeToTravel} alt="Best time to Travel" className='w-25 h-25 object-contain' />
                             <h3 className='text-black text-[20px] font-bold text-center'>what's the best time to travel?</h3>
@@ -711,7 +702,7 @@ const BackgroundTravelWebsite = () => {
                                 scale: 1,
                                 speed: 200
                             }}
-                            className='bg-white rounded-[20px] py-5 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
+                            className='bg-white rounded-[20px] py-12 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
                         >
                             <img src={exploreImage} alt="Explore" className='w-25 h-25 object-contain' />
                             <h3 className='text-black text-[20px] font-bold text-center'>explore</h3>
@@ -749,7 +740,7 @@ const BackgroundTravelWebsite = () => {
                                 scale: 1,
                                 speed: 200
                             }}
-                            className='bg-white rounded-[20px] py-5 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
+                            className='bg-white rounded-[20px] py-16 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
                         >
                             <img src={tripImage} alt="Liked Flights" className='w-25 h-25 object-contain' />
                             <h3 className='text-black text-[20px] font-bold text-center'>trips</h3>
@@ -768,7 +759,7 @@ const BackgroundTravelWebsite = () => {
                                 scale: 1,
                                 speed: 200
                             }}
-                            className='bg-white rounded-[20px] py-5 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
+                            className='bg-white rounded-[20px] py-14 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
                         >
                             <img src={flightTrackerImage} alt="Liked Flights" className='w-25 h-25 object-contain' />
                             <h3 className='text-black text-[20px] font-bold text-center'>flight tracker</h3>
@@ -782,7 +773,7 @@ const BackgroundTravelWebsite = () => {
                 {/* Toggle Button */}
                 {/* <button className="chat-toggle-btn" onClick={() => setShowChat(!showChat)}> */}
                 <button className="chat-toggle-btn btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-blue-800 text-white hover:bg-blue-1000 z-[1000]" onClick={() => setShowChat(!showChat)}>
-                    {showChat ? "Close Chat" : "Ask JetSet AI"}
+                    {showChat ? "Close Chat" : "Ask FlightForesight AI"}
                 </button>
 
                 {/* Chatbot on the Right Side */}
@@ -812,7 +803,7 @@ const BackgroundTravelWebsite = () => {
                 </p>
             </aside>
             <nav>
-                <h6 className="footer-title">Social</h6>
+                <h6 className="footer-title pl-6">Social</h6>
                 <div className="grid grid-flow-col gap-4">
                 <a>
                     <svg

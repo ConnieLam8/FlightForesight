@@ -3,13 +3,13 @@ import mysql from 'mysql2';
 const app = express();
 import cors from 'cors';
 import axios from 'axios';  // Import axios to make HTTP requests
+import fs from 'fs';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 app.use(cors());
 app.use(express.json());
-import fs from 'fs';
 
 // Manually define __dirname for ES Modules
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -23,7 +23,10 @@ const userKey = process.env.MYSQL_USER;
 const passwordKey = process.env.MYSQL_PASSWORD;
 const databaseKey = process.env.MYSQL_DATABASE;
 
-/////////////////////COONECTION STUFF//////////////////////////
+// Get the Flight API Key
+const flightApiKey = process.env.FLIGHT_API_KEY;
+
+/////////////////////CONECTION STUFF//////////////////////////
 const connection = mysql.createConnection({
     host: hostKey,  // Replace with your RDS instance endpoint
     user: userKey,  // Replace with your DB username
@@ -39,10 +42,57 @@ connection.connect((err) => {
     console.log('Connected to the database as id ' + connection.threadId);
 });
 
+/////////////////// FETCH THE FLIGHTS FROM THE FRONT-END /////////////////////////////////
+app.get('/fetch-flights', async (req, res) => {
+    console.log('Received query params: ', req.query);
+    const { departure_id, arrival_id, outbound_date, return_date, currency } = req.query;
+
+    console.log('HERE IS the query from the backend')
+    console.log({ arrival_id, departure_id, outbound_date, return_date, currency })
+
+    if (!arrival_id || !departure_id) {
+        return res.status(400).json({ error: 'arrival_id and departure_id are required' });
+    }
+
+    try {
+        const response = await axios.get('https://serpapi.com/search.json', {
+            params: {
+                engine: "google_flights",
+                departure_id,
+                arrival_id,
+                outbound_date,
+                return_date,
+                currency,
+                hl: "en",
+                output: "JSON",
+                api_key: flightApiKey,
+            },
+        });
+        // Ensure headers haven't been sent before sending the response
+        if (!res.headersSent) {
+            res.json(response.data);  // Send response data to the front-end
+        }
+
+        // Save data to a JSON file for displaying to the front-end
+        console.log("Current Directory: ", __dirname);
+
+        const filePath = path.join(__dirname, 'flightResults.json');
+        console.log("Current Path: ", filePath);
+        fs.writeFileSync(filePath, JSON.stringify(response.data, null, 2));
+
+    } catch (error) {
+        // Check if response was already sent before sending another one
+        if (!res.headersSent) {
+            res.status(500).json({ error: "Headers Error fetching from SerpAPI", details: err.message });
+        }
+
+        console.error('Error fetching from SerpAPI:', error);
+        res.status(500).json({ error: 'Failed to fetch data from SerpAPI' });
+    }
+});
 
 
-
-/////////////JsON STUFF /////////////////////////////////
+//////////////////// JSON STUFF /////////////////////////////////
 
 function saveToJSON(data) {
     return new Promise((resolve, reject) => {

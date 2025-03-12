@@ -1,0 +1,824 @@
+{
+  "search_metadata": {
+    "id": "67d1c234c3f02c8f0c293b22",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/f45770d9311ca04e/67d1c234c3f02c8f0c293b22.json",
+    "created_at": "2025-03-12 17:19:48 UTC",
+    "processed_at": "2025-03-12 17:19:48 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=CAD&tfs=CBwQAhoeEgoyMDI1LTAzLTE1agcIARIDU0FOcgcIARIDQVRMGh4SCjIwMjUtMDMtMTVqBwgBEgNBVExyBwgBEgNTQU5CAQFIAXABmAEB&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/f45770d9311ca04e/67d1c234c3f02c8f0c293b22.html",
+    "prettify_html_file": "https://serpapi.com/searches/f45770d9311ca04e/67d1c234c3f02c8f0c293b22.prettify",
+    "total_time_taken": 6.04
+  },
+  "search_parameters": {
+    "engine": "google_flights",
+    "hl": "en",
+    "gl": "us",
+    "departure_id": "SAN",
+    "arrival_id": "ATL",
+    "outbound_date": "2025-03-15",
+    "return_date": "2025-03-15",
+    "currency": "CAD"
+  },
+  "best_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "San Diego International Airport",
+            "id": "SAN",
+            "time": "2025-03-15 06:40"
+          },
+          "arrival_airport": {
+            "name": "Baltimore/Washington International Thurgood Marshall Airport",
+            "id": "BWI",
+            "time": "2025-03-15 14:30"
+          },
+          "duration": 290,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 2059",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 241 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Baltimore/Washington International Thurgood Marshall Airport",
+            "id": "BWI",
+            "time": "2025-03-15 15:10"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-03-15 17:10"
+          },
+          "duration": 120,
+          "airplane": "Boeing 737",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 1253",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 108 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 40,
+          "name": "Baltimore/Washington International Thurgood Marshall Airport",
+          "id": "BWI"
+        }
+      ],
+      "total_duration": 450,
+      "carbon_emissions": {
+        "this_flight": 350000,
+        "typical_for_this_route": 283000,
+        "difference_percent": 24
+      },
+      "price": 1023,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVlVGMFVEaGFMVjlMYzNOQlEyZHlUVUZDUnkwdExTMHRMUzB0TFc5NVltSnlNMEZCUVVGQlIyWlNkMnB2UjIxRldTMUJFZzFYVGpJd05UbDhWMDR4TWpVekdnc0k0WjRHRUFJYUEwTkJSRGdjY0tPckJBPT0iLFtbIlNBTiIsIjIwMjUtMDMtMTUiLCJCV0kiLG51bGwsIldOIiwiMjA1OSJdLFsiQldJIiwiMjAyNS0wMy0xNSIsIkFUTCIsbnVsbCwiV04iLCIxMjUzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "San Diego International Airport",
+            "id": "SAN",
+            "time": "2025-03-15 06:30"
+          },
+          "arrival_airport": {
+            "name": "Dallas Fort Worth International Airport",
+            "id": "DFW",
+            "time": "2025-03-15 11:38"
+          },
+          "duration": 188,
+          "airplane": "Airbus A321",
+          "airline": "American",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+          "travel_class": "Economy",
+          "flight_number": "AA 2535",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 171 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Dallas Fort Worth International Airport",
+            "id": "DFW",
+            "time": "2025-03-15 12:34"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-03-15 15:41"
+          },
+          "duration": 127,
+          "airplane": "Airbus A321",
+          "airline": "American",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+          "travel_class": "Economy",
+          "flight_number": "AA 1236",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 128 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 56,
+          "name": "Dallas Fort Worth International Airport",
+          "id": "DFW"
+        }
+      ],
+      "total_duration": 371,
+      "carbon_emissions": {
+        "this_flight": 300000,
+        "typical_for_this_route": 283000,
+        "difference_percent": 6
+      },
+      "price": 1031,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVlVGMFVEaGFMVjlMYzNOQlEyZHlUVUZDUnkwdExTMHRMUzB0TFc5NVltSnlNMEZCUVVGQlIyWlNkMnB2UjIxRldTMUJFZzFCUVRJMU16VjhRVUV4TWpNMkdnc0lpYVVHRUFJYUEwTkJSRGdjY05XdkJBPT0iLFtbIlNBTiIsIjIwMjUtMDMtMTUiLCJERlciLG51bGwsIkFBIiwiMjUzNSJdLFsiREZXIiwiMjAyNS0wMy0xNSIsIkFUTCIsbnVsbCwiQUEiLCIxMjM2Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "San Diego International Airport",
+            "id": "SAN",
+            "time": "2025-03-15 06:15"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-03-15 13:26"
+          },
+          "duration": 251,
+          "airplane": "Airbus A321",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 729",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 244 kg"
+          ]
+        }
+      ],
+      "total_duration": 251,
+      "carbon_emissions": {
+        "this_flight": 244000,
+        "typical_for_this_route": 283000,
+        "difference_percent": -14
+      },
+      "price": 1032,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVlVGMFVEaGFMVjlMYzNOQlEyZHlUVUZDUnkwdExTMHRMUzB0TFc5NVltSnlNMEZCUVVGQlIyWlNkMnB2UjIxRldTMUJFZ1ZFVERjeU9Sb0xDT1NsQmhBQ0dnTkRRVVE0SEhDVXNBUT0iLFtbIlNBTiIsIjIwMjUtMDMtMTUiLCJBVEwiLG51bGwsIkRMIiwiNzI5Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "San Diego International Airport",
+            "id": "SAN",
+            "time": "2025-03-15 08:10"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-03-15 15:03"
+          },
+          "duration": 233,
+          "airplane": "Boeing 737MAX 9 Passenger",
+          "airline": "Alaska",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AS.png",
+          "travel_class": "Economy",
+          "flight_number": "AS 474",
+          "ticket_also_sold_by": [
+            "Hawaiian"
+          ],
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 227 kg"
+          ]
+        }
+      ],
+      "total_duration": 233,
+      "carbon_emissions": {
+        "this_flight": 227000,
+        "typical_for_this_route": 283000,
+        "difference_percent": -20
+      },
+      "price": 1108,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AS.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVlVGMFVEaGFMVjlMYzNOQlEyZHlUVUZDUnkwdExTMHRMUzB0TFc5NVltSnlNMEZCUVVGQlIyWlNkMnB2UjIxRldTMUJFZ1ZCVXpRM05Cb0xDTzNnQmhBQ0dnTkRRVVE0SEhDZDJRUT0iLFtbIlNBTiIsIjIwMjUtMDMtMTUiLCJBVEwiLG51bGwsIkFTIiwiNDc0Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "San Diego International Airport",
+            "id": "SAN",
+            "time": "2025-03-15 07:50"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-03-15 14:50"
+          },
+          "duration": 240,
+          "airplane": "Boeing 767",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 762",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 171 kg"
+          ]
+        }
+      ],
+      "total_duration": 240,
+      "carbon_emissions": {
+        "this_flight": 172000,
+        "typical_for_this_route": 283000,
+        "difference_percent": -39
+      },
+      "price": 1570,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVlVGMFVEaGFMVjlMYzNOQlEyZHlUVUZDUnkwdExTMHRMUzB0TFc5NVltSnlNMEZCUVVGQlIyWlNkMnB2UjIxRldTMUJFZ1ZFVERjMk1ob0xDTC9LQ1JBQ0dnTkRRVVE0SEhEUTFBWT0iLFtbIlNBTiIsIjIwMjUtMDMtMTUiLCJBVEwiLG51bGwsIkRMIiwiNzYyIl1dXQ=="
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "San Diego International Airport",
+            "id": "SAN",
+            "time": "2025-03-15 06:15"
+          },
+          "arrival_airport": {
+            "name": "San Francisco International Airport",
+            "id": "SFO",
+            "time": "2025-03-15 08:01"
+          },
+          "duration": 106,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 1986",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 71 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "San Francisco International Airport",
+            "id": "SFO",
+            "time": "2025-03-15 09:04"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-03-15 16:40"
+          },
+          "duration": 276,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 2145",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 244 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 63,
+          "name": "San Francisco International Airport",
+          "id": "SFO"
+        }
+      ],
+      "total_duration": 445,
+      "carbon_emissions": {
+        "this_flight": 315000,
+        "typical_for_this_route": 283000,
+        "difference_percent": 11
+      },
+      "price": 1023,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVlVGMFVEaGFMVjlMYzNOQlEyZHlUVUZDUnkwdExTMHRMUzB0TFc5NVltSnlNMEZCUVVGQlIyWlNkMnB2UjIxRldTMUJFZzFWUVRFNU9EWjhWVUV5TVRRMUdnc0k1SjRHRUFJYUEwTkJSRGdjY0thckJBPT0iLFtbIlNBTiIsIjIwMjUtMDMtMTUiLCJTRk8iLG51bGwsIlVBIiwiMTk4NiJdLFsiU0ZPIiwiMjAyNS0wMy0xNSIsIkFUTCIsbnVsbCwiVUEiLCIyMTQ1Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "San Diego International Airport",
+            "id": "SAN",
+            "time": "2025-03-15 08:40"
+          },
+          "arrival_airport": {
+            "name": "St. Louis Lambert International Airport",
+            "id": "STL",
+            "time": "2025-03-15 14:10"
+          },
+          "duration": 210,
+          "airplane": "Boeing 737",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 3431",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 222 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "St. Louis Lambert International Airport",
+            "id": "STL",
+            "time": "2025-03-15 14:55"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-03-15 17:30"
+          },
+          "duration": 95,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 3567",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 83 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 45,
+          "name": "St. Louis Lambert International Airport",
+          "id": "STL"
+        }
+      ],
+      "total_duration": 350,
+      "carbon_emissions": {
+        "this_flight": 307000,
+        "typical_for_this_route": 283000,
+        "difference_percent": 8
+      },
+      "price": 1124,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVlVGMFVEaGFMVjlMYzNOQlEyZHlUVUZDUnkwdExTMHRMUzB0TFc5NVltSnlNMEZCUVVGQlIyWlNkMnB2UjIxRldTMUJFZzFYVGpNME16RjhWMDR6TlRZM0dnc0l0dTBHRUFJYUEwTkJSRGdjY1B2aEJBPT0iLFtbIlNBTiIsIjIwMjUtMDMtMTUiLCJTVEwiLG51bGwsIldOIiwiMzQzMSJdLFsiU1RMIiwiMjAyNS0wMy0xNSIsIkFUTCIsbnVsbCwiV04iLCIzNTY3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "San Diego International Airport",
+            "id": "SAN",
+            "time": "2025-03-15 11:35"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-03-15 18:41"
+          },
+          "duration": 246,
+          "airplane": "Airbus A321",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 725",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 244 kg"
+          ]
+        }
+      ],
+      "total_duration": 246,
+      "carbon_emissions": {
+        "this_flight": 244000,
+        "typical_for_this_route": 283000,
+        "difference_percent": -14
+      },
+      "price": 1570,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVlVGMFVEaGFMVjlMYzNOQlEyZHlUVUZDUnkwdExTMHRMUzB0TFc5NVltSnlNMEZCUVVGQlIyWlNkMnB2UjIxRldTMUJFZ1ZFVERjeU5Sb0xDTC9LQ1JBQ0dnTkRRVVE0SEhEUTFBWT0iLFtbIlNBTiIsIjIwMjUtMDMtMTUiLCJBVEwiLG51bGwsIkRMIiwiNzI1Il1dXQ=="
+    }
+  ],
+  "price_insights": {
+    "lowest_price": 1023,
+    "price_level": "high",
+    "typical_price_range": [
+      265,
+      650
+    ],
+    "price_history": [
+      [
+        1736582400,
+        377
+      ],
+      [
+        1736668800,
+        429
+      ],
+      [
+        1736755200,
+        377
+      ],
+      [
+        1736841600,
+        390
+      ],
+      [
+        1736928000,
+        332
+      ],
+      [
+        1737014400,
+        331
+      ],
+      [
+        1737100800,
+        333
+      ],
+      [
+        1737187200,
+        466
+      ],
+      [
+        1737273600,
+        466
+      ],
+      [
+        1737360000,
+        465
+      ],
+      [
+        1737446400,
+        460
+      ],
+      [
+        1737532800,
+        475
+      ],
+      [
+        1737619200,
+        477
+      ],
+      [
+        1737705600,
+        476
+      ],
+      [
+        1737792000,
+        547
+      ],
+      [
+        1737878400,
+        513
+      ],
+      [
+        1737964800,
+        514
+      ],
+      [
+        1738051200,
+        543
+      ],
+      [
+        1738137600,
+        558
+      ],
+      [
+        1738224000,
+        558
+      ],
+      [
+        1738310400,
+        530
+      ],
+      [
+        1738396800,
+        531
+      ],
+      [
+        1738483200,
+        569
+      ],
+      [
+        1738569600,
+        538
+      ],
+      [
+        1738656000,
+        564
+      ],
+      [
+        1738742400,
+        561
+      ],
+      [
+        1738828800,
+        496
+      ],
+      [
+        1738915200,
+        486
+      ],
+      [
+        1739001600,
+        485
+      ],
+      [
+        1739088000,
+        564
+      ],
+      [
+        1739174400,
+        565
+      ],
+      [
+        1739260800,
+        596
+      ],
+      [
+        1739347200,
+        552
+      ],
+      [
+        1739433600,
+        523
+      ],
+      [
+        1739520000,
+        593
+      ],
+      [
+        1739606400,
+        443
+      ],
+      [
+        1739692800,
+        443
+      ],
+      [
+        1739779200,
+        528
+      ],
+      [
+        1739865600,
+        380
+      ],
+      [
+        1739952000,
+        379
+      ],
+      [
+        1740038400,
+        380
+      ],
+      [
+        1740124800,
+        402
+      ],
+      [
+        1740211200,
+        404
+      ],
+      [
+        1740297600,
+        466
+      ],
+      [
+        1740384000,
+        296
+      ],
+      [
+        1740470400,
+        298
+      ],
+      [
+        1740556800,
+        299
+      ],
+      [
+        1740643200,
+        299
+      ],
+      [
+        1740729600,
+        301
+      ],
+      [
+        1740816000,
+        302
+      ],
+      [
+        1740902400,
+        302
+      ],
+      [
+        1740988800,
+        301
+      ],
+      [
+        1741075200,
+        302
+      ],
+      [
+        1741161600,
+        300
+      ],
+      [
+        1741248000,
+        299
+      ],
+      [
+        1741334400,
+        298
+      ],
+      [
+        1741420800,
+        300
+      ],
+      [
+        1741507200,
+        300
+      ],
+      [
+        1741590000,
+        300
+      ],
+      [
+        1741676400,
+        301
+      ],
+      [
+        1741762800,
+        1023
+      ]
+    ]
+  },
+  "airports": [
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "SAN",
+            "name": "San Diego International Airport"
+          },
+          "city": "San Diego",
+          "country": "United States",
+          "country_code": "US",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQEOz0aPlrhIfM3YSlR68LMNiXeDXdUvIGLhy8nX9xj8_Wcdp1-tHiBcw3EIHgJ_ssoPAWoNFwEKkgV0g",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT-YOh9oxUwyq8LTaU2vjl5BuF2H3ubR4_fAoNeER5Axn-DQdDAHcVLQF9LXGeiqXphUjCCkIBbUyqWvq8k64PpD9KfPVpztp6OO9daRpE"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "ATL",
+            "name": "Hartsfield-Jackson Atlanta International Airport"
+          },
+          "city": "Atlanta",
+          "country": "United States",
+          "country_code": "US",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQYBXd-jsaFCOrq3Ftbagud_RXYRp8gK_jeDmxAfPmI5pP7SIRedYhExpUTLErX68PeHFvOzs8P_D0v_w",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJh6WEANkd6cril2a8Csnk2i_WTs-ZTUE-pamQ4iTfpTi0hlx5P9xhDKrUeBWRPb-4hiLgvoegdgPZ2t2R8qpkN_a7BzJjUNSnSonV664"
+        }
+      ]
+    },
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "ATL",
+            "name": "Hartsfield-Jackson Atlanta International Airport"
+          },
+          "city": "Atlanta",
+          "country": "United States",
+          "country_code": "US",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQYBXd-jsaFCOrq3Ftbagud_RXYRp8gK_jeDmxAfPmI5pP7SIRedYhExpUTLErX68PeHFvOzs8P_D0v_w",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJh6WEANkd6cril2a8Csnk2i_WTs-ZTUE-pamQ4iTfpTi0hlx5P9xhDKrUeBWRPb-4hiLgvoegdgPZ2t2R8qpkN_a7BzJjUNSnSonV664"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "SAN",
+            "name": "San Diego International Airport"
+          },
+          "city": "San Diego",
+          "country": "United States",
+          "country_code": "US",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQEOz0aPlrhIfM3YSlR68LMNiXeDXdUvIGLhy8nX9xj8_Wcdp1-tHiBcw3EIHgJ_ssoPAWoNFwEKkgV0g",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT-YOh9oxUwyq8LTaU2vjl5BuF2H3ubR4_fAoNeER5Axn-DQdDAHcVLQF9LXGeiqXphUjCCkIBbUyqWvq8k64PpD9KfPVpztp6OO9daRpE"
+        }
+      ]
+    }
+  ]
+}

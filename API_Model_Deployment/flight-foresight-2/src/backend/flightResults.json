@@ -1,266 +1,130 @@
 {
   "search_metadata": {
-    "id": "67d0d58b11d624433acfc710",
+    "id": "67d2038ccaa734166ece610e",
     "status": "Success",
-    "json_endpoint": "https://serpapi.com/searches/2c79f44eb1b1d510/67d0d58b11d624433acfc710.json",
-    "created_at": "2025-03-12 00:30:03 UTC",
-    "processed_at": "2025-03-12 00:30:03 UTC",
-    "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=EUR&tfs=CBwQAhoeEgoyMDI1LTAzLTEyagcIARIDVFBBcgcIARIDQk9TGh4SCjIwMjUtMDMtMTJqBwgBEgNCT1NyBwgBEgNUUEFCAQFIAXABmAEB&tfu=EgIIAQ",
-    "raw_html_file": "https://serpapi.com/searches/2c79f44eb1b1d510/67d0d58b11d624433acfc710.html",
-    "prettify_html_file": "https://serpapi.com/searches/2c79f44eb1b1d510/67d0d58b11d624433acfc710.prettify",
-    "total_time_taken": 1.05
+    "json_endpoint": "https://serpapi.com/searches/f45770d9311ca04e/67d2038ccaa734166ece610e.json",
+    "created_at": "2025-03-12 21:58:36 UTC",
+    "processed_at": "2025-03-12 21:58:36 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=CAD&tfs=CBwQAhoeEgoyMDI1LTAzLTI3agcIARIDUEhYcgcIARIDREVOGh4SCjIwMjUtMDMtMjdqBwgBEgNERU5yBwgBEgNQSFhCAQFIAXABmAEB&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/f45770d9311ca04e/67d2038ccaa734166ece610e.html",
+    "prettify_html_file": "https://serpapi.com/searches/f45770d9311ca04e/67d2038ccaa734166ece610e.prettify",
+    "total_time_taken": 1.44
   },
   "search_parameters": {
     "engine": "google_flights",
     "hl": "en",
     "gl": "us",
-    "departure_id": "TPA",
-    "arrival_id": "BOS",
-    "outbound_date": "2025-03-12",
-    "return_date": "2025-03-12",
-    "currency": "EUR"
+    "departure_id": "PHX",
+    "arrival_id": "DEN",
+    "outbound_date": "2025-03-27",
+    "return_date": "2025-03-27",
+    "currency": "CAD"
   },
   "best_flights": [
     {
       "flights": [
         {
           "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 10:32"
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 08:35"
           },
           "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 13:36"
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 11:28"
           },
-          "duration": 184,
-          "airplane": "Airbus A320",
-          "airline": "Spirit",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/NK.png",
+          "duration": 113,
+          "airplane": "Airbus A320neo",
+          "airline": "Frontier",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
           "travel_class": "Economy",
-          "flight_number": "NK 502",
+          "flight_number": "F9 4768",
           "legroom": "28 in",
           "extensions": [
             "Below average legroom (28 in)",
-            "Wi-Fi for a fee",
-            "Carbon emissions estimate: 159 kg"
+            "Carbon emissions estimate: 77 kg"
           ]
         }
       ],
-      "total_duration": 184,
+      "total_duration": 113,
       "carbon_emissions": {
-        "this_flight": 160000,
-        "typical_for_this_route": 161000,
-        "difference_percent": -1
+        "this_flight": 77000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -25
       },
-      "price": 384,
+      "price": 277,
       "type": "Round trip",
-      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/NK.png",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
       "extensions": [
         "Checked baggage for a fee",
         "Bag and fare conditions depend on the return flight"
       ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZ1ZPU3pVd01ob0xDS0dyQWhBQ0dnTkZWVkk0SEhESXhnST0iLFtbIlRQQSIsIjIwMjUtMDMtMTIiLCJCT1MiLG51bGwsIk5LIiwiNTAyIl1dXQ=="
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pHT1RRM05qZ2FDd2lCMkFFUUFob0RRMEZFT0J4d3FKWUIiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIkY5IiwiNDc2OCJdXV0="
     },
     {
       "flights": [
         {
           "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 06:00"
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 08:53"
           },
           "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 08:59"
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 11:56"
           },
-          "duration": 179,
-          "airplane": "Airbus A320",
-          "airline": "JetBlue",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
-          "travel_class": "Economy",
-          "flight_number": "B6 92",
-          "legroom": "32 in",
-          "extensions": [
-            "Above average legroom (32 in)",
-            "Free Wi-Fi",
-            "In-seat power & USB outlets",
-            "Live TV",
-            "Carbon emissions estimate: 179 kg"
-          ]
-        }
-      ],
-      "total_duration": 179,
-      "carbon_emissions": {
-        "this_flight": 180000,
-        "typical_for_this_route": 161000,
-        "difference_percent": 12
-      },
-      "price": 553,
-      "type": "Round trip",
-      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
-      "extensions": [
-        "Checked baggage for a fee",
-        "Bag and fare conditions depend on the return flight"
-      ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZ1JDTmpreUdnc0kyNjhERUFJYUEwVlZVamdjY0kzWEF3PT0iLFtbIlRQQSIsIjIwMjUtMDMtMTIiLCJCT1MiLG51bGwsIkI2IiwiOTIiXV1d"
-    },
-    {
-      "flights": [
-        {
-          "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 10:13"
-          },
-          "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 13:23"
-          },
-          "duration": 190,
-          "airplane": "Airbus A321",
-          "airline": "JetBlue",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
-          "travel_class": "Economy",
-          "flight_number": "B6 592",
-          "legroom": "32 in",
-          "extensions": [
-            "Above average legroom (32 in)",
-            "Free Wi-Fi",
-            "In-seat power & USB outlets",
-            "Live TV",
-            "Carbon emissions estimate: 182 kg"
-          ],
-          "often_delayed_by_over_30_min": true
-        }
-      ],
-      "total_duration": 190,
-      "carbon_emissions": {
-        "this_flight": 182000,
-        "typical_for_this_route": 161000,
-        "difference_percent": 13
-      },
-      "price": 553,
-      "type": "Round trip",
-      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
-      "extensions": [
-        "Checked baggage for a fee",
-        "Bag and fare conditions depend on the return flight"
-      ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZ1ZDTmpVNU1ob0xDTnV2QXhBQ0dnTkZWVkk0SEhDTjF3TT0iLFtbIlRQQSIsIjIwMjUtMDMtMTIiLCJCT1MiLG51bGwsIkI2IiwiNTkyIl1dXQ=="
-    },
-    {
-      "flights": [
-        {
-          "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 11:17"
-          },
-          "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 14:20"
-          },
-          "duration": 183,
+          "duration": 123,
           "airplane": "Boeing 737",
-          "airline": "Delta",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
-          "travel_class": "Economy",
-          "flight_number": "DL 2996",
-          "legroom": "31 in",
-          "extensions": [
-            "Average legroom (31 in)",
-            "Free Wi-Fi",
-            "In-seat power & USB outlets",
-            "Live TV",
-            "Carbon emissions estimate: 165 kg"
-          ]
-        }
-      ],
-      "total_duration": 183,
-      "carbon_emissions": {
-        "this_flight": 166000,
-        "typical_for_this_route": 161000,
-        "difference_percent": 3
-      },
-      "price": 553,
-      "type": "Round trip",
-      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
-      "extensions": [
-        "Checked baggage for a fee",
-        "Bag and fare conditions depend on the return flight"
-      ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZ1pFVERJNU9UWWFDd2o4cndNUUFob0RSVlZTT0J4d3NkY0QiLFtbIlRQQSIsIjIwMjUtMDMtMTIiLCJCT1MiLG51bGwsIkRMIiwiMjk5NiJdXV0="
-    },
-    {
-      "flights": [
-        {
-          "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 07:00"
-          },
-          "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 10:04"
-          },
-          "duration": 184,
-          "airplane": "Boeing 737",
-          "airline": "Delta",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
-          "travel_class": "Economy",
-          "flight_number": "DL 2489",
-          "legroom": "31 in",
-          "extensions": [
-            "Average legroom (31 in)",
-            "Free Wi-Fi",
-            "In-seat power & USB outlets",
-            "Live TV",
-            "Carbon emissions estimate: 174 kg"
-          ]
-        }
-      ],
-      "total_duration": 184,
-      "carbon_emissions": {
-        "this_flight": 175000,
-        "typical_for_this_route": 161000,
-        "difference_percent": 9
-      },
-      "price": 559,
-      "type": "Round trip",
-      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
-      "extensions": [
-        "Checked baggage for a fee",
-        "Bag and fare conditions depend on the return flight"
-      ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZ1pFVERJME9Ea2FDd2orc3dNUUFob0RSVlZTT0J4dzR0c0QiLFtbIlRQQSIsIjIwMjUtMDMtMTIiLCJCT1MiLG51bGwsIkRMIiwiMjQ4OSJdXV0="
-    }
-  ],
-  "other_flights": [
-    {
-      "flights": [
-        {
-          "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 06:06"
-          },
-          "arrival_airport": {
-            "name": "Charlotte Douglas International Airport",
-            "id": "CLT",
-            "time": "2025-03-12 07:54"
-          },
-          "duration": 108,
-          "airplane": "Airbus A321",
           "airline": "American",
           "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
           "travel_class": "Economy",
-          "flight_number": "AA 1225",
+          "flight_number": "AA 3144",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 97 kg"
+          ]
+        }
+      ],
+      "total_duration": 123,
+      "carbon_emissions": {
+        "this_flight": 98000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -4
+      },
+      "price": 341,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pCUVRNeE5EUWFDd2lGaWdJUUFob0RRMEZFT0J4d2tMa0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIkFBIiwiMzE0NCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 09:53"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 12:45"
+          },
+          "duration": 112,
+          "airplane": "Boeing 737",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 489",
           "legroom": "30 in",
           "extensions": [
             "Average legroom (30 in)",
@@ -269,613 +133,1273 @@
             "Stream media to your device",
             "Carbon emissions estimate: 95 kg"
           ]
-        },
-        {
-          "departure_airport": {
-            "name": "Charlotte Douglas International Airport",
-            "id": "CLT",
-            "time": "2025-03-12 08:55"
-          },
-          "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 11:02"
-          },
-          "duration": 127,
-          "airplane": "Airbus A320",
-          "airline": "American",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
-          "travel_class": "Economy",
-          "flight_number": "AA 1413",
-          "legroom": "31 in",
-          "extensions": [
-            "Average legroom (31 in)",
-            "Wi-Fi for a fee",
-            "In-seat power & USB outlets",
-            "Stream media to your device",
-            "Carbon emissions estimate: 124 kg"
-          ]
         }
       ],
-      "layovers": [
-        {
-          "duration": 61,
-          "name": "Charlotte Douglas International Airport",
-          "id": "CLT"
-        }
-      ],
-      "total_duration": 296,
+      "total_duration": 112,
       "carbon_emissions": {
-        "this_flight": 219000,
-        "typical_for_this_route": 161000,
-        "difference_percent": 36
+        "this_flight": 96000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -6
       },
-      "price": 448,
-      "type": "Round trip",
-      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
-      "extensions": [
-        "Checked baggage for a fee",
-        "Bag and fare conditions depend on the return flight"
-      ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZzFCUVRFeU1qVjhRVUV4TkRFekdnc0kwZDBDRUFJYUEwVlZVamdjY01UOUFnPT0iLFtbIlRQQSIsIjIwMjUtMDMtMTIiLCJDTFQiLG51bGwsIkFBIiwiMTIyNSJdLFsiQ0xUIiwiMjAyNS0wMy0xMiIsIkJPUyIsbnVsbCwiQUEiLCIxNDEzIl1dXQ=="
-    },
-    {
-      "flights": [
-        {
-          "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 07:49"
-          },
-          "arrival_airport": {
-            "name": "LaGuardia Airport",
-            "id": "LGA",
-            "time": "2025-03-12 10:30"
-          },
-          "duration": 161,
-          "airplane": "Boeing 737",
-          "airline": "American",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
-          "travel_class": "Economy",
-          "flight_number": "AA 3220",
-          "legroom": "30 in",
-          "extensions": [
-            "Average legroom (30 in)",
-            "Wi-Fi for a fee",
-            "In-seat power & USB outlets",
-            "Stream media to your device",
-            "Carbon emissions estimate: 148 kg"
-          ]
-        },
-        {
-          "departure_airport": {
-            "name": "LaGuardia Airport",
-            "id": "LGA",
-            "time": "2025-03-12 11:12"
-          },
-          "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 12:20"
-          },
-          "duration": 68,
-          "airplane": "Embraer 175",
-          "airline": "American",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
-          "travel_class": "Economy",
-          "flight_number": "AA 4450",
-          "legroom": "30 in",
-          "extensions": [
-            "Average legroom (30 in)",
-            "Wi-Fi for a fee",
-            "In-seat power & USB outlets",
-            "Stream media to your device",
-            "Carbon emissions estimate: 89 kg"
-          ]
-        }
-      ],
-      "layovers": [
-        {
-          "duration": 42,
-          "name": "LaGuardia Airport",
-          "id": "LGA"
-        }
-      ],
-      "total_duration": 271,
-      "carbon_emissions": {
-        "this_flight": 238000,
-        "typical_for_this_route": 161000,
-        "difference_percent": 48
-      },
-      "price": 516,
-      "type": "Round trip",
-      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
-      "extensions": [
-        "Checked baggage for a fee",
-        "Bag and fare conditions depend on the return flight"
-      ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZzFCUVRNeU1qQjhRVUUwTkRVd0dnc0k5SklERUFJYUEwVlZVamdjY05hM0F3PT0iLFtbIlRQQSIsIjIwMjUtMDMtMTIiLCJMR0EiLG51bGwsIkFBIiwiMzIyMCJdLFsiTEdBIiwiMjAyNS0wMy0xMiIsIkJPUyIsbnVsbCwiQUEiLCI0NDUwIl1dXQ=="
-    },
-    {
-      "flights": [
-        {
-          "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 06:00"
-          },
-          "arrival_airport": {
-            "name": "Newark Liberty International Airport",
-            "id": "EWR",
-            "time": "2025-03-12 08:46"
-          },
-          "duration": 166,
-          "airplane": "Boeing 737MAX 9 Passenger",
-          "airline": "United",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
-          "travel_class": "Economy",
-          "flight_number": "UA 2628",
-          "legroom": "30 in",
-          "extensions": [
-            "Average legroom (30 in)",
-            "Wi-Fi for a fee",
-            "In-seat power outlet",
-            "Stream media to your device",
-            "Carbon emissions estimate: 122 kg"
-          ]
-        },
-        {
-          "departure_airport": {
-            "name": "Newark Liberty International Airport",
-            "id": "EWR",
-            "time": "2025-03-12 09:45"
-          },
-          "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 10:59"
-          },
-          "duration": 74,
-          "airplane": "Airbus A319",
-          "airline": "United",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
-          "travel_class": "Economy",
-          "flight_number": "UA 375",
-          "legroom": "30 in",
-          "extensions": [
-            "Average legroom (30 in)",
-            "Wi-Fi for a fee",
-            "In-seat power & USB outlets",
-            "Stream media to your device",
-            "Carbon emissions estimate: 68 kg"
-          ]
-        }
-      ],
-      "layovers": [
-        {
-          "duration": 59,
-          "name": "Newark Liberty International Airport",
-          "id": "EWR"
-        }
-      ],
-      "total_duration": 299,
-      "carbon_emissions": {
-        "this_flight": 192000,
-        "typical_for_this_route": 161000,
-        "difference_percent": 19
-      },
-      "price": 553,
+      "price": 341,
       "type": "Round trip",
       "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
       "extensions": [
         "Checked baggage for a fee",
         "Bag and fare conditions depend on the return flight"
       ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZ3hWUVRJMk1qaDhWVUV6TnpVYUN3akZyd01RQWhvRFJWVlNPQnh3OWRZRCIsW1siVFBBIiwiMjAyNS0wMy0xMiIsIkVXUiIsbnVsbCwiVUEiLCIyNjI4Il0sWyJFV1IiLCIyMDI1LTAzLTEyIiwiQk9TIixudWxsLCJVQSIsIjM3NSJdXV0="
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1ZWUVRRNE9Sb0xDSVdLQWhBQ0dnTkRRVVE0SEhDUXVRRT0iLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIlVBIiwiNDg5Il1dXQ=="
     },
     {
       "flights": [
         {
           "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 07:15"
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 08:40"
           },
           "arrival_airport": {
-            "name": "Baltimore/Washington International Thurgood Marshall Airport",
-            "id": "BWI",
-            "time": "2025-03-12 09:35"
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 11:30"
           },
-          "duration": 140,
+          "duration": 110,
           "airplane": "Boeing 737",
           "airline": "Southwest",
           "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
           "travel_class": "Economy",
-          "flight_number": "WN 2519",
-          "legroom": "31 in",
-          "extensions": [
-            "Average legroom (31 in)",
-            "Wi-Fi for a fee",
-            "Stream media to your device",
-            "Carbon emissions estimate: 151 kg"
-          ]
-        },
-        {
-          "departure_airport": {
-            "name": "Baltimore/Washington International Thurgood Marshall Airport",
-            "id": "BWI",
-            "time": "2025-03-12 11:20"
-          },
-          "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 12:45"
-          },
-          "duration": 85,
-          "airplane": "Boeing 737MAX 8 Passenger",
-          "airline": "Southwest",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
-          "travel_class": "Economy",
-          "flight_number": "WN 3257",
+          "flight_number": "WN 2976",
           "legroom": "32 in",
           "extensions": [
             "Above average legroom (32 in)",
             "Wi-Fi for a fee",
-            "In-seat USB outlet",
             "Stream media to your device",
-            "Carbon emissions estimate: 68 kg"
+            "Carbon emissions estimate: 99 kg"
           ]
         }
       ],
-      "layovers": [
-        {
-          "duration": 105,
-          "name": "Baltimore/Washington International Thurgood Marshall Airport",
-          "id": "BWI"
-        }
-      ],
-      "total_duration": 330,
+      "total_duration": 110,
       "carbon_emissions": {
-        "this_flight": 220000,
-        "typical_for_this_route": 161000,
-        "difference_percent": 37
+        "this_flight": 99000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -3
       },
-      "price": 553,
+      "price": 377,
       "type": "Round trip",
       "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
       "extensions": [
         "1 checked bag included",
         "Bag and fare conditions depend on the return flight"
       ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZzFYVGpJMU1UbDhWMDR6TWpVM0dnc0l4YThERUFJYUEwVlZVamdjY1BYV0F3PT0iLFtbIlRQQSIsIjIwMjUtMDMtMTIiLCJCV0kiLG51bGwsIldOIiwiMjUxOSJdLFsiQldJIiwiMjAyNS0wMy0xMiIsIkJPUyIsbnVsbCwiV04iLCIzMjU3Il1dXQ=="
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpJNU56WWFDd2lOcGdJUUFob0RRMEZFT0J4dzFNd0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMjk3NiJdXV0="
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 11:08"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 14:04"
+          },
+          "duration": 116,
+          "airplane": "Airbus A320neo",
+          "airline": "Frontier",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
+          "travel_class": "Economy",
+          "flight_number": "F9 1820",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 77 kg"
+          ]
+        }
+      ],
+      "total_duration": 116,
+      "carbon_emissions": {
+        "this_flight": 77000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -25
+      },
+      "price": 277,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pHT1RFNE1qQWFDd2lCMkFFUUFob0RRMEZFT0J4d3FKWUIiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIkY5IiwiMTgyMCJdXV0="
     },
     {
       "flights": [
         {
           "departure_airport": {
-            "name": "Tampa International Airport",
-            "id": "TPA",
-            "time": "2025-03-12 07:05"
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 17:04"
           },
           "arrival_airport": {
-            "name": "LaGuardia Airport",
-            "id": "LGA",
-            "time": "2025-03-12 09:44"
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 20:02"
           },
-          "duration": 159,
-          "airplane": "Boeing 737",
-          "airline": "Delta",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "duration": 118,
+          "airplane": "Airbus A320neo",
+          "airline": "Frontier",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
           "travel_class": "Economy",
-          "flight_number": "DL 2723",
-          "legroom": "31 in",
+          "flight_number": "F9 2106",
+          "legroom": "28 in",
           "extensions": [
-            "Average legroom (31 in)",
-            "Free Wi-Fi",
-            "In-seat power & USB outlets",
-            "Live TV",
-            "Carbon emissions estimate: 146 kg"
-          ]
-        },
-        {
-          "departure_airport": {
-            "name": "LaGuardia Airport",
-            "id": "LGA",
-            "time": "2025-03-12 11:59"
-          },
-          "arrival_airport": {
-            "name": "Boston Logan International Airport",
-            "id": "BOS",
-            "time": "2025-03-12 13:15"
-          },
-          "duration": 76,
-          "airplane": "Embraer 175",
-          "airline": "Delta",
-          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
-          "travel_class": "Economy",
-          "flight_number": "DL 5761",
-          "legroom": "31 in",
-          "extensions": [
-            "Average legroom (31 in)",
-            "Wi-Fi for a fee",
-            "Carbon emissions estimate: 80 kg"
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 77 kg"
           ]
         }
       ],
-      "layovers": [
-        {
-          "duration": 135,
-          "name": "LaGuardia Airport",
-          "id": "LGA"
-        }
-      ],
-      "total_duration": 370,
+      "total_duration": 118,
       "carbon_emissions": {
-        "this_flight": 227000,
-        "typical_for_this_route": 161000,
-        "difference_percent": 41
+        "this_flight": 77000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -25
       },
-      "price": 562,
+      "price": 277,
       "type": "Round trip",
-      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
       "extensions": [
         "Checked baggage for a fee",
         "Bag and fare conditions depend on the return flight"
       ],
-      "departure_token": "WyJDalJJYUcxNlNFZDVUM1UyVlRSQlFWZFBiV2RDUnkwdExTMHRMUzB0TFMxNWJHSm1Oa0ZCUVVGQlIyWlJNVmwzU0hGUUxXZEJFZzFFVERJM01qTjhSRXcxTnpZeEdnc0k5YllERUFJYUEwVlZVamdjY1B2ZUF3PT0iLFtbIlRQQSIsIjIwMjUtMDMtMTIiLCJMR0EiLG51bGwsIkRMIiwiMjcyMyJdLFsiTEdBIiwiMjAyNS0wMy0xMiIsIkJPUyIsbnVsbCwiREwiLCI1NzYxIl1dXQ=="
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pHT1RJeE1EWWFDd2lCMkFFUUFob0RRMEZFT0J4d3FKWUIiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIkY5IiwiMjEwNiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 06:00"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 08:56"
+          },
+          "duration": 116,
+          "airplane": "Airbus A320neo",
+          "airline": "Frontier",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
+          "travel_class": "Economy",
+          "flight_number": "F9 1376",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 77 kg"
+          ]
+        }
+      ],
+      "total_duration": 116,
+      "carbon_emissions": {
+        "this_flight": 77000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -25
+      },
+      "price": 285,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pHT1RFek56WWFDd2ltM2dFUUFob0RRMEZFT0J4dzJKb0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIkY5IiwiMTM3NiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 05:15"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 08:06"
+          },
+          "duration": 111,
+          "airplane": "Boeing 737",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 371",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 92 kg"
+          ]
+        }
+      ],
+      "total_duration": 111,
+      "carbon_emissions": {
+        "this_flight": 93000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -9
+      },
+      "price": 341,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1ZWUVRNM01Sb0xDSVdLQWhBQ0dnTkRRVVE0SEhDUXVRRT0iLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIlVBIiwiMzcxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 05:40"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 08:30"
+          },
+          "duration": 110,
+          "airplane": "Boeing 737",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 653",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 111 kg"
+          ]
+        }
+      ],
+      "total_duration": 110,
+      "carbon_emissions": {
+        "this_flight": 111000,
+        "typical_for_this_route": 102000,
+        "difference_percent": 9
+      },
+      "price": 341,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1ZYVGpZMU14b0xDSVdLQWhBQ0dnTkRRVVE0SEhDUXVRRT0iLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiNjUzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 06:00"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 08:52"
+          },
+          "duration": 112,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 2461",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 82 kg"
+          ]
+        }
+      ],
+      "total_duration": 112,
+      "carbon_emissions": {
+        "this_flight": 82000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -20
+      },
+      "price": 341,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pWUVRJME5qRWFDd2lGaWdJUUFob0RRMEZFT0J4d2tMa0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIlVBIiwiMjQ2MSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 06:30"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 09:20"
+          },
+          "duration": 110,
+          "airplane": "Boeing 737",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 3038",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 111 kg"
+          ]
+        }
+      ],
+      "total_duration": 110,
+      "carbon_emissions": {
+        "this_flight": 111000,
+        "typical_for_this_route": 102000,
+        "difference_percent": 9
+      },
+      "price": 341,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpNd016Z2FDd2lGaWdJUUFob0RRMEZFT0J4d2tMa0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMzAzOCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 07:20"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 10:10"
+          },
+          "duration": 110,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 297",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 87 kg"
+          ]
+        }
+      ],
+      "total_duration": 110,
+      "carbon_emissions": {
+        "this_flight": 88000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -14
+      },
+      "price": 341,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1ZYVGpJNU54b0xDSVdLQWhBQ0dnTkRRVVE0SEhDUXVRRT0iLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMjk3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 07:40"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 10:35"
+          },
+          "duration": 115,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 1498",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 82 kg"
+          ]
+        }
+      ],
+      "total_duration": 115,
+      "carbon_emissions": {
+        "this_flight": 82000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -20
+      },
+      "price": 341,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pWUVRFME9UZ2FDd2lGaWdJUUFob0RRMEZFT0J4d2tMa0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIlVBIiwiMTQ5OCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 11:54"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 14:46"
+          },
+          "duration": 112,
+          "airplane": "Boeing 737",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 1176",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 92 kg"
+          ]
+        }
+      ],
+      "total_duration": 112,
+      "carbon_emissions": {
+        "this_flight": 93000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -9
+      },
+      "price": 341,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pWUVRFeE56WWFDd2lGaWdJUUFob0RRMEZFT0J4d2tMa0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIlVBIiwiMTE3NiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 13:35"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 16:27"
+          },
+          "duration": 112,
+          "airplane": "Airbus A321neo",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 1356",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 76 kg"
+          ]
+        }
+      ],
+      "total_duration": 112,
+      "carbon_emissions": {
+        "this_flight": 77000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -25
+      },
+      "price": 341,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pWUVRFek5UWWFDd2lGaWdJUUFob0RRMEZFT0J4d2tMa0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIlVBIiwiMTM1NiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 17:35"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 20:25"
+          },
+          "duration": 110,
+          "airplane": "Boeing 737",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 1320",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 111 kg"
+          ]
+        }
+      ],
+      "total_duration": 110,
+      "carbon_emissions": {
+        "this_flight": 111000,
+        "typical_for_this_route": 102000,
+        "difference_percent": 9
+      },
+      "price": 369,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpFek1qQWFDd2pwbndJUUFob0RRMEZFT0J4d3BjZ0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMTMyMCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 19:00"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 21:50"
+          },
+          "duration": 110,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 4107",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 87 kg"
+          ]
+        }
+      ],
+      "total_duration": 110,
+      "carbon_emissions": {
+        "this_flight": 88000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -14
+      },
+      "price": 369,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpReE1EY2FDd2pwbndJUUFob0RRMEZFT0J4d3BjZ0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiNDEwNyJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 16:45"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 19:35"
+          },
+          "duration": 110,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 2646",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 87 kg"
+          ]
+        }
+      ],
+      "total_duration": 110,
+      "carbon_emissions": {
+        "this_flight": 88000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -14
+      },
+      "price": 376,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpJMk5EWWFDd2kzcFFJUUFob0RRMEZFT0J4d21Nd0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMjY0NiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 12:36"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 15:28"
+          },
+          "duration": 112,
+          "airplane": "Airbus A321",
+          "airline": "American",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+          "travel_class": "Economy",
+          "flight_number": "AA 1309",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 106 kg"
+          ]
+        }
+      ],
+      "total_duration": 112,
+      "carbon_emissions": {
+        "this_flight": 106000,
+        "typical_for_this_route": 102000,
+        "difference_percent": 4
+      },
+      "price": 408,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pCUVRFek1Ea2FDd2lTdmdJUUFob0RRMEZFT0J4d3NkMEIiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIkFBIiwiMTMwOSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 15:55"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 18:45"
+          },
+          "duration": 110,
+          "airplane": "Boeing 737",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 3577",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 99 kg"
+          ]
+        }
+      ],
+      "total_duration": 110,
+      "carbon_emissions": {
+        "this_flight": 99000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -3
+      },
+      "price": 412,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpNMU56Y2FDd2krd1FJUUFob0RRMEZFT0J4dzI5OEIiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMzU3NyJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 12:10"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 14:55"
+          },
+          "duration": 105,
+          "airplane": "Boeing 737",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 2756",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 99 kg"
+          ]
+        }
+      ],
+      "total_duration": 105,
+      "carbon_emissions": {
+        "this_flight": 99000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -3
+      },
+      "price": 420,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpJM05UWWFDd2pqeHdJUUFob0RRMEZFT0J4d2krUUIiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMjc1NiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 13:10"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 16:00"
+          },
+          "duration": 110,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 1756",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 87 kg"
+          ]
+        }
+      ],
+      "total_duration": 110,
+      "carbon_emissions": {
+        "this_flight": 88000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -14
+      },
+      "price": 420,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpFM05UWWFDd2pqeHdJUUFob0RRMEZFT0J4d2krUUIiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMTc1NiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 09:45"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 12:30"
+          },
+          "duration": 105,
+          "airplane": "Boeing 737",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 1876",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 99 kg"
+          ]
+        }
+      ],
+      "total_duration": 105,
+      "carbon_emissions": {
+        "this_flight": 99000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -3
+      },
+      "price": 434,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpFNE56WWFDd2lDMHdJUUFob0RRMEZFT0J4dzllc0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMTg3NiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 14:25"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 17:10"
+          },
+          "duration": 105,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Southwest",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+          "travel_class": "Economy",
+          "flight_number": "WN 3177",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 87 kg"
+          ]
+        }
+      ],
+      "total_duration": 105,
+      "carbon_emissions": {
+        "this_flight": 88000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -14
+      },
+      "price": 459,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WN.png",
+      "extensions": [
+        "1 checked bag included",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pYVGpNeE56Y2FDd2pHNWdJUUFob0RRMEZFT0J4d3dQa0IiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIldOIiwiMzE3NyJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 15:25"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 18:20"
+          },
+          "duration": 115,
+          "airplane": "Boeing 737",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 2131",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 92 kg"
+          ]
+        }
+      ],
+      "total_duration": 115,
+      "carbon_emissions": {
+        "this_flight": 93000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -9
+      },
+      "price": 563,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pWUVRJeE16RWFDd2l4dHdNUUFob0RRMEZFT0J4dzRMRUMiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIlVBIiwiMjEzMSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Phoenix Sky Harbor International Airport",
+            "id": "PHX",
+            "time": "2025-03-27 16:46"
+          },
+          "arrival_airport": {
+            "name": "Denver International Airport",
+            "id": "DEN",
+            "time": "2025-03-27 19:40"
+          },
+          "duration": 114,
+          "airplane": "Boeing 737",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 1226",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 95 kg"
+          ]
+        }
+      ],
+      "total_duration": 114,
+      "carbon_emissions": {
+        "this_flight": 96000,
+        "typical_for_this_route": 102000,
+        "difference_percent": -6
+      },
+      "price": 563,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJTkhWdVgyaDRZMHcyTW10QlFWSXplSGRDUnkwdExTMHRMUzB0YjJ0aWFYa3lNRUZCUVVGQlIyWlRRVFF3UlVSU1dXdEJFZ1pWUVRFeU1qWWFDd2l4dHdNUUFob0RRMEZFT0J4dzRMRUMiLFtbIlBIWCIsIjIwMjUtMDMtMjciLCJERU4iLG51bGwsIlVBIiwiMTIyNiJdXV0="
     }
   ],
   "price_insights": {
-    "lowest_price": 384,
+    "lowest_price": 277,
     "price_level": "high",
     "typical_price_range": [
-      65,
-      175
+      90,
+      265
     ],
     "price_history": [
       [
-        1736485200,
-        91
+        1736578800,
+        235
       ],
       [
-        1736571600,
-        77
+        1736665200,
+        267
       ],
       [
-        1736658000,
-        77
+        1736751600,
+        235
       ],
       [
-        1736744400,
-        77
+        1736838000,
+        234
       ],
       [
-        1736830800,
+        1736924400,
+        234
+      ],
+      [
+        1737010800,
+        233
+      ],
+      [
+        1737097200,
+        234
+      ],
+      [
+        1737183600,
+        236
+      ],
+      [
+        1737270000,
+        236
+      ],
+      [
+        1737356400,
+        163
+      ],
+      [
+        1737442800,
+        118
+      ],
+      [
+        1737529200,
+        119
+      ],
+      [
+        1737615600,
+        105
+      ],
+      [
+        1737702000,
         76
       ],
       [
-        1736917200,
+        1737788400,
         76
       ],
       [
-        1737003600,
+        1737874800,
         76
       ],
       [
-        1737090000,
-        76
+        1737961200,
+        55
       ],
       [
-        1737176400,
-        76
+        1738047600,
+        55
       ],
       [
-        1737262800,
-        76
+        1738134000,
+        80
       ],
       [
-        1737349200,
-        76
+        1738220400,
+        80
       ],
       [
-        1737435600,
-        75
+        1738306800,
+        80
       ],
       [
-        1737522000,
-        75
+        1738393200,
+        80
       ],
       [
-        1737608400,
-        75
+        1738479600,
+        80
       ],
       [
-        1737694800,
+        1738566000,
+        81
+      ],
+      [
+        1738652400,
+        79
+      ],
+      [
+        1738738800,
+        78
+      ],
+      [
+        1738825200,
+        101
+      ],
+      [
+        1738911600,
+        101
+      ],
+      [
+        1738998000,
+        101
+      ],
+      [
+        1739084400,
+        98
+      ],
+      [
+        1739170800,
+        98
+      ],
+      [
+        1739257200,
+        98
+      ],
+      [
+        1739343600,
+        105
+      ],
+      [
+        1739430000,
+        105
+      ],
+      [
+        1739516400,
+        104
+      ],
+      [
+        1739602800,
+        104
+      ],
+      [
+        1739689200,
+        104
+      ],
+      [
+        1739775600,
+        104
+      ],
+      [
+        1739862000,
+        104
+      ],
+      [
+        1739948400,
+        104
+      ],
+      [
+        1740034800,
+        104
+      ],
+      [
+        1740121200,
+        217
+      ],
+      [
+        1740207600,
+        161
+      ],
+      [
+        1740294000,
+        161
+      ],
+      [
+        1740380400,
+        160
+      ],
+      [
+        1740466800,
+        161
+      ],
+      [
+        1740553200,
+        162
+      ],
+      [
+        1740639600,
+        154
+      ],
+      [
+        1740726000,
+        113
+      ],
+      [
+        1740812400,
+        113
+      ],
+      [
+        1740898800,
+        105
+      ],
+      [
+        1740985200,
+        105
+      ],
+      [
+        1741071600,
+        105
+      ],
+      [
+        1741158000,
+        105
+      ],
+      [
+        1741244400,
+        104
+      ],
+      [
+        1741330800,
         112
       ],
       [
-        1737781200,
-        111
+        1741417200,
+        113
       ],
       [
-        1737867600,
-        121
+        1741503600,
+        113
       ],
       [
-        1737954000,
-        107
+        1741590000,
+        113
       ],
       [
-        1738040400,
-        107
+        1741676400,
+        113
       ],
       [
-        1738126800,
-        107
-      ],
-      [
-        1738213200,
-        95
-      ],
-      [
-        1738299600,
-        95
-      ],
-      [
-        1738386000,
-        85
-      ],
-      [
-        1738472400,
-        85
-      ],
-      [
-        1738558800,
-        88
-      ],
-      [
-        1738645200,
-        77
-      ],
-      [
-        1738731600,
-        76
-      ],
-      [
-        1738818000,
-        76
-      ],
-      [
-        1738904400,
-        76
-      ],
-      [
-        1738990800,
-        81
-      ],
-      [
-        1739077200,
-        81
-      ],
-      [
-        1739163600,
-        81
-      ],
-      [
-        1739250000,
-        82
-      ],
-      [
-        1739336400,
-        82
-      ],
-      [
-        1739422800,
-        75
-      ],
-      [
-        1739509200,
-        75
-      ],
-      [
-        1739595600,
-        74
-      ],
-      [
-        1739682000,
-        74
-      ],
-      [
-        1739768400,
-        74
-      ],
-      [
-        1739854800,
-        75
-      ],
-      [
-        1739941200,
-        84
-      ],
-      [
-        1740027600,
-        81
-      ],
-      [
-        1740114000,
-        81
-      ],
-      [
-        1740200400,
-        81
-      ],
-      [
-        1740286800,
-        81
-      ],
-      [
-        1740373200,
-        97
-      ],
-      [
-        1740459600,
-        98
-      ],
-      [
-        1740546000,
-        98
-      ],
-      [
-        1740632400,
-        104
-      ],
-      [
-        1740718800,
-        104
-      ],
-      [
-        1740805200,
-        93
-      ],
-      [
-        1740891600,
-        93
-      ],
-      [
-        1740978000,
-        94
-      ],
-      [
-        1741064400,
-        104
-      ],
-      [
-        1741150800,
-        108
-      ],
-      [
-        1741237200,
-        107
-      ],
-      [
-        1741323600,
-        107
-      ],
-      [
-        1741410000,
-        107
-      ],
-      [
-        1741496400,
-        107
-      ],
-      [
-        1741579200,
-        107
-      ],
-      [
-        1741665600,
-        384
+        1741762800,
+        277
       ]
     ]
   },
@@ -884,27 +1408,27 @@
       "departure": [
         {
           "airport": {
-            "id": "TPA",
-            "name": "Tampa International Airport"
+            "id": "PHX",
+            "name": "Phoenix Sky Harbor International Airport"
           },
-          "city": "Tampa",
+          "city": "Phoenix",
           "country": "United States",
           "country_code": "US",
-          "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTICvs-4h2QTaMFKYSp_eDBJpWMhfKNoOjdYdkEZ4_JL6uFop0wumasrIIdw2CSS-y2X5v1-kI5QOzVKA",
-          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT4vhwIGcjJVf1rofdkxJmMii1tTQp7zFzs53Cp_QuPUB9YLrgXZCavTGeblfyXCvCf1vz8dIZ2XZH106utquuwrS-azAwaVis5iZ5Xsp0"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnevCvXRtAaf-lYH0HRcuiPKTEGWFI_UH25ojX7wrJGVf2_VmAYqAVB17vV8Wjtr7hZhIkm9Cz0ABnkQ",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX46bnDHHSQQxMU7pLPG_uVrlejTYvC1EFs_gJWqTqvZEoemE3cOuvd1nwPDhixo-RrFSSnDXi_aVqCi3Q1aNfbQRDDGDqsbmdKXtoVwc"
         }
       ],
       "arrival": [
         {
           "airport": {
-            "id": "BOS",
-            "name": "Boston Logan International Airport"
+            "id": "DEN",
+            "name": "Denver International Airport"
           },
-          "city": "Boston",
+          "city": "Denver",
           "country": "United States",
           "country_code": "US",
-          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTsThI_7VKLWvxDOugOLpVHze3RQP7rvr-KLjOZJ0PEf2xI8bEhumBB3ZjXe4HF-8srxAhSOe22Cjuc1g",
-          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTmyfqYldUKPJdrEh9tMEkjc-XwVb6VUgvvAhx1n4EUeXRSkCPp1-NQAofPisLnWMTcastf8G7m1fVavxIZ4tviHRyoXXRpqKgvkC8ja3w"
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT0m3vvsmLYW9jKUBbXjus74m5fandHrh4Tqz3RAzsITCt2pTLh8awvdbC78oLmKNuRDQLVhgqnOC6CBg",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSzdEh1a1SRandDas5auXPfgQBPj2TYeYmj9MY_XZwkEniPdVt8GgnlGRYVIZJ_DDI9X4i3CbmPMQf5--DdD0T9cb3tHx79IivMYIARRoY"
         }
       ]
     },
@@ -912,27 +1436,27 @@
       "departure": [
         {
           "airport": {
-            "id": "BOS",
-            "name": "Boston Logan International Airport"
+            "id": "DEN",
+            "name": "Denver International Airport"
           },
-          "city": "Boston",
+          "city": "Denver",
           "country": "United States",
           "country_code": "US",
-          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTsThI_7VKLWvxDOugOLpVHze3RQP7rvr-KLjOZJ0PEf2xI8bEhumBB3ZjXe4HF-8srxAhSOe22Cjuc1g",
-          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTmyfqYldUKPJdrEh9tMEkjc-XwVb6VUgvvAhx1n4EUeXRSkCPp1-NQAofPisLnWMTcastf8G7m1fVavxIZ4tviHRyoXXRpqKgvkC8ja3w"
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT0m3vvsmLYW9jKUBbXjus74m5fandHrh4Tqz3RAzsITCt2pTLh8awvdbC78oLmKNuRDQLVhgqnOC6CBg",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSzdEh1a1SRandDas5auXPfgQBPj2TYeYmj9MY_XZwkEniPdVt8GgnlGRYVIZJ_DDI9X4i3CbmPMQf5--DdD0T9cb3tHx79IivMYIARRoY"
         }
       ],
       "arrival": [
         {
           "airport": {
-            "id": "TPA",
-            "name": "Tampa International Airport"
+            "id": "PHX",
+            "name": "Phoenix Sky Harbor International Airport"
           },
-          "city": "Tampa",
+          "city": "Phoenix",
           "country": "United States",
           "country_code": "US",
-          "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTICvs-4h2QTaMFKYSp_eDBJpWMhfKNoOjdYdkEZ4_JL6uFop0wumasrIIdw2CSS-y2X5v1-kI5QOzVKA",
-          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT4vhwIGcjJVf1rofdkxJmMii1tTQp7zFzs53Cp_QuPUB9YLrgXZCavTGeblfyXCvCf1vz8dIZ2XZH106utquuwrS-azAwaVis5iZ5Xsp0"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnevCvXRtAaf-lYH0HRcuiPKTEGWFI_UH25ojX7wrJGVf2_VmAYqAVB17vV8Wjtr7hZhIkm9Cz0ABnkQ",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX46bnDHHSQQxMU7pLPG_uVrlejTYvC1EFs_gJWqTqvZEoemE3cOuvd1nwPDhixo-RrFSSnDXi_aVqCi3Q1aNfbQRDDGDqsbmdKXtoVwc"
         }
       ]
     }
