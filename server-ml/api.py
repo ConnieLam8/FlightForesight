@@ -12,7 +12,7 @@ print('Start')
 
 # Load your data
 # data = pd.read_csv('NUMERICAL_DATA_final_with_outliers_with_weather.csv')
-data = ''
+data = pd.read_csv('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.csv')
 
 # Define the route for the main page with the form
 @app.route('/')
