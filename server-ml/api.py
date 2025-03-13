@@ -17,20 +17,6 @@ print('Start')
 # data = pd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
 data = dd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
 
-# data = pd.read_csv(file_path, dtype={'column_name': 'float32'})
-
-# chunk_size = 10000  # Process 10,000 rows at a time
-
-# # Create an empty list to store chunks
-# chunks = []
-
-# # Read CSV file in chunks and store them
-# for chunk in pd.read_csv(file_path, chunksize=chunk_size):
-#     chunks.append(chunk)  # Store each chunk in a list
-
-# # Combine all chunks into a single DataFrame
-# data = pd.concat(chunks, ignore_index=True)
-
 # Define the route for the main page with the form
 @app.route('/')
 def index():
