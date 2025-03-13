@@ -5,9 +5,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import '../App.css';
 import ChatBot from "./ChatBot";
 
-import { Tilt } from 'react-tilt';
+// import { Tilt } from 'react-tilt';
+import ParallaxTilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
-import dotenv from 'dotenv';
 
 import planeImage from '../images/airplane-7-64.png';
 import signInLogo from '../images/—Pngtree—avatar icon profile icon member_5247852.png';
@@ -209,7 +209,7 @@ const BackgroundTravelWebsite = () => {
     // Create a variable for the cards at the bottom of the page
     const ServiceCard = ({index, title, icon}) => {
         return (
-        <Tilt className='xs:w-[250px] w-full'>
+        <ParallaxTilt className='xs:w-[250px] w-full'>
             <motion.div
             variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
             className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
@@ -228,7 +228,7 @@ const BackgroundTravelWebsite = () => {
             </div>
     
             </motion.div>
-        </Tilt>
+        </ParallaxTilt>
         )
     }
 
@@ -263,7 +263,7 @@ const BackgroundTravelWebsite = () => {
         const queryString = new URLSearchParams(params).toString();
         console.log(`Full Request URL: http://localhost:5001/fetch-flights?${queryString}`);
 
-        const serverUrl = process.env.VITE_SERVER_NODE_URL;
+        const serverUrl = import.meta.env.VITE_SERVER_NODE_URL;
 
         // axios.get('http://localhost:5001/fetch-flights', { params })
         axios.get(`${serverUrl}/fetch-flights`, { params })
@@ -658,7 +658,7 @@ const BackgroundTravelWebsite = () => {
             {/* Create a div for the Popups cards */}
             <div className='mt-40 flex flex-wrap gap-6 justify-center'>
                 {/* Ask Jetset AI Popup */}
-                <Tilt className='w-[200px] sm:w-[220px]'>
+                <ParallaxTilt className='w-[200px] sm:w-[220px]'>
                     <motion.div
                         className='w-full bg-white p-[1px] rounded-[20px] shadow-card border-2 border-blue-800'
                     >
@@ -674,10 +674,10 @@ const BackgroundTravelWebsite = () => {
                             <h3 className='text-black text-[20px] font-bold text-center'>ask jetSet AI</h3>
                         </div>
                     </motion.div>
-                </Tilt>
+                </ParallaxTilt>
 
                 {/* Best time to travel Popup */}
-                <Tilt className='w-[200px] sm:w-[220px]'>
+                <ParallaxTilt className='w-[200px] sm:w-[220px]'>
                     <motion.div
                         className='w-full bg-white p-[1px] rounded-[20px] shadow-card border-2 border-blue-800'
                     >
@@ -693,10 +693,10 @@ const BackgroundTravelWebsite = () => {
                             <h3 className='text-black text-[20px] font-bold text-center'>what's the best time to travel?</h3>
                         </div>
                     </motion.div>
-                </Tilt>
+                </ParallaxTilt>
 
                 {/* Explore Popup */}
-                <Tilt className='w-[200px] sm:w-[220px]'>
+                <ParallaxTilt className='w-[200px] sm:w-[220px]'>
                     <motion.div
                         className='w-full bg-white p-[1px] rounded-[20px] shadow-card border-2 border-blue-800'
                     >
@@ -712,10 +712,10 @@ const BackgroundTravelWebsite = () => {
                             <h3 className='text-black text-[20px] font-bold text-center'>explore</h3>
                         </div>
                     </motion.div>
-                </Tilt>
+                </ParallaxTilt>
 
                 {/* Price Change Popup */}
-                <Tilt className='w-[200px] sm:w-[220px]'>
+                <ParallaxTilt className='w-[200px] sm:w-[220px]'>
                     <motion.div
                         className='w-full bg-white p-[1px] rounded-[20px] shadow-card border-2 border-blue-800'
                     >
@@ -731,10 +731,10 @@ const BackgroundTravelWebsite = () => {
                             <h3 className='text-black text-[20px] font-bold text-center'>price change detection</h3>
                         </div>
                     </motion.div>
-                </Tilt>
+                </ParallaxTilt>
 
                 {/* Trips Popup */}
-                <Tilt className='w-[200px] sm:w-[220px]'>
+                <ParallaxTilt className='w-[200px] sm:w-[220px]'>
                     <motion.div
                         className='w-full bg-white p-[1px] rounded-[20px] shadow-card border-2 border-blue-800'
                     >
@@ -750,10 +750,10 @@ const BackgroundTravelWebsite = () => {
                             <h3 className='text-black text-[20px] font-bold text-center'>trips</h3>
                         </div>
                     </motion.div>
-                </Tilt>
+                </ParallaxTilt>
 
                 {/* Flight Tracker Popup */}
-                <Tilt className='w-[200px] sm:w-[220px]'>
+                <ParallaxTilt className='w-[200px] sm:w-[220px]'>
                     <motion.div
                         className='w-full bg-white p-[1px] rounded-[20px] shadow-card border-2 border-blue-800'
                     >
@@ -769,7 +769,7 @@ const BackgroundTravelWebsite = () => {
                             <h3 className='text-black text-[20px] font-bold text-center'>flight tracker</h3>
                         </div>
                     </motion.div>
-                </Tilt>
+                </ParallaxTilt>
             </div>
 
 
