@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import pickle
+# import dask.dataframe as dd
 from flask import Flask, request, render_template
 from datetime import datetime
 from flask import jsonify
@@ -14,17 +15,19 @@ print('Start')
 # data = pd.read_csv('NUMERICAL_DATA_final_with_outliers_with_weather.csv')
 file_path = pd.read_csv('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.csv')
 
-chunk_size = 10000  # Process 10,000 rows at a time
+data = pd.read_csv(file_path, dtype={'column_name': 'float32'})
 
-# Create an empty list to store chunks
-chunks = []
+# chunk_size = 10000  # Process 10,000 rows at a time
 
-# Read CSV file in chunks and store them
-for chunk in pd.read_csv(file_path, chunksize=chunk_size):
-    chunks.append(chunk)  # Store each chunk in a list
+# # Create an empty list to store chunks
+# chunks = []
 
-# Combine all chunks into a single DataFrame
-data = pd.concat(chunks, ignore_index=True)
+# # Read CSV file in chunks and store them
+# for chunk in pd.read_csv(file_path, chunksize=chunk_size):
+#     chunks.append(chunk)  # Store each chunk in a list
+
+# # Combine all chunks into a single DataFrame
+# data = pd.concat(chunks, ignore_index=True)
 
 # Define the route for the main page with the form
 @app.route('/')
