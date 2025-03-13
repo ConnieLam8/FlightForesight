@@ -13,7 +13,7 @@ print('Start')
 
 # Load your data
 # data = pd.read_csv('NUMERICAL_DATA_final_with_outliers_with_weather.csv')
-data = pd.read_parquet('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
+data = pd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
 
 # data = pd.read_csv(file_path, dtype={'column_name': 'float32'})
 
