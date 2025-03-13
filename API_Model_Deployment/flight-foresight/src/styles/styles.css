@@ -1,0 +1,36 @@
+.paddingX {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+@media (min-width: 640px) {
+    .paddingX {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+.navbarRight {
+    font-size: 20px;
+    text-align: right;
+}
+
+.navbarRight ul {
+    display: flex;
+    list-style: none; /* Removes bullet points */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+.navbarRight li {
+    margin: 0 15px; /* Adds space between items */
+}
+  
+.navbarRight a {
+    text-decoration: none; /* Removes underline from links */
+    color: black; /* Sets link color (change as needed) */
+}
+  
+.navbarRight a:hover {
+    color: blue; /* Optional: Changes link color on hover */
+}

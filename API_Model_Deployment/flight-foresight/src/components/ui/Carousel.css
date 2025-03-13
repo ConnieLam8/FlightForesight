@@ -1,0 +1,83 @@
+/* Apply Apple font stack globally */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
+}
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+  }
+  
+  .card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 400px;
+    margin: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  .card h3 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(164, 153, 153, 0.3); /* Optional overlay for darkening the image */
+    z-index: 1;
+    border-radius: 20px;
+  }
+  
+  .card .info-box {
+    position: absolute;
+    top: 60px; /* Adjusted to be right below the title */
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    z-index: 2;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
+  }
+  
+  .card .info-box p {
+    margin: 2px 0;
+  }
+  
+  .card .info-box .price {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
