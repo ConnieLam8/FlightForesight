@@ -6,18 +6,18 @@ from datetime import datetime
 from flask import jsonify
 from flask_cors import CORS
 
-import dask.dataframe as dd
+# import dask.dataframe as dd
 
 app = Flask(__name__)
 CORS(app)
 print('Start')
 
 # Load your data
-# data = pd.read_csv('NUMERICAL_DATA_final_with_outliers_with_weather.csv')
+data = pd.read_csv('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.csv')
 # data = pd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
-data = dd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
+# data = dd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
 
-data = data.compute()
+# data = data.compute()
 
 # Define the route for the main page with the form
 @app.route('/')
