@@ -28,7 +28,7 @@ const databaseKey = process.env.MYSQL_DATABASE;
 const flightApiKey = process.env.FLIGHT_API_KEY;
 
 // Get the server URL from the server-ml back-end
-const serverUrl = "https://flightforesight-ml.onrender.com";
+const serverUrl = process.env.SERVER_ML_URL;
 
 /////////////////////CONECTION STUFF//////////////////////////
 const connection = mysql.createConnection({
