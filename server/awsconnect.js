@@ -27,6 +27,9 @@ const databaseKey = process.env.MYSQL_DATABASE;
 // Get the Flight API Key
 const flightApiKey = process.env.FLIGHT_API_KEY;
 
+// Get the server URL from the server-ml back-end
+const serverUrl = "https://flightforesight-ml.onrender.com";
+
 /////////////////////CONECTION STUFF//////////////////////////
 const connection = mysql.createConnection({
     host: hostKey,  // Replace with your RDS instance endpoint
@@ -147,7 +150,8 @@ function saveToJSON(data) {
 
 async function sendDataToResultsAPI(data) {
     try {
-        const response = await axios.post('http://127.0.0.1:5000/result', data);
+        // const response = await axios.post('http://127.0.0.1:5000/result', data);
+        const response = await axios.post(`${serverUrl}/result`, data);
         console.log('Results API Response:', response.data);
 
         // Clear the JSON file after sending the data

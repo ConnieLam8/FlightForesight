@@ -146,7 +146,8 @@ function saveToJSON(data) {
 
 async function sendDataToResultsAPI(data) {
     try {
-        const response = await axios.post('http://127.0.0.1:5000/result', data);
+        // const response = await axios.post('http://127.0.0.1:5000/result', data);
+        const response = await axios.post('https://flightforesight-ml.onrender.com/result', data);
         console.log('Results API Response:', response.data);
 
         // Clear the JSON file after sending the data

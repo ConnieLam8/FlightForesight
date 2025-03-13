@@ -17,6 +17,8 @@ print('Start')
 # data = pd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
 data = dd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
 
+data = data.compute()
+
 # Define the route for the main page with the form
 @app.route('/')
 def index():

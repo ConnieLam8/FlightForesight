@@ -262,7 +262,7 @@ const BackgroundTravelWebsite = () => {
         const queryString = new URLSearchParams(params).toString();
         console.log(`Full Request URL: http://localhost:5001/fetch-flights?${queryString}`);
 
-        const serverUrl = "";
+        const serverUrl = "https://flightforesight.onrender.com";
 
         // axios.get('http://localhost:5001/fetch-flights', { params })
         axios.get(`${serverUrl}/fetch-flights`, { params })
