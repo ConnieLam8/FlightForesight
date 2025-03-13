@@ -4,6 +4,9 @@ import axios from "axios";
 import robotIcon from '../images/robot-icon.png';
 import userIcon from '../images/user-profile.jpg';
 
+// Set the server url from the back-end service
+const serverUrl = "https://flightforesight.onrender.com";
+
 const ChatBot = () => {
     const [messages, setMessages] = useState([
         { text: "Hello! I can help predict your flight delay. Let's start with the name of your airline.", isBot: true }
@@ -32,10 +35,13 @@ const ChatBot = () => {
 
     const fetchSuggestions = async (input, stepKey) => {
         const endpoint = stepKey === "Airline_Name"
-            ? 'http://localhost:5001/autocompleteAirline'
+            // ? 'http://localhost:5001/autocompleteAirline'
+            ? `${serverUrl}/autocompleteAirline`
             : stepKey === "full_Origin_Airport_Name"
-                ? "http://localhost:5001/autocompleteOriginAirport"
-                : "http://localhost:5001/autocompleteDestAirport"; // default for other cases (e.g., Dest_Airport_Name)
+                // ? "http://localhost:5001/autocompleteOriginAirport"
+                ? `${serverUrl}/autocompleteOriginAirport`
+                // : "http://localhost:5001/autocompleteDestAirport"; // default for other cases (e.g., Dest_Airport_Name)
+                : `${serverUrl}/autocompleteDestAirport`; // default for other cases (e.g., Dest_Airport_Name)
 
         try {
             const response = await axios.post(endpoint, { query: input });
@@ -78,7 +84,8 @@ const ChatBot = () => {
         if (currentKey === "Airline_Name") {
             // Verify the DOT Code with the backend
             try {
-                const response = await axios.post("http://localhost:5001/verifyAirlineName", { Airline_Name: input });
+                // const response = await axios.post("http://localhost:5001/verifyAirlineName", { Airline_Name: input });
+                const response = await axios.post(`${serverUrl}/verifyAirlineName`, { Airline_Name: input });
                 if (response.data.valid) {
                     // Proceed to the next step
                     if (currentStep < steps.length - 1) {
@@ -99,7 +106,8 @@ const ChatBot = () => {
             }
         } else if (currentKey === "full_Origin_Airport_Name") {
             try {
-                const response1 = await axios.post("http://localhost:5001/verifyOriginAirportName", { full_Origin_Airport_Name: input });
+                // const response1 = await axios.post("http://localhost:5001/verifyOriginAirportName", { full_Origin_Airport_Name: input });
+                const response1 = await axios.post(`${serverUrl}/verifyOriginAirportName`, { full_Origin_Airport_Name: input });
                 if (response1.data.valid) {
                     // Proceed to the next step
                     if (currentStep < steps.length - 1) {
@@ -120,7 +128,8 @@ const ChatBot = () => {
             }
         } else if (currentKey === "full_Dest_Airport_Name") {
             try {
-                const response2 = await axios.post("http://localhost:5001/verifyDestAirportName", { full_Dest_Airport_Name: input });
+                // const response2 = await axios.post("http://localhost:5001/verifyDestAirportName", { full_Dest_Airport_Name: input });
+                const response2 = await axios.post(`${serverUrl}/verifyDestAirportName`, { full_Dest_Airport_Name: input });
                 if (response2.data.valid) {
                     // Proceed to the next step
                     if (currentStep < steps.length - 1) {
@@ -141,7 +150,8 @@ const ChatBot = () => {
             }
         } else if (currentKey === "crs_dep_military_date") {
             try {
-                const response3 = await axios.post("http://localhost:5001/verifyDepdate", { crs_dep_military_date: input });
+                // const response3 = await axios.post("http://localhost:5001/verifyDepdate", { crs_dep_military_date: input });
+                const response3 = await axios.post(`${serverUrl}/verifyDepdate`, { crs_dep_military_date: input });
                 if (response3.data.valid) {
                     // Proceed to the next step
                     if (currentStep < steps.length - 1) {
@@ -162,7 +172,8 @@ const ChatBot = () => {
             }
         } else if (currentKey === "crs_arr_military_date") {
             try {
-                const response4 = await axios.post("http://localhost:5001/verifyArrdate", { crs_arr_military_date: input });
+                // const response4 = await axios.post("http://localhost:5001/verifyArrdate", { crs_arr_military_date: input });
+                const response4 = await axios.post(`${serverUrl}/verifyArrdate`, { crs_arr_military_date: input });
                 if (response4.data.valid) {
                     // Display the results in the chatbot
                     setResults(response4.data.results);
