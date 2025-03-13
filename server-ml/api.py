@@ -11,7 +11,8 @@ CORS(app)
 print('Start')
 
 # Load your data
-data = pd.read_csv('NUMERICAL_DATA_final_with_outliers_with_weather.csv')
+# data = pd.read_csv('NUMERICAL_DATA_final_with_outliers_with_weather.csv')
+data = ''
 
 # Define the route for the main page with the form
 @app.route('/')
