@@ -12,7 +12,19 @@ print('Start')
 
 # Load your data
 # data = pd.read_csv('NUMERICAL_DATA_final_with_outliers_with_weather.csv')
-data = pd.read_csv('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.csv')
+file_path = pd.read_csv('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.csv')
+
+chunk_size = 10000  # Process 10,000 rows at a time
+
+# Create an empty list to store chunks
+chunks = []
+
+# Read CSV file in chunks and store them
+for chunk in pd.read_csv(file_path, chunksize=chunk_size):
+    chunks.append(chunk)  # Store each chunk in a list
+
+# Combine all chunks into a single DataFrame
+data = pd.concat(chunks, ignore_index=True)
 
 # Define the route for the main page with the form
 @app.route('/')
