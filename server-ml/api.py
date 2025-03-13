@@ -13,9 +13,9 @@ print('Start')
 
 # Load your data
 # data = pd.read_csv('NUMERICAL_DATA_final_with_outliers_with_weather.csv')
-file_path = pd.read_csv('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.csv')
+data = pd.read_parquet('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
 
-data = pd.read_csv(file_path, dtype={'column_name': 'float32'})
+# data = pd.read_csv(file_path, dtype={'column_name': 'float32'})
 
 # chunk_size = 10000  # Process 10,000 rows at a time
 
