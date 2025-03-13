@@ -153,7 +153,7 @@ async function sendDataToResultsAPI(data) {
         // const response = await axios.post('http://127.0.0.1:5000/result', data);
         const response = await axios.post(`${serverUrl}/result`, data);
         console.log('Results API Response:', response.data);
-
+        
         // Clear the JSON file after sending the data
         fs.writeFile('airportData.json', JSON.stringify([], null, 2), (err) => {
             if (err) {
