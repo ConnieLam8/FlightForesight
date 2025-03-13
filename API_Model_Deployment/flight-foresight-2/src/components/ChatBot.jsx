@@ -3,9 +3,10 @@ import "./ChatBot.css";
 import axios from "axios";
 import robotIcon from '../images/robot-icon.png';
 import userIcon from '../images/user-profile.jpg';
+import dotenv from 'dotenv';
 
 // Set the server url from the back-end service
-const serverUrl = "https://flightforesight.onrender.com";
+const serverUrl = process.env.VITE_SERVER_NODE_URL;
 
 const ChatBot = () => {
     const [messages, setMessages] = useState([

@@ -7,6 +7,7 @@ import ChatBot from "./ChatBot";
 
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
+import dotenv from 'dotenv';
 
 import planeImage from '../images/airplane-7-64.png';
 import signInLogo from '../images/—Pngtree—avatar icon profile icon member_5247852.png';
@@ -262,7 +263,7 @@ const BackgroundTravelWebsite = () => {
         const queryString = new URLSearchParams(params).toString();
         console.log(`Full Request URL: http://localhost:5001/fetch-flights?${queryString}`);
 
-        const serverUrl = "https://flightforesight.onrender.com";
+        const serverUrl = process.env.VITE_SERVER_NODE_URL;
 
         // axios.get('http://localhost:5001/fetch-flights', { params })
         axios.get(`${serverUrl}/fetch-flights`, { params })
