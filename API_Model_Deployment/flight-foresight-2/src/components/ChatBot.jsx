@@ -35,8 +35,17 @@ const ChatBot = () => {
 
     const [suggestions, setSuggestions] = useState([]);
     const handleDateChange = (date) => {
-        setFlightDetails((prev) => ({ ...prev, departureDate: date }));
-        setMessages((prev) => [...prev, { text: date.toLocaleDateString(), isBot: false }]);
+        if (!date) return;
+
+        const formattedDate = date.toLocaleDateString("en-US", {
+            month: "2-digit",
+            day: "2-digit",
+            year: "numeric",
+        }); // Converts to MM/DD/YYYY
+
+        setFlightDetails((prev) => ({ ...prev, departureDate: formattedDate }));
+        setMessages((prev) => [...prev, { text: formattedDate, isBot: false }]);
+
         if (currentStep < steps.length - 1) {
             setCurrentStep((prev) => prev + 1);
             setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
@@ -315,7 +324,7 @@ const ChatBot = () => {
                             <DatePicker
                                 selected={flightDetails.departureDate}
                                 onChange={handleDateChange}
-                                dateFormat="MM/dd/yyyy"
+                                // dateFormat="MM/dd/yyyy"
                                 className="input input-bordered w-full max-w-xs"
                                 disabled={!!flightDetails.departureDate}
                             />
