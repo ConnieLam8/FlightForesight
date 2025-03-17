@@ -1,9 +1,8 @@
 .suggestions-dropdown {
     position: flex;
     background-color: rgb(244, 244, 244);
-    border: 1px solid #ccc;
     border-radius: 6px;
-    width: calc(100% - 10px); /* Adjust width to match input field */
+    width: calc(100% - 3px); /* Adjust width to match input field */
     max-height: 200px; /* Increased height */
     overflow-y: auto; /* Enable vertical scrolling */
     z-index: 1000; /* Ensure it appears above other elements */
