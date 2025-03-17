@@ -325,6 +325,34 @@ app.post('/autocompleteDestAirport', (req, res) => {
     });
 });
 
+/////////////////// VERIFY DEPARTURE DATE /////////////////////////////////
+app.post('/verifydepartureDate', async (req, res) => {
+    const { departureDate } = req.body;
+    console.log('Received departure date:', departureDate);
+
+    // Check if departureDate is provided
+    if (!departureDate) {
+        return res.status(400).json({ error: 'Departure date is required' });
+    }
+
+    // Validate MM-DD-YYYY format using regex
+    const dateFormatRegex = /^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-\d{4}$/;
+    if (!dateFormatRegex.test(departureDate)) {
+        return res.status(400).json({ error: 'Invalid format. Please use MM-DD-YYYY.' });
+    }
+    // Convert MM-DD-YYYY to Date object (JS uses YYYY-MM-DD)
+    const [month, day, year] = departureDate.split('-');
+    const inputDate = new Date(`${year}-${month}-${day}`);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Remove time part for accurate comparison
+
+    // Validate if the input date is in the past
+    if (inputDate < today) {
+        return res.status(400).json({ error: 'Invalid departure date. The date must be today or in the future.' });
+    }
+
+
+});
 
 
 

@@ -16,6 +16,7 @@ const ChatBot = () => {
         Airline_Name: "",
         full_Origin_Airport_Name: "",
         full_Dest_Airport_Name: "",
+        departureDate: "",
         crs_dep_military_date: "",
         crs_arr_military_date: ""
     });
@@ -24,6 +25,7 @@ const ChatBot = () => {
         { key: "Airline_Name", prompt: "Please provide the Airline Name." },
         { key: "full_Origin_Airport_Name", prompt: "What is the origin airport name?" },
         { key: "full_Dest_Airport_Name", prompt: "What is the destination airport name?" },
+        { key: "departureDate", prompt: "What is the departure Date?" },
         { key: "crs_dep_military_date", prompt: "What is the scheduled departure time? (Format:HH:MM)" },
         { key: "crs_arr_military_date", prompt: "What is the scheduled arrival time? (Format:HH:MM)" }
     ];
@@ -148,7 +150,34 @@ const ChatBot = () => {
                     { text: "Error verifying airport name. Please try again.", isBot: true }
                 ]);
             }
-        } else if (currentKey === "crs_dep_military_date") {
+
+        }
+        else if (currentKey === "departureDate") {
+            try {
+                const response5 = await axios.post(`${serverUrl}/verifydepartureDate`, {departureDate: input});
+                if (response5.data.valid) {
+                    // Proceed to the next step
+                    if (currentStep < steps.length - 1) {
+                        setCurrentStep((prev) => prev + 1);
+                        setMessages((prev) => [...prev, {text: steps[currentStep + 1].prompt, isBot: true}]);
+                    }
+                } else {
+                    setMessages((prev) => [
+                        ...prev,
+                        {text: response5.data.message, isBot: true}
+                    ]);
+                }
+            }catch (error) {
+                    setMessages((prev) => [
+                        ...prev,
+                        { text: "Error verifying  Date . Please try again.", isBot: true }
+                    ]);
+                }
+
+
+            }
+
+        else if (currentKey === "crs_dep_military_date") {
             try {
                 // const response3 = await axios.post("http://localhost:5001/verifyDepdate", { crs_dep_military_date: input });
                 const response3 = await axios.post(`${serverUrl}/verifyDepdate`, { crs_dep_military_date: input });
@@ -280,6 +309,7 @@ const ChatBot = () => {
                         name="userInput"
                         placeholder="Type your response..."
                         onChange={handleInputChange}
+                        // pattern="\d{2}-\d{2}-\d{4}"  // Ensure input matches MM-DD-YYYY format
                         className="input input-bordered w-full max-w-xs"
                         required
                     />
