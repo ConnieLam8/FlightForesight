@@ -564,7 +564,7 @@ const BackgroundTravelWebsite = () => {
                     {results ? (
                     results.map((flight, index) => (
                         <div key={index} className="collapse collapse-arrow bg-base-200 rounded-lg shadow-lg mb-4">
-                            <input type="radio" name="my-accordion-2" defaultChecked />
+                            <input type="radio" name="my-accordion-2"/>
                             <div className="collapse-title text-xl font-medium flex items-center space-x-4 py-4">
                                 <img src={flight.airline_logo} alt={flight.flights[0].airline} width="50" />
                                 <div className="flex-grow">
