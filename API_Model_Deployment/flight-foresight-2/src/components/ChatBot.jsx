@@ -25,7 +25,7 @@ const ChatBot = () => {
         { key: "Airline_Name", prompt: "Please provide the Airline Name." },
         { key: "full_Origin_Airport_Name", prompt: "What is the origin airport name?" },
         { key: "full_Dest_Airport_Name", prompt: "What is the destination airport name?" },
-        { key: "departureDate", prompt: "What is the departure Date?" },
+        { key: "departureDate", prompt: "What is the departure Date? (Format:MM-DD-YYYY)" },
         { key: "crs_dep_military_date", prompt: "What is the scheduled departure time? (Format:HH:MM)" },
         { key: "crs_arr_military_date", prompt: "What is the scheduled arrival time? (Format:HH:MM)" }
     ];
@@ -170,7 +170,7 @@ const ChatBot = () => {
             }catch (error) {
                     setMessages((prev) => [
                         ...prev,
-                        { text: "Error verifying Date . Please try again.", isBot: true }
+                        { text: "Invalid Date Format . Please try again.", isBot: true }
                     ]);
                 }
 
@@ -196,7 +196,7 @@ const ChatBot = () => {
             } catch (error) {
                 setMessages((prev) => [
                     ...prev,
-                    { text: "Error verifying Date. Please try again.", isBot: true }
+                    { text: "Invalid Time Format. Please try again.", isBot: true }
                 ]);
             }
         } else if (currentKey === "crs_arr_military_date") {
@@ -220,7 +220,7 @@ const ChatBot = () => {
             } catch (error) {
                 setMessages((prev) => [
                     ...prev,
-                    { text: "Error verifying Date. Please try again.", isBot: true }
+                    { text: "Invalid Time Format. Please try again.", isBot: true }
                 ]);
             }
         } else {
