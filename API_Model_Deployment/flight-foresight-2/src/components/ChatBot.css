@@ -9,7 +9,6 @@
     z-index: 1000; /* Ensure it appears above other elements */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 5px; /* Existing margin */
-    top: 100%; /* Position it below the input box */
     left: 0;
 }
 
@@ -108,7 +107,7 @@
 .chatbot-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     padding: 10px;
     background-color: #f4f4f4;
     border-top: 1px solid #ddd;
