@@ -351,9 +351,8 @@ app.post('/verifydepartureDate', async (req, res) => {
         return res.status(400).json({ error: 'Invalid departure date. The date must be today or in the future.' });
     }
 
-
+    res.status(200).json({ valid: true, message: 'Departure date is valid' });
 });
-
 
 
 /////////////////// VERIFY DEPARTURE DATE /////////////////////////////////

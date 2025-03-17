@@ -170,7 +170,7 @@ const ChatBot = () => {
             }catch (error) {
                     setMessages((prev) => [
                         ...prev,
-                        { text: "Error verifying  Date . Please try again.", isBot: true }
+                        { text: "Error verifying Date . Please try again.", isBot: true }
                     ]);
                 }
 
