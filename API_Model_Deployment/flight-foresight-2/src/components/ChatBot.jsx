@@ -46,10 +46,8 @@ const ChatBot = () => {
         setFlightDetails((prev) => ({ ...prev, departureDate: formattedDate }));
         setMessages((prev) => [...prev, { text: formattedDate, isBot: false }]);
 
-        if (currentStep < steps.length - 1) {
-            setCurrentStep((prev) => prev + 1);
-            setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
-        }
+        handleUserResponse(formattedDate);
+
     };
 
     const fetchSuggestions = async (input, stepKey) => {
@@ -170,21 +168,17 @@ const ChatBot = () => {
 
         }
         else if (currentKey === "departureDate") {
-            try {
-                const response5 = await axios.post(`${serverUrl}/verifydepartureDate`, {departureDate: input});
-                if (response5.data.valid) {
-                    // Proceed to the next step
-                    if (currentStep < steps.length - 1) {
-                        setCurrentStep((prev) => prev + 1);
-                        setMessages((prev) => [...prev, {text: steps[currentStep + 1].prompt, isBot: true}]);
+                try {
+                    const response5 = await axios.post(`${serverUrl}/verifydepartureDate`, { departureDate: input });
+                    if (response5.data.valid) {
+                        if (currentStep < steps.length - 1) {
+                            setCurrentStep((prev) => prev + 1);
+                            setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
+                        }
+                    } else {
+                        setMessages((prev) => [...prev, { text: response.data.message, isBot: true }]);
                     }
-                } else {
-                    setMessages((prev) => [
-                        ...prev,
-                        {text: response5.data.message, isBot: true}
-                    ]);
-                }
-            }catch (error) {
+                } catch (error) {
                     setMessages((prev) => [
                         ...prev,
                         { text: "Invalid Date Format . Please try again.", isBot: true }
@@ -335,7 +329,6 @@ const ChatBot = () => {
                         name="userInput"
                         placeholder="Type your response..."
                         onChange={handleInputChange}
-                        pattern="\d{2}-\d{2}-\d{4}"  // Ensure input matches MM-DD-YYYY format
                         className="input input-bordered w-full max-w-xs"
                         required
                     />
