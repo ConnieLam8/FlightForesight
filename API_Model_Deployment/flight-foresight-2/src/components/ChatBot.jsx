@@ -326,7 +326,7 @@ const ChatBot = () => {
                         name="userInput"
                         placeholder="Type your response..."
                         onChange={handleInputChange}
-                        // pattern="\d{2}-\d{2}-\d{4}"  // Ensure input matches MM-DD-YYYY format
+                        pattern="\d{2}-\d{2}-\d{4}"  // Ensure input matches MM-DD-YYYY format
                         className="input input-bordered w-full max-w-xs"
                         required
                     />
