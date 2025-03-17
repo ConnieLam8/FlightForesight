@@ -1,14 +1,13 @@
 .suggestions-dropdown {
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
+    position: flex;
+    background-color: #f4f4f4;
     border-radius: 6px;
-    width: calc(100% - 20px); /* Adjust width to match input field */
+    width: calc(100% - 2px); /* Adjust width to match input field */
     max-height: 200px; /* Increased height */
     overflow-y: auto; /* Enable vertical scrolling */
     z-index: 1000; /* Ensure it appears above other elements */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 5px;
+    color: #000080;
 }
 
 .suggestions-dropdown p {
