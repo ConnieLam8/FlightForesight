@@ -336,7 +336,7 @@ app.post('/verifydepartureDate', async (req, res) => {
     }
 
     // Validate MM-DD-YYYY format using regex
-    const dateFormatRegex = /^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-\d{4}$/;
+    const dateFormatRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
     if (!dateFormatRegex.test(departureDate)) {
         return res.status(400).json({ error: 'Invalid format. Please use MM-DD-YYYY.' });
     }

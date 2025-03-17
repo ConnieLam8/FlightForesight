@@ -3,6 +3,8 @@ import "./ChatBot.css";
 import axios from "axios";
 import robotIcon from '../images/robot-icon.png';
 import userIcon from '../images/user-profile.jpg';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 // Set the server url from the back-end service
 const serverUrl = import.meta.env.VITE_SERVER_NODE_URL;
@@ -16,7 +18,7 @@ const ChatBot = () => {
         Airline_Name: "",
         full_Origin_Airport_Name: "",
         full_Dest_Airport_Name: "",
-        departureDate: "",
+        departureDate: null,
         crs_dep_military_date: "",
         crs_arr_military_date: ""
     });
@@ -32,8 +34,14 @@ const ChatBot = () => {
 
 
     const [suggestions, setSuggestions] = useState([]);
-
-
+    const handleDateChange = (date) => {
+        setFlightDetails((prev) => ({ ...prev, departureDate: date }));
+        setMessages((prev) => [...prev, { text: date.toLocaleDateString(), isBot: false }]);
+        if (currentStep < steps.length - 1) {
+            setCurrentStep((prev) => prev + 1);
+            setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
+        }
+    };
 
     const fetchSuggestions = async (input, stepKey) => {
         const endpoint = stepKey === "Airline_Name"
@@ -303,6 +311,15 @@ const ChatBot = () => {
                     onSubmit={handleSubmit}
                     className="chatbot-form flex items-center gap-2 p-4"
                 >
+                    {steps[currentStep].key === "departureDate" ? (
+                            <DatePicker
+                                selected={flightDetails.departureDate}
+                                onChange={handleDateChange}
+                                dateFormat="MM/dd/yyyy"
+                                className="input input-bordered w-full max-w-xs"
+                                disabled={!!flightDetails.departureDate}
+                            />
+                    ) : (
                     <input
                         ref={inputRef} // Attach ref here
                         type="text"
@@ -313,6 +330,7 @@ const ChatBot = () => {
                         className="input input-bordered w-full max-w-xs"
                         required
                     />
+                    )}
                     {suggestions.length > 0 && (
                         <ul className="suggestions-dropdown">
                             {suggestions.map((suggestion, index) => (
