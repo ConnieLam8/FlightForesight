@@ -26,7 +26,6 @@ const ChatBot = () => {
         { key: "Airline_Name", prompt: "Please provide the Airline Name." },
         { key: "full_Origin_Airport_Name", prompt: "What is the origin airport name?" },
         { key: "full_Dest_Airport_Name", prompt: "What is the destination airport name?" },
-        { key: "departureDate", prompt: "Please select your flight departure date." },
         { key: "crs_dep_military_date", prompt: "What is the scheduled departure time? (Format:HH:MM)" },
         { key: "crs_arr_military_date", prompt: "What is the scheduled arrival time? (Format:HH:MM)" }
     ];
