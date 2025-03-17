@@ -3,7 +3,8 @@ import "./ChatBot.css";
 import axios from "axios";
 import robotIcon from '../images/robot-icon.png';
 import userIcon from '../images/user-profile.jpg';
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 // Set the server url from the back-end service
 const serverUrl = import.meta.env.VITE_SERVER_NODE_URL;
 
@@ -16,6 +17,7 @@ const ChatBot = () => {
         Airline_Name: "",
         full_Origin_Airport_Name: "",
         full_Dest_Airport_Name: "",
+        departureDate: null,
         crs_dep_military_date: "",
         crs_arr_military_date: ""
     });
@@ -30,6 +32,7 @@ const ChatBot = () => {
 
 
     const [suggestions, setSuggestions] = useState([]);
+    const [selectingDate, setSelectingDate] = useState(false);
 
 
 
@@ -185,7 +188,7 @@ const ChatBot = () => {
                 } else {
                     setMessages((prev) => [
                         ...prev,
-                         { text: response4.data.message, isBot: true }
+                        { text: response4.data.message, isBot: true }
                     ]);
                 }
             } catch (error) {
@@ -194,7 +197,25 @@ const ChatBot = () => {
                     { text: "Error verifying Date. Please try again.", isBot: true }
                 ]);
             }
-        } else {
+        }
+        else if (currentKey === "departureDate") {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            if (input < today) {
+                setMessages((prev) => [...prev, {
+                    text: "Invalid date. Please select today or a future date.",
+                    isBot: true
+                }]);
+                return;
+
+                setFlightDetails((prev) => ({...prev, [currentKey]: input}));
+                setSelectingDate(false)
+            }  else {
+                setFlightDetails((prev) => ({ ...prev, [currentKey]: input }));
+                setMessages((prev) => [...prev, { text: input, isBot: false }]);
+            }}
+
+        else {
             // Proceed to the next step without verification
             if (currentStep < steps.length - 1) {
                 setCurrentStep((prev) => prev + 1);
@@ -210,6 +231,9 @@ const ChatBot = () => {
         if (userInput) {
             handleUserResponse(userInput);
         }
+    };
+    const handleDateSelection = (date) => {
+        handleUserResponse(date);
     };
 
 
@@ -234,7 +258,7 @@ const ChatBot = () => {
                             <div className="chat-image avatar">
                                 <div className="w-14 rounded-full">
                                     <img
-                                        src={msg.isBot 
+                                        src={msg.isBot
                                             ? robotIcon // Chatbot Avatar
                                             : userIcon // User Avatar
                                         }
@@ -252,6 +276,25 @@ const ChatBot = () => {
                         </div>
                     ))}
 
+                    {selectingDate && (
+                        <div className="chat chat-start">
+                            <div className="chat-image avatar">
+                                <div className="w-14 rounded-full">
+                                    <img src={robotIcon} alt="Chatbot Avatar" />
+                                </div>
+                            </div>
+                            <div className="chat-bubble bg-blue-500 text-white">
+                                <DatePicker
+                                    selected={flightDetails.departureDate}
+                                    onChange={handleDateSelection}
+                                    minDate={new Date()}
+                                    placeholderText="Select your departure date"
+                                    className="input input-bordered w-full"
+                                />
+                            </div>
+                        </div>
+                    )}
+
                     {results && (
                         <div className="chat chat-start">
                             <div className="chat-image avatar">
@@ -265,12 +308,12 @@ const ChatBot = () => {
                             <div className="chat-bubble bg-blue-500 text-white">{formatResults(results)}</div>
                         </div>
                     )}
-                    
+
                     {/* Add an invisible scroll element */}
                     <div ref={messageEndRef} />
                 </div>
 
-                <form 
+                <form
                     onSubmit={handleSubmit}
                     className="chatbot-form flex items-center gap-2 p-4"
                 >
@@ -302,7 +345,7 @@ const ChatBot = () => {
                         </ul>
                     )}
 
-                    <button 
+                    <button
                         type="submit"
                         className="btn w-[100px] h-[50px] rounded-md text-white bg-blue-800 hover:bg-blue-1000"
                     >
