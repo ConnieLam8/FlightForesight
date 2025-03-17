@@ -3,13 +3,19 @@
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 6px;
-    width: calc(100% - 20px); /* Adjust width to match input field */
+    width: 100%; /* Set width to 100% of the parent */
     max-height: 200px; /* Increased height */
     overflow-y: auto; /* Enable vertical scrolling */
     z-index: 1000; /* Ensure it appears above other elements */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 5px; /* Existing margin */
-    left: 0;
+    left: 0; /* Align with the left edge of the parent */
+    top: 100%; /* Position below the parent */
+}
+
+/* Ensure the parent element is positioned correctly */
+.parent-element {
+    position: relative;
 }
 
 .suggestions-dropdown p {
