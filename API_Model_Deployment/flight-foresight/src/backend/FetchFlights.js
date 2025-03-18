@@ -16,9 +16,6 @@ app.use(express.json());
 
 const flightApiKey = process.env.FLIGHT_API_KEY;
 
-// console.log("Loaded Environment Variables:", process.env);
-console.log("API Key: ", flightApiKey);
-
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'build')));
 

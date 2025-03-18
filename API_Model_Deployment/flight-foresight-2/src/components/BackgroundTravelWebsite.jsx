@@ -489,7 +489,7 @@ const BackgroundTravelWebsite = () => {
         )
     }
 
-    // Check
+    // Check the calendar
     const [isOpenCalendar, setIsOpenCalendar] = useState(false);
     const toggleDropdownCalendar = () => setIsOpenCalendar(!isOpenCalendar);
     
@@ -503,30 +503,47 @@ const BackgroundTravelWebsite = () => {
     const [arrivalAirport, setArrivalAirport] = useState('');
     const [departureAirport, setDepartureAirport] = useState('');
 
+    // Tracks if search was triggered
+    const [hasSearched, setHasSearched] = useState(false);
+
+    // Fetch if the trip was a round-trip or a one-way trip
+    const[tripType, setTripType] = useState('1');
+
     const handleSearch = () => {
         // Grab the search query results from user
         const params = {
-            arrival_id: selectedAirportCodeArrival,
             departure_id: selectedAirportCode,
+            arrival_id: selectedAirportCodeArrival,
             outbound_date: startDate ? startDate.toISOString().split('T')[0] : undefined,
             return_date: endDate ? endDate.toISOString().split('T')[0] : undefined,
             currency: currency,
+            type: tripType,
         };
+
+        // Modify the params based on the tripType
+        if(tripType !== "2") {
+            params.return_date = endDate ? endDate.toISOString().split('T')[0] : undefined;
+        }
 
         console.log("CORRECTLY grabbing query")
         console.log(params)
 
-        // Debugging
-        const queryString = new URLSearchParams(params).toString();
-        console.log(`Full Request URL: http://localhost:5001/fetch-flights?${queryString}`);
-        
+        // Mark that a search has been made
+        setHasSearched(true);
+
+        // Set the serverUrls
         const serverUrl = import.meta.env.VITE_SERVER_NODE_URL;
 
-        // axios.get('http://localhost:5001/fetch-flights', { params })
+        // Debugging
+        const queryString = new URLSearchParams(params).toString();
+        console.log(`Full Request URL: ${serverUrl}/fetch-flights?${queryString}`);
+
         axios.get(`${serverUrl}/fetch-flights`, { params })
             .then(response => {
                 // Get the best flight results from the API call
                 setResults(response.data.best_flights);
+                console.log("BEST RESULTSSSSSS ------------------------")
+                console.log(response.data.best_flights)
                 setError(null);
             })
             .catch(err => {
@@ -535,6 +552,11 @@ const BackgroundTravelWebsite = () => {
                 setResults(null);
             });
     };
+
+    // Log hasSearched after it changes
+    useEffect(() => {
+        console.log("SEARCH: ", hasSearched);
+    }, [hasSearched]); // Only runs when `hasSearched` changes
 
     function formatDate(dateString) {
         const date = new Date(dateString); // Create a Date object
@@ -687,10 +709,20 @@ const BackgroundTravelWebsite = () => {
                     <div className='flight-path'>
                         <ul className="hover:bg-transparent menu menu-horizontal bg-base-200">
                             <li className='hover:border-b-2 hover:border-blue-400 hover:bg-transparent'>
-                                <a className="hover:text-blue-400">Roundtrip</a>
+                                <a 
+                                    className="hover:text-blue-400"
+                                    onClick={() => setTripType("2")}
+                                >
+                                    One-way
+                                </a>
                             </li>
                             <li className='hover:border-b-2 hover:border-blue-400 hover:bg-transparent'>
-                                <a className="hover:text-blue-400">One-way</a>
+                                <a 
+                                    className="hover:text-blue-400"
+                                    onClick={() => setTripType("1")}
+                                >
+                                    Roundtrip
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -827,13 +859,16 @@ const BackgroundTravelWebsite = () => {
                 {error && <p style={{ color: 'red' }}>{error}</p>}
 
                 <div>
-                    {/* {results && results.length > 0 ? ( */}
                     {results && results.length > 0 && (
                         <h1 className="mb-5 text-5xl font-bold">Best Flight Results</h1>
                     )}
 
-                    {results ? (
-                    results.map((flight, index) => (
+                    {!results && hasSearched ? (
+                        <p className="mt-40 text-center text-gray-500">No options match your search.</p>
+                    ) : results && results.length > 0 ? (
+                        results.map((flight, index) => (
+                        
+
                         <div key={index} className="collapse collapse-arrow bg-base-200 rounded-lg shadow-lg mb-4">
                             <input type="checkbox" name="my-accordion-2"/>
                             <div className="collapse-title text-xl font-medium flex items-center space-x-4 py-4">
@@ -971,7 +1006,6 @@ const BackgroundTravelWebsite = () => {
 
                     ))
                     ) : (
-                    // <p>No flights available.</p>
                         <p></p>
                     )}
                 </div>
