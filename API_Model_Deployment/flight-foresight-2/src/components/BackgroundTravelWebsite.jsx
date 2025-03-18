@@ -96,72 +96,329 @@ const BackgroundTravelWebsite = () => {
     
     // Check for specific airport codes
     const airportCodes = {
-        "Los Angeles": "LAX",
+        "Allentown/Bethlehem/Easton, PA": "ABE",
+        "Abilene, TX": "ABI",
+        "Albuquerque, NM": "ABQ",
+        "Aberdeen, SD": "ABR",
+        "Albany, GA": "ABY",
+        "Nantucket, MA": "ACK",
+        "Waco, TX": "ACT",
+        "Arcata/Eureka, CA": "ACV",
+        "Atlantic City, NJ": "ACY",
+        "Alexandria, LA": "AEX",
+        "Augusta, GA": "AGS",
+        "Albany, NY": "ALB",
+        "Waterloo, IA": "ALO",
+        "Alamosa, CO": "ALS",
+        "Walla Walla, WA": "ALW",
+        "Amarillo, TX": "AMA",
+        "Alpena, MI": "APN",
+        "Watertown, NY": "ART",
+        "Aspen, CO": "ASE",
+        "Atlanta, GA": "ATL",
+        "Watertown, SD": "ATY",
+        "Austin, TX": "AUS",
+        "Asheville, NC": "AVL",
+        "Wilkes-Barre/Scranton, PA": "AVP",
+        "Kalamazoo, MI": "AZO",
+        "Hartford, CT": "BDL",
+        "Scottsbluff, NE": "BFF",
+        "Bakersfield, CA": "BFL",
+        "Mobile, AL": "BFM",
+        "Binghamton, NY": "BGM",
+        "Bangor, ME": "BGR",
+        "Birmingham, AL": "BHM",
+        "Bishop, CA": "BIH",
+        "Billings, MT": "BIL",
+        "Bismarck/Mandan, ND": "BIS",
+        "Bellingham, WA": "BLI",
+        "Belleville, IL": "BLV",
+        "Bloomington/Normal, IL": "BMI",
+        "Nashville, TN": "BNA",
+        "Boise, ID": "BOI",
+        "Boston, MA": "BOS",
+        "Beaumont/Port Arthur, TX": "BPT",
+        "Brainerd, MN": "BRD",
+        "Brownsville, TX": "BRO",
+        "Butte, MT": "BTM",
+        "Baton Rouge, LA": "BTR",
+        "Burlington, VT": "BTV",
+        "Buffalo, NY": "BUF",
+        "Burbank, CA": "BUR",
+        "Baltimore, MD": "BWI",
+        "Bozeman, MT": "BZN",
+        "Columbia, SC": "CAE",
+        "Akron/Canton, OH": "CAK",
+        "Cedar City, UT": "CDC",
+        "Cape Girardeau, MO": "CGI",
+        "Chattanooga, TN": "CHA",
+        "Charlottesville, VA": "CHO",
+        "Charleston, SC": "CHS",
+        "Cedar Rapids/Iowa City, IA": "CID",
+        "Sault Ste. Marie, MI": "CIU",
+        "Clarksburg, WV": "CKB",
+        "Cleveland, OH": "CLE",
+        "College Station, TX": "CLL",
+        "Charlotte, NC": "CLT",
+        "Columbus, OH": "CMH",
+        "Champaign/Urbana, IL": "CMI",
+        "Hancock/Houghton, MI": "CMX",
+        "Moab, UT": "CNY",
+        "Cody, WY": "COD",
+        "Colorado Springs, CO": "COS",
+        "Columbia, MO": "COU",
+        "Casper, WY": "CPR",
+        "Corpus Christi, TX": "CRP",
+        "Charleston, WV": "CRW",
+        "Columbus, GA": "CSG",
+        "Cincinnati, OH": "CVG",
+        "Cheyenne, WY": "CYS",
+        "Daytona Beach, FL": "DAB",
+        "Dallas, TX (Love Field)": "DAL",
+        "Dayton, OH": "DAY",
+        "Dubuque, IA": "DBQ",
+        "Washington, DC (Reagan)": "DCA",
+        "Dodge City, KS": "DDC",
+        "Decatur, IL": "DEC",
+        "Denver, CO": "DEN",
+        "Dallas/Fort Worth, TX": "DFW",
+        "Dothan, AL": "DHN",
+        "Dickinson, ND": "DIK",
+        "Duluth, MN": "DLH",
+        "Durango, CO": "DRO",
+        "Del Rio, TX": "DRT",
+        "Des Moines, IA": "DSM",
+        "Detroit, MI": "DTW",
+        "Devils Lake, ND": "DVL",
+        "Kearney, NE": "EAR",
+        "Wenatchee, WA": "EAT",
+        "Eau Claire, WI": "EAU",
+        "Panama City, FL": "ECP",
+        "Eagle/Vail, CO": "EGE",
+        "Elko, NV": "EKO",
+        "Elmira/Corning, NY": "ELM",
+        "El Paso, TX": "ELP",
+        "Erie, PA": "ERI",
+        "Escanaba, MI": "ESC",
+        "Eugene, OR": "EUG",
+        "Evansville, IN": "EVV",
+        "New Bern, NC": "EWN",
+        "Newark, NJ": "EWR",
+        "Key West, FL": "EYW",
+        "Fargo, ND": "FAR",
+        "Fresno, CA": "FAT",
+        "Fayetteville, NC": "FAY",
+        "Flagstaff, AZ": "FLG",
+        "Fort Lauderdale, FL": "FLL",
+        "Florence, SC": "FLO",
+        "Flint, MI": "FNT",
+        "Fort Dodge, IA": "FOD",
+        "Sioux Falls, SD": "FSD",
+        "Fort Smith, AR": "FSM",
+        "Fort Wayne, IN": "FWA",
+        "Gillette, WY": "GCC",
+        "Garden City, KS": "GCK",
+        "Spokane, WA": "GEG",
+        "Grand Forks, ND": "GFK",
+        "Longview, TX": "GGG",
+        "Grand Junction, CO": "GJT",
+        "Gainesville, FL": "GNV",
+        "Gulfport/Biloxi, MS": "GPT",
+        "Green Bay, WI": "GRB",
+        "Grand Island, NE": "GRI",
+        "Killeen/Fort Hood, TX": "GRK",
+        "Grand Rapids, MI": "GRR",
+        "Greensboro/High Point, NC": "GSO",
+        "Greenville/Spartanburg, SC": "GSP",
+        "Great Falls, MT": "GTF",
+        "Columbus/Tupelo, MS": "GTR",
+        "Gunnison/Crested Butte, CO": "GUC",
+        "Hayden/Steamboat Springs, CO": "HDN",
+        "Hagerstown, MD": "HGR",
+        "Hibbing/Chisholm, MN": "HIB",
+        "Helena, MT": "HLN",
+        "Houston, TX (Hobby)": "HOU",
+        "White Plains, NY": "HPN",
+        "Harlingen, TX": "HRL",
+        "Huntsville, AL": "HSV",
+        "Huntington, WV": "HTS",
+        "New Haven, CT": "HVN",
+        "Hyannis, MA": "HYA",
+        "Hays, KS": "HYS",
+        "Washington, DC (Dulles)": "IAD",
+        "Niagara Falls, NY": "IAG",
+        "Houston, TX (Intercontinental)": "IAH",
+        "Wichita, KS": "ICT",
+        "Idaho Falls, ID": "IDA",
+        "Wilmington, DE": "ILG",
+        "Wilmington, NC": "ILM",
+        "Iron Mountain, MI": "IMT",
+        "Indianapolis, IN": "IND",
+        "International Falls, MN": "INL",
+        "Williamsport, PA": "IPT",
+        "Williston, ND": "ISN",
+        "Islip, NY": "ISP",
+        "Ithaca, NY": "ITH",
+        "Jackson Hole, WY": "JAC",
+        "Jackson, MS": "JAN",
+        "Jacksonville, FL": "JAX",
         "New York (JFK)": "JFK",
-        "San Francisco": "SFO",
-        "Chicago (O'Hare)": "ORD",
-        "Miami": "MIA",
-        "Atlanta": "ATL",
-        "Dallas/Fort Worth": "DFW",
-        "Denver": "DEN",
-        "Seattle": "SEA",
-        "Las Vegas": "LAS",
-        "Orlando": "MCO",
-        "Boston (Logan)": "BOS",
-        "Phoenix": "PHX",
-        "Houston (Bush Intercontinental)": "IAH",
-        "San Diego": "SAN",
-        "Minneapolis (MSP)": "MSP",
-        "Detroit (DTW)": "DTW",
-        "Charlotte": "CLT",
-        "Philadelphia": "PHL",
-        "Washington D.C. (Dulles)": "IAD",
-        "Salt Lake City": "SLC",
-        "Baltimore (BWI)": "BWI",
-        "Portland (PDX)": "PDX",
-        "Kansas City": "MCI",
-        "Cleveland (CLE)": "CLE",
-        "Indianapolis": "IND",
-        "St. Louis": "STL",
-        "Tampa": "TPA",
-        "Sacramento": "SMF",
-        "Raleigh/Durham": "RDU",
-        "Newark": "EWR",
-        "Pittsburgh": "PIT",
-        "Austin": "AUS",
-        "Nashville": "BNA",
-        "Columbus (CMH)": "CMH",
-        "Cincinnati": "CVG",
-        "Louisville": "SDF",
-        "Oklahoma City": "OKC",
-        "Jacksonville": "JAX",
-        "Richmond": "RIC",
-        "Charlotte": "CLT",
-        "Birmingham": "BHM",
-        "New Orleans": "MSY",
-        "Anchorage": "ANC",
-        "Boise": "BOI",
-        "Fresno": "FAT",
-        "Albany": "ALB",
-        "Grand Rapids": "GRR",
-        "Lubbock": "LBB",
-        "Madison": "MSN",
-        "Tucson": "TUS",
-        "Charleston (SC)": "CHS",
-        "Fort Lauderdale": "FLL",
-        "Greensboro": "GBO",
-        "Des Moines": "DSM",
-        "Chattanooga": "CHA",
-        "Buffalo": "BUF",
-        "Hartford": "BDL",
-        "Louisville": "SDF",
-        "Palm Springs": "PSP",
-        "Salt Lake City": "SLC",
-        "Bakersfield": "BFL",
-        "Pensacola": "PNS",
-        "Burlington (VT)": "BTV",
-        "Montpelier": "MPV",
-        "Lynchburg": "LYH"
+        "Joplin, MO": "JLN",
+        "Jamestown, ND": "JMS",
+        "Johnstown, PA": "JST",
+        "Lansing, MI": "LAN",
+        "Las Vegas, NV": "LAS",
+        "Lawton, OK": "LAW",
+        "Los Angeles, CA": "LAX",
+        "Lubbock, TX": "LBB",
+        "North Platte, NE": "LBF",
+        "Liberal, KS": "LBL",
+        "Lake Charles, LA": "LCH",
+        "Lexington, KY": "LEX",
+        "Lafayette, LA": "LFT",
+        "New York (LGA)": "LGA",
+        "Long Beach, CA": "LGB",
+        "Little Rock, AR": "LIT",
+        "Lincoln, NE": "LNK",
+        "Laredo, TX": "LRD",
+        "La Crosse, WI": "LSE",
+        "Lewiston, ID": "LWS",
+        "Lynchburg, VA": "LYH",
+        "Midland/Odessa, TX": "MAF",
+        "Saginaw/Bay City/Midland, MI": "MBS",
+        "Kansas City, MO": "MCI",
+        "Orlando, FL": "MCO",
+        "Mason City, IA": "MCW",
+        "Harrisburg, PA": "MDT",
+        "Chicago (Midway), IL": "MDW",
+        "Meridian, MS": "MEI",
+        "Memphis, TN": "MEM",
+        "McAllen, TX": "MFE",
+        "Medford, OR": "MFR",
+        "Montgomery, AL": "MGM",
+        "Manhattan/Ft. Riley, KS": "MHK",
+        "Manchester, NH": "MHT",
+        "Miami, FL": "MIA",
+        "Milwaukee, WI": "MKE",
+        "Muskegon, MI": "MKG",
+        "Melbourne, FL": "MLB",
+        "Moline/Quad Cities, IL": "MLI",
+        "Monroe, LA": "MLU",
+        "Mobile, AL": "MOB",
+        "Minot, ND": "MOT",
+        "Monterey, CA": "MRY",
+        "Madison, WI": "MSN",
+        "Missoula, MT": "MSO",
+        "Minneapolis/St. Paul, MN": "MSP",
+        "New Orleans, LA": "MSY",
+        "Montrose/Telluride, CO": "MTJ",
+        "Martha's Vineyard, MA": "MVY",
+        "Myrtle Beach, SC": "MYR",
+        "Jacksonville/Camp Lejeune, NC": "OAJ",
+        "Oakland, CA": "OAK",
+        "Ogden, UT": "OGD",
+        "Oklahoma City, OK": "OKC",
+        "Omaha, NE": "OMA",
+        "Ontario, CA": "ONT",
+        "Chicago (O'Hare), IL": "ORD",
+        "Norfolk, VA": "ORF",
+        "Worcester, MA": "ORH",
+        "North Bend/Coos Bay, OR": "OTH",
+        "Owensboro, KY": "OWB",
+        "Everett, WA": "PAE",
+        "Paducah, KY": "PAH",
+        "Plattsburgh, NY": "PBG",
+        "West Palm Beach, FL": "PBI",
+        "Portland, OR": "PDX",
+        "Punta Gorda, FL": "PGD",
+        "Newport News/Williamsburg, VA": "PHF",
+        "Philadelphia, PA": "PHL",
+        "Phoenix, AZ": "PHX",
+        "Peoria, IL": "PIA",
+        "Hattiesburg/Laurel, MS": "PIB",
+        "St. Pete/Clearwater, FL": "PIE",
+        "Pocatello, ID": "PIH",
+        "Pierre, SD": "PIR",
+        "Pittsburgh, PA": "PIT",
+        "Pellston, MI": "PLN",
+        "Pensacola, FL": "PNS",
+        "Prescott, AZ": "PRC",
+        "Pasco/Tri-Cities, WA": "PSC",
+        "Portsmouth, NH": "PSM",
+        "Palm Springs, CA": "PSP",
+        "Pueblo, CO": "PUB",
+        "Pullman/Moscow, WA": "PUW",
+        "Providence, RI": "PVD",
+        "Provo, UT": "PVU",
+        "Plainview, TX": "PVM",
+        "Rapid City, SD": "RAP",
+        "Redding, CA": "RDD",
+        "Redmond/Bend, OR": "RDM",
+        "Raleigh/Durham, NC": "RDU",
+        "Rockford, IL": "RFD",
+        "Rhinelander, WI": "RHI",
+        "Richmond, VA": "RIC",
+        "Riverton, WY": "RIW",
+        "Rock Springs, WY": "RKS",
+        "Reno, NV": "RNO",
+        "Roanoke, VA": "ROA",
+        "Rochester, NY": "ROC",
+        "Roswell, NM": "ROW",
+        "Rochester, MN": "RST",
+        "Fort Myers, FL": "RSW",
+        "Santa Fe, NM": "SAF",
+        "San Diego, CA": "SAN",
+        "San Antonio, TX": "SAT",
+        "Savannah, GA": "SAV",
+        "Santa Barbara, CA": "SBA",
+        "South Bend, IN": "SBN",
+        "San Luis Obispo, CA": "SBP",
+        "Stockton, CA": "SCK",
+        "Louisville, KY": "SDF",
+        "Seattle, WA": "SEA",
+        "Orlando/Sanford, FL": "SFB",
+        "San Francisco, CA": "SFO",
+        "Springfield/Branson, MO": "SGF",
+        "St. George, UT": "SGU",
+        "Sheridan, WY": "SHR",
+        "Shreveport, LA": "SHV",
+        "San Jose, CA": "SJC",
+        "San Angelo, TX": "SJT",
+        "Salt Lake City, UT": "SLC",
+        "Salina, KS": "SLN",
+        "Sacramento, CA": "SMF",
+        "Santa Maria, CA": "SMX",
+        "Santa Ana/Orange County, CA": "SNA",
+        "Springfield, IL": "SPI",
+        "Wichita Falls, TX": "SPS",
+        "Sarasota/Bradenton, FL": "SRQ",
+        "St. Cloud, MN": "STC",
+        "St. Louis, MO": "STL",
+        "Santa Rosa, CA": "STS",
+        "Sioux City, IA": "SUX",
+        "Stillwater, OK": "SWO",
+        "Syracuse, NY": "SYR",
+        "Terre Haute, IN": "TBN",
+        "Tallahassee, FL": "TLH",
+        "Toledo, OH": "TOL",
+        "Tampa, FL": "TPA",
+        "Bristol/Johnson City/Kingsport, TN": "TRI",
+        "Trenton, NJ": "TTN",
+        "Tulsa, OK": "TUL",
+        "Tucson, AZ": "TUS",
+        "Traverse City, MI": "TVC",
+        "Twin Falls, ID": "TWF",
+        "Texarkana, AR": "TXK",
+        "Tyler, TX": "TYR",
+        "Knoxville, TN": "TYS",
+        "Quincy, IL": "UIN",
+        "Victoria, TX": "VCT",
+        "Vernal, UT": "VEL",
+        "Valdosta, GA": "VLD",
+        "Valparaiso, FL": "VPS",
+        "Fayetteville/Springdale, AR": "XNA",
+        "Wasilla, AK": "XWA",
+        "Yakima, WA": "YKM",
     };
 
     const [selectedAirportCode, setSelectedAirportCode] = useState('');
@@ -249,8 +506,8 @@ const BackgroundTravelWebsite = () => {
     const handleSearch = () => {
         // Grab the search query results from user
         const params = {
-            arrival_id: selectedAirportCode,
-            departure_id: selectedAirportCodeArrival,
+            arrival_id: selectedAirportCodeArrival,
+            departure_id: selectedAirportCode,
             outbound_date: startDate ? startDate.toISOString().split('T')[0] : undefined,
             return_date: endDate ? endDate.toISOString().split('T')[0] : undefined,
             currency: currency,
@@ -262,7 +519,7 @@ const BackgroundTravelWebsite = () => {
         // Debugging
         const queryString = new URLSearchParams(params).toString();
         console.log(`Full Request URL: http://localhost:5001/fetch-flights?${queryString}`);
-
+        
         const serverUrl = import.meta.env.VITE_SERVER_NODE_URL;
 
         // axios.get('http://localhost:5001/fetch-flights', { params })
@@ -278,6 +535,19 @@ const BackgroundTravelWebsite = () => {
                 setResults(null);
             });
     };
+
+    function formatDate(dateString) {
+        const date = new Date(dateString); // Create a Date object
+        const options = { month: 'long', day: 'numeric' }; // Specify format options
+        return date.toLocaleDateString('en-US', options); // Format the date
+      }
+      
+      function splitDateTime(datetime) {
+        console.log("datetime:", datetime); // Log the input datetime to check if it's correct
+        const [date, time] = datetime.split(' ');
+        const formattedDate = formatDate(date); // Convert the date into "Month Day" format
+        return { date: formattedDate, time };
+      }
 
     return (
         <div>
@@ -565,7 +835,7 @@ const BackgroundTravelWebsite = () => {
                     {results ? (
                     results.map((flight, index) => (
                         <div key={index} className="collapse collapse-arrow bg-base-200 rounded-lg shadow-lg mb-4">
-                            <input type="radio" name="my-accordion-2"/>
+                            <input type="checkbox" name="my-accordion-2"/>
                             <div className="collapse-title text-xl font-medium flex items-center space-x-4 py-4">
                                 <img src={flight.airline_logo} alt={flight.flights[0].airline} width="50" />
                                 <div className="flex-grow">
@@ -576,63 +846,115 @@ const BackgroundTravelWebsite = () => {
                             </div>
 
                             <div className="collapse-content p-4 space-y-4 bg-white rounded-lg shadow-lg">
-                                {/* Departure Section */}
-                                <div className="space-y-3">
-                                    <div className="flex items-center space-x-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21l-2-2m0 0l-2-2m2 2l2-2m-2 2V3a2 2 0 00-2-2H7a2 2 0 00-2 2v14l-2 2h16z" />
-                                        </svg>
-                                        <p className="text-lg font-semibold">Departure</p>
-                                    </div>
-                                    <p>{flight.flights[0].departure_airport.name} at {flight.flights[0].departure_airport.time}</p>
-                                </div>
 
-                                {/* Arrival Section */}
-                                <div className="space-y-3">
-                                    <div className="flex items-center space-x-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-2 2m0 0l-2 2m2-2h-7l-4 4V5l4 4h7z" />
-                                        </svg>
-                                        <p className="text-lg font-semibold">Arrival</p>
-                                    </div>
-                                    <p>{flight.flights[0].arrival_airport.name} at {flight.flights[0].arrival_airport.time}</p>
-                                </div>
+                            <div className="entireTrip">
+                                {flight.flights.map((flightDetails, index) => (
+                                    <div key={index}>
+                                    <div className="space-y-6"> {/* This adds vertical spacing between child divs */}
+                                     
+                                     
+                                     {/* Departure Section */}
+                                    <div className="space-y-1">
+                                        <div className="flex items-center space-x-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21l-2-2m0 0l-2-2m2-2l2-2m-2 2V3a2 2 0 00-2-2H7a2 2 0 00-2 2v14l-2 2h16z" />
+                                            </svg>
+                                            <p className="text-lg font-semibold">Departure</p>
+                                        </div>
 
-                                {/* Duration Section */}
-                                <div className="space-y-3">
-                                    <div className="flex items-center space-x-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3H6v4H2v2h4v4h2V9h4V7h-4z" />
-                                        </svg>
-                                        <p className="text-lg font-semibold">Duration</p>
-                                    </div>
-                                    <p>{flight.total_duration} minutes</p>
-                                </div>
+                                        {/* Aligning airport name to the left & formatted date to the right */}
+                                        <div className="flex justify-between items-center pl-7">
+                                            <p className="flex-1">{flightDetails.departure_airport.name}</p>
+                                            <p className="text-gray-600">
+                                                {splitDateTime(flightDetails.departure_airport.time).date} 
+                                                <span className="ml-2">{splitDateTime(flightDetails.departure_airport.time).time}</span>
+                                            </p>
+                                        </div>
 
-                                {/* Carbon Emissions Section */}
-                                <div className="space-y-3">
-                                    <div className="flex items-center space-x-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4v16h18V4H3zm2 2h14v12H5V6zm5 8h4v2h-4z" />
-                                        </svg>
-                                        <p className="text-lg font-semibold">Carbon Emissions</p>
                                     </div>
-                                    <p>{flight.carbon_emissions.this_flight} g</p>
-                                </div>
 
-                                {/* Travel Class Section */}
-                                <div className="space-y-3">
-                                    <div className="flex items-center space-x-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3H6v4H2v2h4v4h2V9h4V7h-4z" />
-                                        </svg>
-                                        <p className="text-lg font-semibold">Travel Class</p>
+
+                                        {/* Arrival Section */}
+                                        <div className="space-y-1">
+                                            <div className="flex items-center space-x-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-2 2m0 0l-2 2m2-2h-7l-4 4V5l4 4h7z" />
+                                                </svg>
+                                                <p className="text-lg font-semibold">Arrival</p>
+                                            </div>
+
+                                            <div className="flex justify-between items-center pl-7">
+                                                <p className="flex-1">{flightDetails.arrival_airport.name}</p>
+                                                <p className="text-gray-600">
+                                                    {splitDateTime(flightDetails.arrival_airport.time).date} 
+                                                    <span className="ml-2">{splitDateTime(flightDetails.arrival_airport.time).time}</span>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p>{flight.flights[0].travel_class}</p> {/* Travel Class info */}
-                                </div>
 
-                                {/* Flight Type - Round trip or One way */}
-                                <div className="space-y-3">
+
+                                    {/* Layover Section - Added between flights */}
+                                    {index < flight.flights.length - 1 && flight.layovers?.[index] && (
+                                        <div className="space-y-3 text-center">
+                                            <div className="flex items-center justify-center space-x-2 text-black">
+                                                {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3H6v4H2v2h4v4h2V9h4V7h-4z" />
+                                                </svg> */}
+                                                <div className='w-full flex flex-col space-y-2 pt-3 pb-3'> 
+                                                    <hr className="border-t border-gray-300" />
+                                                    <p className="text-sm font-semibold">
+                                                        {flight.layovers[index].duration} min layover ⋅ {flight.flights[index].arrival_airport.name}
+                                                    </p>
+                                                    <hr className="border-t border-gray-300" />
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    </div>
+
+
+
+                                ))}
+                            </div>
+
+                            {/* Duration Section */}
+                            <div className="space-y-1">
+                                <div className="flex items-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3H6v4H2v2h4v4h2V9h4V7h-4z" />
+                                </svg>
+                                <p className="text-lg font-semibold">Duration</p>
+                                </div>
+                                <p className="pl-7">{flight.total_duration} minutes</p>
+                            </div>
+
+                            {/* Carbon Emissions Section */}
+                            <div className="space-y-1">
+                                <div className="flex items-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4v16h18V4H3zm2 2h14v12H5V6zm5 8h4v2h-4z" />
+                                </svg>
+                                <p className="text-lg font-semibold">Carbon Emissions Estimate</p>
+                                </div>
+                                <p className="pl-7">{flight.carbon_emissions.this_flight} g</p>
+                            </div>
+
+                            {/* Travel Class Section */}
+                            <div className="space-y-1">
+                                <div className="flex items-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3H6v4H2v2h4v4h2V9h4V7h-4z" />
+                                </svg>
+                                <p className="text-lg font-semibold">Travel Class</p>
+                                </div>
+                                <p className="pl-7">{flight.flights[0].travel_class}</p>
+                            </div>
+                            
+                             {/* Flight Type - Round trip or One way */}
+                             <div className="space-y-3">
                                     <div className="flex items-center space-x-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 17l-5 5m0 0l-5-5m5 5V3m0 14l5-5m-5 5l-5-5" />
@@ -641,8 +963,8 @@ const BackgroundTravelWebsite = () => {
                                     </div>
                                     <p>{flight.type}</p> {/* Travel Class info */}
                                 </div>
-                            </div>
-
+                        </div>
+                               
                         </div>
 
                         
@@ -672,7 +994,7 @@ const BackgroundTravelWebsite = () => {
                             className='bg-white rounded-[20px] py-12 px-6 min-h-[220px] flex justify-evenly items-center flex-col'
                         >
                             <img src={jetsetAI} alt="AI for jetSet" className='w-25 h-25 object-contain' />
-                            <h3 className='text-black text-[20px] font-bold text-center'>ask jetSet AI</h3>
+                            <h3 className='text-black text-[20px] font-bold text-center'>flightforesight</h3>
                         </div>
                     </motion.div>
                 </ParallaxTilt>
@@ -803,7 +1125,7 @@ const BackgroundTravelWebsite = () => {
                     }} 
                 />
                 <p>
-                FlightForesight
+                jetSet
                 <br />
                 </p>
             </aside>
