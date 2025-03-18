@@ -800,6 +800,7 @@ const BackgroundTravelWebsite = () => {
                             placeholder="Leaving from"
                             value={departureAirport}
                             onChange={handleInputChange}
+                            isClearable
                             formatOptionLabel={formatOptionLabel} // Custom render function
                             className="react-select-container"
                             classNamePrefix="react-select"
@@ -862,6 +863,7 @@ const BackgroundTravelWebsite = () => {
                         placeholder="Going to"
                         value={arrivalAirport}
                         onChange={handleInputChangeArrival}
+                        isClearable
                         formatOptionLabel={formatOptionLabel} // Custom render function
                         className="react-select-container"
                         classNamePrefix="react-select"
