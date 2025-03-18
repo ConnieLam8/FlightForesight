@@ -261,10 +261,10 @@ const ChatBot = () => {
 
     const formatResults = (results) => {
         const { regression_result } = results;
-        if (regression_result > 0) {
-            return `The flight will be ${Math.abs(regression_result).toFixed(2)} minutes early.`;
-        } else if (regression_result < 0) {
-            return `The flight will be ${regression_result.toFixed(2)} minutes late.`;
+        if (regression_result < 0) {
+            return `The flight will be ${Math.abs(regression_result).toFixed(2)} minutes late.`;
+        } else if (regression_result > 0) {
+            return `The flight will be ${regression_result.toFixed(2)} minutes early.`;
         } else {
             return "The flight is on time.";
         }

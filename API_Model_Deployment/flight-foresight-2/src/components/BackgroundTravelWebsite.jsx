@@ -614,16 +614,21 @@ const BackgroundTravelWebsite = () => {
 
     function formatDate(dateString) {
         const date = new Date(dateString); // Create a Date object
-        const options = { month: 'long', day: 'numeric' }; // Specify format options
+        const options = { 
+            month: 'long', 
+            day: 'numeric', 
+            year: 'numeric' // Include the year in the format
+        };
         return date.toLocaleDateString('en-US', options); // Format the date
-      }
-      
-      function splitDateTime(datetime) {
+    }
+    
+    function splitDateTime(datetime) {
         console.log("datetime:", datetime); // Log the input datetime to check if it's correct
         const [date, time] = datetime.split(' ');
-        const formattedDate = formatDate(date); // Convert the date into "Month Day" format
+        const formattedDate = formatDate(date); // Convert the date into "Month Day Year" format
         return { date: formattedDate, time };
-      }
+    }
+    
 
     return (
         <div>
