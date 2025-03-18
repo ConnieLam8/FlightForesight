@@ -425,36 +425,75 @@ const BackgroundTravelWebsite = () => {
     const [selectedAirportCode, setSelectedAirportCode] = useState('');
     const [selectedAirportCodeArrival, setSelectedAirportCodeArrival] = useState('');
 
-    const handleInputChange = (e) => {
-        const input = e.target.value;
-        setDepartureAirport(input);
+    // const handleInputChange = (e) => {
+    //     const input = e.target.value;
+    //     setDepartureAirport(input);
     
-        // Find matching airport code based on the input
-        const matchedAirport = Object.keys(airportCodes).find((city) =>
-            city.toLowerCase().includes(input.toLowerCase())
-        );
+    //     // Find matching airport code based on the input
+    //     const matchedAirport = Object.keys(airportCodes).find((city) =>
+    //         city.toLowerCase().includes(input.toLowerCase())
+    //     );
 
-        if (matchedAirport) {
-            setSelectedAirportCode(airportCodes[matchedAirport]); // Save airport code
+    //     if (matchedAirport) {
+    //         setSelectedAirportCode(airportCodes[matchedAirport]); // Save airport code
+    //     } else {
+    //         setSelectedAirportCode(''); // Reset if no match
+    //     }
+    // };
+
+    const handleInputChange = (selectedOption) => {
+        if (!selectedOption) {
+            setDepartureAirport(null);
+            setSelectedAirportCode(''); // Reset if no selection
+            return;
+        }
+    
+        setDepartureAirport(selectedOption);
+    
+        // Find matching airport code based on the selected label
+        const matchedAirportCode = airportCodes[selectedOption.label];
+    
+        if (matchedAirportCode) {
+            setSelectedAirportCode(matchedAirportCode); // Save airport code
         } else {
             setSelectedAirportCode(''); // Reset if no match
         }
     };
-
-    const handleInputChangeArrival = (e) => {
-        const input = e.target.value;
-        setArrivalAirport(input);
     
-        // Find matching airport code based on the input
-        const matchedAirport = Object.keys(airportCodes).find((city) =>
-          city.toLowerCase().includes(input.toLowerCase())
-        );
-        if (matchedAirport) {
-          setSelectedAirportCodeArrival(airportCodes[matchedAirport]); // Save airport code
-        } else {
-          setSelectedAirportCodeArrival(''); // Reset if no match
+
+    // const handleInputChangeArrival = (e) => {
+    //     const input = e.target.value;
+    //     setArrivalAirport(input);
+    
+    //     // Find matching airport code based on the input
+    //     const matchedAirport = Object.keys(airportCodes).find((city) =>
+    //       city.toLowerCase().includes(input.toLowerCase())
+    //     );
+    //     if (matchedAirport) {
+    //       setSelectedAirportCodeArrival(airportCodes[matchedAirport]); // Save airport code
+    //     } else {
+    //       setSelectedAirportCodeArrival(''); // Reset if no match
+    //     }
+    // }
+
+    const handleInputChangeArrival = (selectedOption) => {
+        if (!selectedOption) {
+            setArrivalAirport(null);
+            setSelectedAirportCodeArrival(''); // Reset if no selection
+            return;
         }
-    }
+    
+        setArrivalAirport(selectedOption);
+    
+        // Find matching airport code based on the selected label
+        const matchedAirportCode = airportCodes[selectedOption.label];
+    
+        if (matchedAirportCode) {
+            setSelectedAirportCodeArrival(matchedAirportCode); // Save airport code
+        } else {
+            setSelectedAirportCodeArrival(''); // Reset if no match
+        }
+    };
 
     const options = Object.keys(airportCodes).map((airport) => ({
         value: airport,
@@ -748,22 +787,22 @@ const BackgroundTravelWebsite = () => {
                         <div className="label">
                             <span className="label-text">Leaving from?</span>
                         </div>
-                        <input 
+                        {/* <input 
                             list="airport-list"
                             type="text" 
                             placeholder="Leaving from" 
                             value={departureAirport} 
                             onChange={handleInputChange}
                             className="input input-bordered w-full max-w-xs border-2 border-solid border-blue-800" 
-                        />
+                        /> */}
                         <Select
-                        options={options}
-                        placeholder="Leaving from"
-                        value={departureAirport}
-                        onChange={handleInputChange}
-                        formatOptionLabel={formatOptionLabel} // Custom render function
-                        className="react-select-container"
-                        classNamePrefix="react-select"
+                            options={options}
+                            placeholder="Leaving from"
+                            value={departureAirport}
+                            onChange={handleInputChange}
+                            formatOptionLabel={formatOptionLabel} // Custom render function
+                            className="react-select-container"
+                            classNamePrefix="react-select"
                         />
                         {/* Datalist for autofill
                         <datalist id="airport-list">
@@ -810,14 +849,14 @@ const BackgroundTravelWebsite = () => {
                         <div className="label">
                             <span className="label-text">Going to?</span>
                         </div>
-                        <input 
+                        {/* <input 
                             list="airport-list"
                             type="text" 
                             placeholder="Going to" 
                             value={arrivalAirport} 
                             onChange={handleInputChangeArrival}
                             className="input input-bordered w-full max-w-xs border-2 border-solid border-blue-800" 
-                        />
+                        /> */}
                         <Select
                         options={options}
                         placeholder="Going to"
