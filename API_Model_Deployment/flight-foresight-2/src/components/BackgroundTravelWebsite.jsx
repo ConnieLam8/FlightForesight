@@ -461,6 +461,7 @@ const BackgroundTravelWebsite = () => {
                     className="btn btn-circle btn-outline"
                     onClick={swapAirports}
                     title="Swap airports"
+                    style={{ marginTop: '36px' }} /* Adjust this value as needed */
                     >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
