@@ -774,11 +774,7 @@ const BackgroundTravelWebsite = () => {
                         placeholder="Leaving from"
                         value={departureAirport}
                         // onChange={(selectedOption) => setDepartureAirport(selectedOption)}
-                        // onChange={handleInputChange}
-                        onChange={(selectedOption) => {
-                            setDepartureAirport(selectedOption);
-                            handleInputChange(); // Call without passing selectedOption
-                        }}
+                        onChange={handleInputChange}
                         formatOptionLabel={formatOptionLabel} // Custom render function
                         className="react-select-container"
                         classNamePrefix="react-select"
@@ -818,11 +814,7 @@ const BackgroundTravelWebsite = () => {
                         placeholder="Going to"
                         value={arrivalAirport}
                         // onChange={(selectedOption) => setArrivalAirport(selectedOption)}
-                        // onChange={handleInputChangeArrival}
-                        onChange={(selectedOption) => {
-                            setArrivalAirport(selectedOption);
-                            handleInputChangeArrival(); // Call without passing selectedOption
-                        }}
+                        onChange={handleInputChangeArrival}
                         formatOptionLabel={formatOptionLabel} // Custom render function
                         className="react-select-container"
                         classNamePrefix="react-select"
