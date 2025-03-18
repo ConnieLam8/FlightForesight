@@ -341,7 +341,7 @@ app.post('/verifydepartureDate', async (req, res) => {
         return res.status(400).json({ error: 'Invalid format. Please use MM-DD-YYYY.' });
     }
     // Convert MM-DD-YYYY to Date object (JS uses YYYY-MM-DD)
-    const [month, day, year] = departureDate.split('-');
+    const [month, day, year] = departureDate.split('/').map(Number);
     const inputDate = new Date(`${year}-${month}-${day}`);
     const today = new Date();
     today.setHours(0, 0, 0, 0); // Remove time part for accurate comparison

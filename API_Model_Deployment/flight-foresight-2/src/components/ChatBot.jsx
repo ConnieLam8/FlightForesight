@@ -43,13 +43,7 @@ const ChatBot = () => {
             year: "numeric",
         }); // Converts to MM/DD/YYYY
 
-        setFlightDetails((prev) => ({ ...prev, departureDate: formattedDate }));
-        setMessages((prev) => [...prev, { text: formattedDate, isBot: false }]);
-
-        if (currentStep < steps.length - 1) {
-            setCurrentStep((prev) => prev + 1);
-            setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
-        }
+        handleUserResponse(formattedDate); // Pass to `handleUserResponse`
     };
 
     const fetchSuggestions = async (input, stepKey) => {
@@ -190,8 +184,6 @@ const ChatBot = () => {
                         { text: "Invalid Date Format . Please try again.", isBot: true }
                     ]);
                 }
-
-
             }
 
         else if (currentKey === "crs_dep_military_date") {
@@ -324,7 +316,7 @@ const ChatBot = () => {
                             <DatePicker
                                 selected={flightDetails.departureDate}
                                 onChange={handleDateChange}
-                                // dateFormat="MM/dd/yyyy"
+                                 dateFormat="MM/dd/yyyy"
                                 className="input input-bordered w-full max-w-xs"
                                 disabled={!!flightDetails.departureDate}
                             />
@@ -335,7 +327,6 @@ const ChatBot = () => {
                         name="userInput"
                         placeholder="Type your response..."
                         onChange={handleInputChange}
-                        pattern="\d{2}-\d{2}-\d{4}"  // Ensure input matches MM-DD-YYYY format
                         className="input input-bordered w-full max-w-xs"
                         required
                     />
