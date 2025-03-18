@@ -331,6 +331,7 @@ const ChatBot = () => {
                         onChange={handleInputChange}
                         className="input input-bordered w-full max-w-xs"
                         required
+                        autocomplete="off"
                     />
                     )}
                     {suggestions.length > 0 && (

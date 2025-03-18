@@ -2,22 +2,23 @@
     position: flex;
     background-color: #f4f4f4;
     border-radius: 6px;
-    width: calc(100% - 2px); /* Adjust width to match input field */
+    width: calc(100% - 20px); /* Adjust width to match input field */
     max-height: 200px; /* Increased height */
     overflow-y: auto; /* Enable vertical scrolling */
     z-index: 1000; /* Ensure it appears above other elements */
     margin-top: 5px;
     color: #000080;
+    font-size: 10px;
 }
 
-.suggestions-dropdown p {
+.suggestions-dropdown li {
     padding: 10px;
     margin: 0;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
-.suggestions-dropdown p:hover {
+.suggestions-dropdown li:hover {
     background-color: rgba(0, 153, 255, 0.67); /* Light blue background on hover */
 }
 
