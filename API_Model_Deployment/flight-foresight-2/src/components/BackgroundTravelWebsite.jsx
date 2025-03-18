@@ -613,11 +613,11 @@ const BackgroundTravelWebsite = () => {
     }, [hasSearched]); // Only runs when `hasSearched` changes
 
     function formatDate(dateString) {
-        const date = new Date(dateString); // Create a Date object
+        const date = new Date(dateString + 'T00:00:00'); // Adding a default time to avoid ambiguity
         const options = { 
             month: 'long', 
             day: 'numeric', 
-            year: 'numeric' // Include the year in the format
+            year: 'numeric'
         };
         return date.toLocaleDateString('en-US', options); // Format the date
     }
