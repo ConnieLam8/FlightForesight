@@ -1063,7 +1063,7 @@ const BackgroundTravelWebsite = () => {
                             </div>
                             
                              {/* Flight Type - Round trip or One way */}
-                             <div className="space-y-3">
+                             <div className="space-y-1">
                                     <div className="flex items-center space-x-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 17l-5 5m0 0l-5-5m5 5V3m0 14l5-5m-5 5l-5-5" />
