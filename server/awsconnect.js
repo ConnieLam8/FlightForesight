@@ -8,7 +8,10 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-app.use(cors());
+app.use(cors({
+    origin: '*'     // Allow all requests from any origin
+}));
+
 app.use(express.json());
 
 // Manually define __dirname for ES Modules
