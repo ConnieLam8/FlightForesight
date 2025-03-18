@@ -507,7 +507,7 @@ const BackgroundTravelWebsite = () => {
     const [hasSearched, setHasSearched] = useState(false);
 
     // Fetch if the trip was a round-trip or a one-way trip
-    const[tripType, setTripType] = useState('1');
+    const[tripType, setTripType] = useState(1);
 
     const handleSearch = () => {
         // Grab the search query results from user
@@ -521,7 +521,7 @@ const BackgroundTravelWebsite = () => {
         };
 
         // Modify the params based on the tripType
-        if(tripType !== "2") {
+        if(tripType !== 2) {
             params.return_date = endDate ? endDate.toISOString().split('T')[0] : undefined;
         }
 
@@ -712,7 +712,7 @@ const BackgroundTravelWebsite = () => {
                             <li className='hover:border-b-2 hover:border-blue-400 hover:bg-transparent'>
                                 <a 
                                     className="hover:text-blue-400"
-                                    onClick={() => setTripType("2")}
+                                    onClick={() => setTripType(2)}
                                 >
                                     One-way
                                 </a>
@@ -720,7 +720,7 @@ const BackgroundTravelWebsite = () => {
                             <li className='hover:border-b-2 hover:border-blue-400 hover:bg-transparent'>
                                 <a 
                                     className="hover:text-blue-400"
-                                    onClick={() => setTripType("1")}
+                                    onClick={() => setTripType(1)}
                                 >
                                     Roundtrip
                                 </a>
