@@ -34,6 +34,10 @@ const ChatBot = () => {
 
 
     const [suggestions, setSuggestions] = useState([]);
+    const [disableSuggestions, setDisableSuggestions] = useState(false);
+    const [disableOriginSuggestions, setDisableOriginSuggestions] = useState(false);
+    const [disableDestSuggestions, setDisableDestSuggestions] = useState(false);
+
     const handleDateChange = (date) => {
         if (!date) return;
 
@@ -47,6 +51,13 @@ const ChatBot = () => {
     };
 
     const fetchSuggestions = async (input, stepKey) => {
+        if (
+            (stepKey === "Airline_Name" && disableSuggestions) ||
+            (stepKey === "full_Origin_Airport_Name" && disableOriginSuggestions) ||
+            (stepKey === "full_Dest_Airport_Name" && disableDestSuggestions)
+        ) {
+            return; // Stop fetching if suggestions are disabled
+        }
         const endpoint = stepKey === "Airline_Name"
             // ? 'http://localhost:5001/autocompleteAirline'
             ? `${serverUrl}/autocompleteAirline`
@@ -100,6 +111,8 @@ const ChatBot = () => {
                 // const response = await axios.post("http://localhost:5001/verifyAirlineName", { Airline_Name: input });
                 const response = await axios.post(`${serverUrl}/verifyAirlineName`, { Airline_Name: input });
                 if (response.data.valid) {
+                    setDisableSuggestions(true); // ✅ Disable Airline suggestions
+
                     // Proceed to the next step
                     if (currentStep < steps.length - 1) {
                         setCurrentStep((prev) => prev + 1);
@@ -122,6 +135,8 @@ const ChatBot = () => {
                 // const response1 = await axios.post("http://localhost:5001/verifyOriginAirportName", { full_Origin_Airport_Name: input });
                 const response1 = await axios.post(`${serverUrl}/verifyOriginAirportName`, { full_Origin_Airport_Name: input });
                 if (response1.data.valid) {
+                    setDisableSuggestions(true); // ✅ Disable Airline suggestions
+
                     // Proceed to the next step
                     if (currentStep < steps.length - 1) {
                         setCurrentStep((prev) => prev + 1);
@@ -144,6 +159,8 @@ const ChatBot = () => {
                 // const response2 = await axios.post("http://localhost:5001/verifyDestAirportName", { full_Dest_Airport_Name: input });
                 const response2 = await axios.post(`${serverUrl}/verifyDestAirportName`, { full_Dest_Airport_Name: input });
                 if (response2.data.valid) {
+                    setDisableSuggestions(true); // ✅ Disable Airline suggestions
+
                     // Proceed to the next step
                     if (currentStep < steps.length - 1) {
                         setCurrentStep((prev) => prev + 1);
@@ -333,7 +350,10 @@ const ChatBot = () => {
                         required
                     />
                     )}
-                    {suggestions.length > 0 && (
+                    {suggestions.length > 0 &&
+                        !disableSuggestions &&
+                        !disableOriginSuggestions &&
+                        !disableDestSuggestions && (
                         <ul className="suggestions-dropdown">
                             {suggestions.map((suggestion, index) => (
                                 <li
