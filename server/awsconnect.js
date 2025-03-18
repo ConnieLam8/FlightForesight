@@ -49,10 +49,11 @@ connection.connect((err) => {
 /////////////////// FETCH THE FLIGHTS FROM THE FRONT-END /////////////////////////////////
 app.get('/fetch-flights', async (req, res) => {
     console.log('Received query params: ', req.query);
-    const { departure_id, arrival_id, outbound_date, return_date, currency } = req.query;
+    const { departure_id, arrival_id, outbound_date, return_date, currency, type } = req.query;
 
     console.log('HERE IS the query from the backend')
-    console.log({ arrival_id, departure_id, outbound_date, return_date, currency })
+    console.log({ arrival_id, departure_id, outbound_date, return_date, currency, type })
+    console.log("Trip Type: ", type.type);
 
     if (!arrival_id || !departure_id) {
         return res.status(400).json({ error: 'arrival_id and departure_id are required' });
@@ -67,6 +68,7 @@ app.get('/fetch-flights', async (req, res) => {
                 outbound_date,
                 return_date,
                 currency,
+                type,
                 hl: "en",
                 output: "JSON",
                 api_key: flightApiKey,
