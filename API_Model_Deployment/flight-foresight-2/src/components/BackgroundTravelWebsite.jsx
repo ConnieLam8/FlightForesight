@@ -1070,7 +1070,7 @@ const BackgroundTravelWebsite = () => {
                                     </svg>
                                     <p className="text-lg font-semibold">Type</p>
                                     </div>
-                                    <p classname="pl-20">{flight.type}</p> {/* Travel Class info */}
+                                    <p className="pl-7">{flight.type}</p> {/* Travel Class info */}
                             </div>
                         </div>
                                
