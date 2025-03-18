@@ -175,14 +175,16 @@ const ChatBot = () => {
                 } else {
                     setMessages((prev) => [
                         ...prev,
-                        {text: response5.data.message, isBot: true}
-                    ]);
+                        {text: response5.data.message, isBot: true}]);
+                    setFlightDetails((prev) => ({ ...prev, departureDate: null }));
+
                 }
             }catch (error) {
                     setMessages((prev) => [
                         ...prev,
                         { text: "Invalid Date Format . Please try again.", isBot: true }
                     ]);
+                setFlightDetails((prev) => ({ ...prev, departureDate: null }));
                 }
             }
 
