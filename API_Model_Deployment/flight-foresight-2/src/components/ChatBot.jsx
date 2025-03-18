@@ -111,6 +111,8 @@ const ChatBot = () => {
                         setCurrentStep((prev) => prev + 1);
                         setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
                     }
+                    setSuggestions([]); // Clear suggestions after correct input
+
                 } else {
                     setMessages((prev) => [
                         ...prev,
@@ -133,6 +135,8 @@ const ChatBot = () => {
                         setCurrentStep((prev) => prev + 1);
                         setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
                     }
+                    setSuggestions([]); // Clear suggestions after correct input
+
                 } else {
                     setMessages((prev) => [
                         ...prev,
