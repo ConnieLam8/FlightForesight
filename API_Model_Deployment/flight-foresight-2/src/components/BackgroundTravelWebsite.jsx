@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../App.css';
 import ChatBot from "./ChatBot";
+import Select from 'react-select';
 
 // import { Tilt } from 'react-tilt';
 import ParallaxTilt from 'react-parallax-tilt';
@@ -421,39 +422,45 @@ const BackgroundTravelWebsite = () => {
         "Yakima, WA": "YKM",
     };
 
+    const [departureAirport, setDepartureAirport] = useState(null);
+    const [arrivalAirport, setArrivalAirport] = useState(null);
     const [selectedAirportCode, setSelectedAirportCode] = useState('');
     const [selectedAirportCodeArrival, setSelectedAirportCodeArrival] = useState('');
 
-    const handleInputChange = (e) => {
-        const input = e.target.value;
-        setDepartureAirport(input);
+    // Convert airportCodes to options for react-select
+    const options = Object.keys(airportCodes).map((airport) => ({
+        value: airport,
+        label: `${airport}`, // Main label
+        subLabel: `${airportCodes[airport]} - ${airport}`, // Secondary label
+      }));
     
-        // Find matching airport code based on the input
-        const matchedAirport = Object.keys(airportCodes).find((city) =>
-            city.toLowerCase().includes(input.toLowerCase())
-        );
+    // Custom render function for options
+    const formatOptionLabel = ({ label, subLabel }) => (
+    <div>
+      <div>{label}</div> {/* Main label */}
+      <div style={{ fontSize: '0.8rem', color: '#666' }}>{subLabel}</div> {/* Smaller secondary label */}
+    </div>
+    );
 
-        if (matchedAirport) {
-            setSelectedAirportCode(airportCodes[matchedAirport]); // Save airport code
+    // Handle departure airport selection
+    const handleDepartureChange = (selectedOption) => {
+        setDepartureAirport(selectedOption);
+        if (selectedOption) {
+        setSelectedAirportCode(selectedOption.value); // Save airport code
         } else {
-            setSelectedAirportCode(''); // Reset if no match
+        setSelectedAirportCode(''); // Reset if no selection
         }
     };
 
-    const handleInputChangeArrival = (e) => {
-        const input = e.target.value;
-        setArrivalAirport(input);
-    
-        // Find matching airport code based on the input
-        const matchedAirport = Object.keys(airportCodes).find((city) =>
-          city.toLowerCase().includes(input.toLowerCase())
-        );
-        if (matchedAirport) {
-          setSelectedAirportCodeArrival(airportCodes[matchedAirport]); // Save airport code
+    // Handle arrival airport selection
+    const handleArrivalChange = (selectedOption) => {
+        setArrivalAirport(selectedOption);
+        if (selectedOption) {
+        setSelectedAirportCodeArrival(selectedOption.value); // Save airport code
         } else {
-          setSelectedAirportCodeArrival(''); // Reset if no match
+        setSelectedAirportCodeArrival(''); // Reset if no selection
         }
-    }
+    };
 
     // Function to swap departure and arrival
     const swapAirports = () => {
@@ -498,10 +505,6 @@ const BackgroundTravelWebsite = () => {
     const [results, setResults] = useState(null);
     const [error, setError] = useState(null);
     const [posts, setPosts] = useState([]);     // Set a state for the posts
-
-    // Fetch the search queries prompted from the user
-    const [arrivalAirport, setArrivalAirport] = useState('');
-    const [departureAirport, setDepartureAirport] = useState('');
 
     // Tracks if search was triggered
     const [hasSearched, setHasSearched] = useState(false);
@@ -728,35 +731,21 @@ const BackgroundTravelWebsite = () => {
                         </ul>
                     </div>
 
-                    {/* Search departure flight input fields */}
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    {/* Departure Airport Select */}
                     <label className="form-control w-full max-w-xs">
                         <div className="label">
-                            <span className="label-text">Leaving from?</span>
+                        <span className="label-text">Leaving from?</span>
                         </div>
-                        <input 
-                            list="airport-list"
-                            type="text" 
-                            placeholder="Leaving from" 
-                            value={departureAirport} 
-                            onChange={handleInputChange}
-                            className="input input-bordered w-full max-w-xs border-2 border-solid border-blue-800" 
+                        <Select
+                        options={options}
+                        placeholder="Leaving from"
+                        value={departureAirport}
+                        onChange={(selectedOption) => setDepartureAirport(selectedOption)}
+                        formatOptionLabel={formatOptionLabel} // Custom render function
+                        className="react-select-container"
+                        classNamePrefix="react-select"
                         />
-                        {/* Datalist for autofill */}
-                        <datalist id="airport-list">
-                            {Object.keys(airportCodes).map((airport, index) => (
-                            <option key={index} value={airport}>
-                                {airportCodes[airport]} - {airport}
-                            </option>
-                            ))}
-                        </datalist>
-
-                        {/* Show the selected airport code */}
-                        {/* {selectedAirportCode && (
-                            <div className="mt-2">
-                            <p>Selected Airport Code: {selectedAirportCode}</p>
-                            </div>
-                        )} */}
                     </label>
 
                     {/* Swap Arrow Icon */}
@@ -782,18 +771,19 @@ const BackgroundTravelWebsite = () => {
                     </svg>
                     </button>
 
-                    {/* Arrival Airport Input Parameters */}
+                    {/* Arrival Airport Select */}
                     <label className="form-control w-full max-w-xs">
                         <div className="label">
-                            <span className="label-text">Going to?</span>
+                        <span className="label-text">Going to?</span>
                         </div>
-                        <input 
-                            list="airport-list"
-                            type="text" 
-                            placeholder="Going to" 
-                            value={arrivalAirport} 
-                            onChange={handleInputChangeArrival}
-                            className="input input-bordered w-full max-w-xs border-2 border-solid border-blue-800" 
+                        <Select
+                        options={options}
+                        placeholder="Going to"
+                        value={arrivalAirport}
+                        onChange={(selectedOption) => setArrivalAirport(selectedOption)}
+                        formatOptionLabel={formatOptionLabel} // Custom render function
+                        className="react-select-container"
+                        classNamePrefix="react-select"
                         />
                     </label>
 
