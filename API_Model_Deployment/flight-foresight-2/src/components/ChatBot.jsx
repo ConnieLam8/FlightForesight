@@ -68,12 +68,6 @@ const ChatBot = () => {
         const userInput = e.target.value.trim();
         const currentKey = steps[currentStep].key;
 
-        // Check if the current field is already filled in flightDetails
-        if (flightDetails[currentKey]) {
-            setSuggestions([]); // Clear suggestions if the field is already filled
-            return;
-        }
-
         if (userInput) {
             fetchSuggestions(userInput, currentKey);
         } else {
@@ -155,8 +149,6 @@ const ChatBot = () => {
                         setCurrentStep((prev) => prev + 1);
                         setMessages((prev) => [...prev, { text: steps[currentStep + 1].prompt, isBot: true }]);
                     }
-                    setSuggestions([]); // Clear suggestions after correct input
-
                 } else {
                     setMessages((prev) => [
                         ...prev,
@@ -342,7 +334,7 @@ const ChatBot = () => {
                         autocomplete="off"
                     />
                     )}
-                    {suggestions.length > 0 && !flightDetails[steps[currentStep].key] && (
+                    {suggestions.length > 0 && (
                         <ul className="suggestions-dropdown">
                             {suggestions.map((suggestion, index) => (
                                 <li
