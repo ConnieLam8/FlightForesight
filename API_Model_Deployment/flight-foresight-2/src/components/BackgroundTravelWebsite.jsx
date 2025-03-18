@@ -525,6 +525,7 @@ const BackgroundTravelWebsite = () => {
             params.return_date = endDate ? endDate.toISOString().split('T')[0] : undefined;
         }
 
+        console.log("Trip Type: ", tripType)
         console.log("CORRECTLY grabbing query")
         console.log(params)
 
