@@ -422,10 +422,8 @@ const BackgroundTravelWebsite = () => {
         "Yakima, WA": "YKM",
     };
 
-    // const [departureAirport, setDepartureAirport] = useState(null);
-    // const [arrivalAirport, setArrivalAirport] = useState(null);
-    const [departureAirport, setDepartureAirport] = useState('');
-    const [arrivalAirport, setArrivalAirport] = useState('');
+    const [departureAirport, setDepartureAirport] = useState(null);
+    const [arrivalAirport, setArrivalAirport] = useState(null);
     const [selectedAirportCode, setSelectedAirportCode] = useState('');
     const [selectedAirportCodeArrival, setSelectedAirportCodeArrival] = useState('');
 
