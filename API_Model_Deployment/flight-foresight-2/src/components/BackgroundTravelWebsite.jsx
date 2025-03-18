@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../App.css';
 import ChatBot from "./ChatBot";
+import Select from 'react-select'; 
 
 // import { Tilt } from 'react-tilt';
 import ParallaxTilt from 'react-parallax-tilt';
@@ -455,6 +456,20 @@ const BackgroundTravelWebsite = () => {
         }
     }
 
+    const options = Object.keys(airportCodes).map((airport) => ({
+        value: airport,
+        label: `${airport}`, // Main label
+        subLabel: `${airportCodes[airport]}- ${airport}`, // Secondary label
+      }));
+    
+      // Custom render function for options
+      const formatOptionLabel = ({ label, subLabel }) => (
+        <div>
+          <div>{label}</div> {/* Main label */}
+          <div style={{ fontSize: '0.8rem', color: '#666' }}>{subLabel}</div> {/* Smaller secondary label */}
+        </div>
+      );
+
     // Function to swap departure and arrival
     const swapAirports = () => {
         setDepartureAirport(arrivalAirport);
@@ -733,22 +748,31 @@ const BackgroundTravelWebsite = () => {
                         <div className="label">
                             <span className="label-text">Leaving from?</span>
                         </div>
-                        <input 
+                        {/* <input 
                             list="airport-list"
                             type="text" 
                             placeholder="Leaving from" 
                             value={departureAirport} 
                             onChange={handleInputChange}
                             className="input input-bordered w-full max-w-xs border-2 border-solid border-blue-800" 
+                        /> */}
+                        <Select
+                        options={options}
+                        placeholder="Leaving from"
+                        value={departureAirport}
+                        onChange={handleInputChange}
+                        formatOptionLabel={formatOptionLabel} // Custom render function
+                        className="react-select-container"
+                        classNamePrefix="react-select"
                         />
-                        {/* Datalist for autofill */}
+                        {/* Datalist for autofill
                         <datalist id="airport-list">
                             {Object.keys(airportCodes).map((airport, index) => (
                             <option key={index} value={airport}>
                                 {airportCodes[airport]} - {airport}
                             </option>
                             ))}
-                        </datalist>
+                        </datalist> */}
 
                         {/* Show the selected airport code */}
                         {/* {selectedAirportCode && (
@@ -786,13 +810,22 @@ const BackgroundTravelWebsite = () => {
                         <div className="label">
                             <span className="label-text">Going to?</span>
                         </div>
-                        <input 
+                        {/* <input 
                             list="airport-list"
                             type="text" 
                             placeholder="Going to" 
                             value={arrivalAirport} 
                             onChange={handleInputChangeArrival}
                             className="input input-bordered w-full max-w-xs border-2 border-solid border-blue-800" 
+                        /> */}
+                        <Select
+                        options={options}
+                        placeholder="Going to"
+                        value={arrivalAirport}
+                        onChange={handleInputChangeArrival}
+                        formatOptionLabel={formatOptionLabel} // Custom render function
+                        className="react-select-container"
+                        classNamePrefix="react-select"
                         />
                     </label>
 
