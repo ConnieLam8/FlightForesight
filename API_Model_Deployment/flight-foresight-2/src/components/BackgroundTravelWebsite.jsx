@@ -748,14 +748,14 @@ const BackgroundTravelWebsite = () => {
                         <div className="label">
                             <span className="label-text">Leaving from?</span>
                         </div>
-                        {/* <input 
+                        <input 
                             list="airport-list"
                             type="text" 
                             placeholder="Leaving from" 
                             value={departureAirport} 
                             onChange={handleInputChange}
                             className="input input-bordered w-full max-w-xs border-2 border-solid border-blue-800" 
-                        /> */}
+                        />
                         <Select
                         options={options}
                         placeholder="Leaving from"
@@ -810,14 +810,14 @@ const BackgroundTravelWebsite = () => {
                         <div className="label">
                             <span className="label-text">Going to?</span>
                         </div>
-                        {/* <input 
+                        <input 
                             list="airport-list"
                             type="text" 
                             placeholder="Going to" 
                             value={arrivalAirport} 
                             onChange={handleInputChangeArrival}
                             className="input input-bordered w-full max-w-xs border-2 border-solid border-blue-800" 
-                        /> */}
+                        />
                         <Select
                         options={options}
                         placeholder="Going to"
