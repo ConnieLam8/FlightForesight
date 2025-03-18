@@ -442,6 +442,39 @@ const BackgroundTravelWebsite = () => {
     </div>
     );
 
+    // Handle the input airport change
+    const handleInputChange = (e) => {
+        const input = e.target.value;
+        setDepartureAirport(input);
+
+        // Find matching airport code based on the input
+        const matchedAirport = Objects.key(airportCodes).find((city) => 
+            city.toLowerCase().includes(input.toLowerCase())
+        );
+
+        if (matchedAirport) {
+            setSelectedAirportCode(airportCodes[matchedAirport]);   // Save the airport code
+        } else {
+            setSelectedAirportCode('');     // Reset if there's no match
+        }
+    }
+
+    const handleInputChangeArrival = (e) => {
+        const input = e.target.value;
+        setArrivalAirport(input);
+
+        // Find matching airport code based on the input
+        const matchedAirport = Objects.key(airportCodes).find((city) => 
+            city.toLowerCase().includes(input.toLowerCase())
+        );
+
+        if (matchedAirport) {
+            setSelectedAirportCodeArrival(airportCodes[matchedAirport]);   // Save the airport code
+        } else {
+            setSelectedAirportCodeArrival('');     // Reset if there's no match
+        }
+    }
+
     // Handle departure airport selection
     const handleDepartureChange = (selectedOption) => {
         setDepartureAirport(selectedOption);
@@ -740,7 +773,8 @@ const BackgroundTravelWebsite = () => {
                         options={options}
                         placeholder="Leaving from"
                         value={departureAirport}
-                        onChange={(selectedOption) => setDepartureAirport(selectedOption)}
+                        // onChange={(selectedOption) => setDepartureAirport(selectedOption)}
+                        onChange={handleInputChange}
                         formatOptionLabel={formatOptionLabel} // Custom render function
                         className="react-select-container"
                         classNamePrefix="react-select"
@@ -779,7 +813,8 @@ const BackgroundTravelWebsite = () => {
                         options={options}
                         placeholder="Going to"
                         value={arrivalAirport}
-                        onChange={(selectedOption) => setArrivalAirport(selectedOption)}
+                        // onChange={(selectedOption) => setArrivalAirport(selectedOption)}
+                        onChange={handleInputChangeArrival}
                         formatOptionLabel={formatOptionLabel} // Custom render function
                         className="react-select-container"
                         classNamePrefix="react-select"
