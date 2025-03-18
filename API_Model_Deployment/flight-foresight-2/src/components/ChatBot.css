@@ -8,7 +8,7 @@
     z-index: 1000; /* Ensure it appears above other elements */
     margin-top: 5px;
     color: #000080;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .suggestions-dropdown li {
@@ -19,7 +19,7 @@
 }
 
 .suggestions-dropdown li:hover {
-    background-color: rgba(0, 153, 255, 0.67); /* Light blue background on hover */
+    background-color: #cccccc; /* Light blue background on hover */
 }
 
 /* Close button styling */
@@ -27,7 +27,7 @@
     position: sticky;
     top: 0;
     background-color: #f4f4f4;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #cccccc;
     padding: 8px;
     text-align: right;
     cursor: pointer;
