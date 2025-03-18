@@ -68,10 +68,16 @@ const ChatBot = () => {
         const userInput = e.target.value.trim();
         const currentKey = steps[currentStep].key;
 
-        if (userInput) {
+        if (!userInput) {
+            setSuggestions([]); // Clear when input is empty
+            return;
+        }
+
+        // Fetch suggestions only if the step requires it
+        if (["Airline_Name", "full_Origin_Airport_Name", "full_Dest_Airport_Name"].includes(currentKey)) {
             fetchSuggestions(userInput, currentKey);
         } else {
-            setSuggestions([]);
+            setSuggestions([]); // Ensure suggestions are cleared for other inputs
         }
     };
     const [results, setResults] = useState(null);
