@@ -97,6 +97,31 @@ app.get('/fetch-flights', async (req, res) => {
     }
 });
 
+/////////////////// Save airport input values temporarily in JSON /////////////////////////
+function updateAirportDataJSON(partialData) {
+  return new Promise((resolve, reject) => {
+    fs.readFile('airportData.json', 'utf8', (err, fileData) => {
+      let jsonData = {};
+
+      if (!err) {
+        try {
+          jsonData = JSON.parse(fileData);
+        } catch {
+          jsonData = {};
+        }
+      }
+
+      const updatedData = { ...jsonData, ...partialData };
+
+      fs.writeFile('airportData.json', JSON.stringify(updatedData, null, 2), (err) => {
+        if (err) return reject(err);
+        resolve(updatedData);
+      });
+    });
+  });
+}
+
+
 
 //////////////////// JSON STUFF /////////////////////////////////
 
@@ -105,6 +130,8 @@ function saveToJSON(data) {
         // First, ensure that the JSON file exists, and create it if it doesn't
         fs.readFile('airportData.json', 'utf8', (err, fileData) => {
             let jsonData = [];
+
+            print("JSON DATA TO CHECK:", jsonData)
 
             if (err) {
                 if (err.code === 'ENOENT') {  // File doesn't exist
@@ -142,12 +169,14 @@ function saveToJSON(data) {
                     return reject(err);
                 } else {
                     console.log('Final data saved to airportData.json');
-                    resolve(jsonData); // Resolve the promise with the updated JSON data
+                    // resolve(jsonData); // Resolve the promise with the updated JSON data
+                    resolve(filteredData); // Return just the new object, not the whole array
                 }
             });
         });
     });
 }
+
 ///////////////////CALL FOR API/////////////////////////
 
 async function sendDataToResultsAPI(data) {
@@ -192,7 +221,8 @@ app.post('/verifyAirlineName', (req, res) => {
             console.log('Query results:', results);  // Log query results to debug
             if (results.length > 0) {
                 const DOT_Code = results[0].DOT_Code;
-                saveToJSON({ Airline_Name, DOT_Code });
+                // saveToJSON({ Airline_Name, DOT_Code });
+                updateAirportDataJSON({ DOT_CODE: DOT_Code})
 
                 res.json({ valid: true, DOT_Code: results[0].DOT_Code }); // Send the DOT_Code if found
             } else {
@@ -243,7 +273,8 @@ app.post('/verifyOriginAirportName', (req, res) => {
             if (results.length > 0) {
                 const Origin_Airport_Code = results[0].Origin_Airport_Code;
                 // Save to JSON file
-                saveToJSON({ full_Origin_Airport_Name, Origin_Airport_Code });
+                // saveToJSON({ full_Origin_Airport_Name, Origin_Airport_Code });
+                updateAirportDataJSON({ ORIGIN: Origin_Airport_Code})
 
                 res.json({ valid: true, Origin_Airport_Code: results[0].Origin_Airport_Code }); // Send the DOT_Code if found
             } else {
@@ -297,7 +328,8 @@ app.post('/verifyDestAirportName', (req, res) => {
             if (results.length > 0) {
                 const Dest_Airport_Code = results[0].Dest_Airport_Code;
                 // Save to JSON file
-                saveToJSON({ full_Dest_Airport_Name, Dest_Airport_Code });
+                // saveToJSON({ full_Dest_Airport_Name, Dest_Airport_Code });
+                updateAirportDataJSON({ DEST: Dest_Airport_Code})
 
                 res.json({ valid: true, Dest_Airport_Code: results[0].Dest_Airport_Code }); // Send the DOT_Code if found
             } else {
@@ -377,7 +409,9 @@ app.post('/verifyDepdate', (req, res) => {
         return res.status(400).json({ error: 'Invalid time format. Please use HH:MM format.' });
     }
 
-    saveToJSON({crs_dep_military_date});
+    // saveToJSON({crs_dep_military_date});
+    updateAirportDataJSON({ crs_dep_military_time: crs_dep_military_date})
+    
 
     res.status(200).json({ valid: true, message: 'Departure time validated successfully' });
 
@@ -404,7 +438,8 @@ app.post('/verifyArrdate', async (req, res) => {
 
     try {
         // Save the arrival date to the JSON file
-        const jsonData = await saveToJSON({ crs_arr_military_date });
+        // const jsonData = await saveToJSON({ crs_arr_military_date });
+        const jsonData = updateAirportDataJSON({ crs_arr_military_time: crs_arr_military_date})
 
         // After saving, send the data to the Results API
         const results = await sendDataToResultsAPI(jsonData);
