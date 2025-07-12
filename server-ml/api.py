@@ -34,7 +34,8 @@ response.raise_for_status()     # Check for request issues
 
 # Load the CSV into the DataFrame
 csv_data = StringIO(response.text)
-data = pd.read_csv(csv_data)
+data = pd.read_csv(csv_data, usecols=["OriginAirportID", "DestAirportID", "Origin_DestPair", "Delayed_Status", "route_delay_rank", "DISTANCE", "airport_region_group_encoded", 
+                                      "DOT_CODE", "average_airline_delay", "crs_dep_military_hour", "hourly_origin_dest_average", "route_hour_delay_rank", "average_delay_flight_route"])
 
 # data = pd.read_csv('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.csv')     # This mount works already (DO NOT DELETE)
 
