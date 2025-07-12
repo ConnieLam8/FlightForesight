@@ -6,6 +6,10 @@ from datetime import datetime
 from flask import jsonify
 from flask_cors import CORS
 
+import requests
+from io import StringIO
+import os
+
 # import dask.dataframe as dd
 
 app = Flask(__name__)
@@ -13,11 +17,26 @@ CORS(app)
 print('Start')
 
 # Load your data
-data = pd.read_csv('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.csv')
-# data = pd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
-# data = dd.read_parquet('NUMERICAL_DATA_final_with_outliers_with_weather.parquet')
+# Load the token
+hf_data_token = os.environ["HF_DATA_TOKEN"]
 
-# data = data.compute()
+# Raw file URL
+url = os.environ["HF_URL"]
+
+# Add the token to headers
+headers = {
+    "Authorization": f"Bearer {hf_data_token}"
+}
+
+# Get the file content
+response = requests.get(url, headers=headers)
+response.raise_for_status()     # Check for request issues
+
+# Load the CSV into the DataFrame
+csv_data = StringIO(response.text)
+data = pd.read_csv(csv_data)
+
+# data = pd.read_csv('/mnt/data/NUMERICAL_DATA_final_with_outliers_with_weather.csv')     # This mount works already (DO NOT DELETE)
 
 # Define the route for the main page with the form
 @app.route('/')
