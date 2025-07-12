@@ -152,6 +152,9 @@ function saveToJSON(data) {
 
 async function sendDataToResultsAPI(data) {
     try {
+        console.log("Sending data to Results API:", data)
+        console.log("Target URL:", `${serverUrl}/result`)
+
         // const response = await axios.post('http://127.0.0.1:5000/result', data);
         const response = await axios.post(`${serverUrl}/result`, data);
         console.log('Results API Response:', response.data);
@@ -405,6 +408,8 @@ app.post('/verifyArrdate', async (req, res) => {
 
         // After saving, send the data to the Results API
         const results = await sendDataToResultsAPI(jsonData);
+
+        console.log("Sending data to results API:", jsonData);
 
         // Send the results back to the frontend
         res.status(200).json({ valid: true, message: 'Arrival time validated successfully', results });
