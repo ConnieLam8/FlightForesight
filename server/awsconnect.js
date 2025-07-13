@@ -131,7 +131,7 @@ function saveToJSON(data) {
         fs.readFile('airportData.json', 'utf8', (err, fileData) => {
             let jsonData = [];
 
-            print("JSON DATA TO CHECK:", jsonData)
+            console.log("JSON DATA TO CHECK:", jsonData)
 
             if (err) {
                 if (err.code === 'ENOENT') {  // File doesn't exist
