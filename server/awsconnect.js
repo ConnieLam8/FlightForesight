@@ -131,66 +131,66 @@ function saveToJSON(data) {
         fs.readFile('airportData.json', 'utf8', (err, fileData) => {
             let jsonData = [];
 
-            // Read the current file
-            if (!err && fileData.trim() !== '') {
-                try {
-                    jsonData = JSON.parse(fileData)
-                } catch (parseErr) {
-                    console.warn('JSON file was invalid, starting fresh.');
-                    jsonData = [];
-                }
-            }
-
-            // if (err) {
-            //     if (err.code === 'ENOENT') {  // File doesn't exist
-            //         console.log('File not found, creating new one.');
-            //     } else {
-            //         console.error('Error reading JSON file:', err);
-            //         return reject(err);
-            //     }
-            // } else {
+            // // Read the current file
+            // if (!err && fileData.trim() !== '') {
             //     try {
-            //         // Parse the existing data or initialize an empty array if it's not valid
-            //         jsonData = JSON.parse(fileData) || {};
+            //         jsonData = JSON.parse(fileData)
             //     } catch (parseErr) {
-            //         console.error('Error parsing JSON file:', parseErr);
-            //         return reject(parseErr);
+            //         console.warn('JSON file was invalid, starting fresh.');
+            //         jsonData = [];
             //     }
             // }
 
-            // Merge new data into the existing data fields
-            const updatedData = {
-                ...jsonData,
-                // These will overwrite if already present
-                ...(data.DOT_Code !== undefined && { DOT_CODE: data.DOT_Code }),
-                ...(data.Origin_Airport_Code !== undefined && { ORIGIN: data.Origin_Airport_Code }),
-                ...(data.Dest_Airport_Code !== undefined && { DEST: data.Dest_Airport_Code }),
-                ...(data.crs_dep_military_date !== undefined && { crs_dep_military_time: data.crs_dep_military_date }),
-                ...(data.crs_arr_military_date !== undefined && { crs_arr_military_time: data.crs_arr_military_date })
+            if (err) {
+                if (err.code === 'ENOENT') {  // File doesn't exist
+                    console.log('File not found, creating new one.');
+                } else {
+                    console.error('Error reading JSON file:', err);
+                    return reject(err);
+                }
+            } else {
+                try {
+                    // Parse the existing data or initialize an empty array if it's not valid
+                    jsonData = JSON.parse(fileData) || [];
+                } catch (parseErr) {
+                    console.error('Error parsing JSON file:', parseErr);
+                    return reject(parseErr);
+                }
             }
 
-            // // Only store specific fields
-            // const filteredData = {
-            //     DOT_CODE: data.DOT_Code,
-            //     ORIGIN: data.Origin_Airport_Code,
-            //     DEST: data.Dest_Airport_Code,
-            //     crs_dep_military_time: data.crs_dep_military_date,
-            //     crs_arr_military_time: data.crs_arr_military_date
-            // };
+            // // Merge new data into the existing data fields
+            // const updatedData = {
+            //     ...jsonData,
+            //     // These will overwrite if already present
+            //     ...(data.DOT_Code !== undefined && { DOT_CODE: data.DOT_Code }),
+            //     ...(data.Origin_Airport_Code !== undefined && { ORIGIN: data.Origin_Airport_Code }),
+            //     ...(data.Dest_Airport_Code !== undefined && { DEST: data.Dest_Airport_Code }),
+            //     ...(data.crs_dep_military_date !== undefined && { crs_dep_military_time: data.crs_dep_military_date }),
+            //     ...(data.crs_arr_military_date !== undefined && { crs_arr_military_time: data.crs_arr_military_date })
+            // }
 
-            // // Add the new data to the array
-            // jsonData.push(filteredData);
+            // Only store specific fields
+            const filteredData = {
+                DOT_CODE: data.DOT_Code,
+                ORIGIN: data.Origin_Airport_Code,
+                DEST: data.Dest_Airport_Code,
+                crs_dep_military_time: data.crs_dep_military_date,
+                crs_arr_military_time: data.crs_arr_military_date
+            };
+
+            // Add the new data to the array
+            jsonData.push(filteredData);
 
             // Ensure the JSON structure is still an array and save it back to the file
-            // fs.writeFile('airportData.json', JSON.stringify(jsonData, null, 2), (err) => {
-            fs.writeFile('airportData.json', JSON.stringify(updatedData, null, 2), (err) => {
+            fs.writeFile('airportData.json', JSON.stringify(jsonData, null, 2), (err) => {
+            // fs.writeFile('airportData.json', JSON.stringify(updatedData, null, 2), (err) => {
                 if (err) {
                     console.error('Error saving JSON file:', err);
                     return reject(err);
                 } else {
                     console.log('Final data saved to airportData.json with:', updatedData);
-                    // resolve(jsonData); // Resolve the promise with the updated JSON data
-                    resolve(updatedData)
+                    resolve(jsonData); // Resolve the promise with the updated JSON data
+                    // resolve(updatedData)
                 }
             });
         });
