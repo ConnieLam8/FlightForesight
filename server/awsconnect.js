@@ -188,7 +188,7 @@ function saveToJSON(data) {
                     console.error('Error saving JSON file:', err);
                     return reject(err);
                 } else {
-                    console.log('Final data saved to airportData.json with:', updatedData);
+                    console.log('Final data saved to airportData.json with:', jsonData);
                     resolve(jsonData); // Resolve the promise with the updated JSON data
                     // resolve(updatedData)
                 }
