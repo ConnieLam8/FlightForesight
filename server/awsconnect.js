@@ -131,16 +131,6 @@ function saveToJSON(data) {
         fs.readFile('airportData.json', 'utf8', (err, fileData) => {
             let jsonData = [];
 
-            // // Read the current file
-            // if (!err && fileData.trim() !== '') {
-            //     try {
-            //         jsonData = JSON.parse(fileData)
-            //     } catch (parseErr) {
-            //         console.warn('JSON file was invalid, starting fresh.');
-            //         jsonData = [];
-            //     }
-            // }
-
             if (err) {
                 if (err.code === 'ENOENT') {  // File doesn't exist
                     console.log('File not found, creating new one.');
@@ -158,28 +148,24 @@ function saveToJSON(data) {
                 }
             }
 
-            // // Merge new data into the existing data fields
-            // const updatedData = {
-            //     ...jsonData,
-            //     // These will overwrite if already present
-            //     ...(data.DOT_Code !== undefined && { DOT_CODE: data.DOT_Code }),
-            //     ...(data.Origin_Airport_Code !== undefined && { ORIGIN: data.Origin_Airport_Code }),
-            //     ...(data.Dest_Airport_Code !== undefined && { DEST: data.Dest_Airport_Code }),
-            //     ...(data.crs_dep_military_date !== undefined && { crs_dep_military_time: data.crs_dep_military_date }),
-            //     ...(data.crs_arr_military_date !== undefined && { crs_arr_military_time: data.crs_arr_military_date })
-            // }
+            // Merge new data into the existing data fields
+            if (data.DOT_Code !== undefined) jsonData.push({ DOT_CODE: data.DOT_Code });
+            if (data.Origin_Airport_Code !== undefined) jsonData .push({ ORIGIN: data.Origin_Airport_Code });
+            if (data.Dest_Airport_Code !== undefined) jsonData .push({ DEST: data.Dest_Airport_Code });
+            if (data.crs_dep_military_date !== undefined) jsonData .push({ crs_dep_military_time: data.crs_dep_military_date });
+            if (data.crs_arr_military_date !== undefined) jsonData .push({ crs_arr_military_time: data.crs_arr_military_date });
 
-            // Only store specific fields
-            const filteredData = {
-                DOT_CODE: data.DOT_Code,
-                ORIGIN: data.Origin_Airport_Code,
-                DEST: data.Dest_Airport_Code,
-                crs_dep_military_time: data.crs_dep_military_date,
-                crs_arr_military_time: data.crs_arr_military_date
-            };
+            // // Only store specific fields
+            // const filteredData = {
+            //     DOT_CODE: data.DOT_Code,
+            //     ORIGIN: data.Origin_Airport_Code,
+            //     DEST: data.Dest_Airport_Code,
+            //     crs_dep_military_time: data.crs_dep_military_date,
+            //     crs_arr_military_time: data.crs_arr_military_date
+            // };
 
-            // Add the new data to the array
-            jsonData.push(filteredData);
+            // // Add the new data to the array
+            // jsonData.push(filteredData);
 
             // Ensure the JSON structure is still an array and save it back to the file
             fs.writeFile('airportData.json', JSON.stringify(jsonData, null, 2), (err) => {
