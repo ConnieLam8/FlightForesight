@@ -131,32 +131,42 @@ function saveToJSON(data) {
         fs.readFile('airportData.json', 'utf8', (err, fileData) => {
             let jsonData = {};
 
-            if (err) {
-                if (err.code === 'ENOENT') {  // File doesn't exist
-                    console.log('File not found, creating new one.');
-                } else {
-                    console.error('Error reading JSON file:', err);
-                    return reject(err);
-                }
-            } else {
+            // Read the current file
+            if (!err && fileData.trim() !== '') {
                 try {
-                    // Parse the existing data or initialize an empty array if it's not valid
-                    jsonData = JSON.parse(fileData) || {};
+                    jsonData = JSON.parse(fileData)
                 } catch (parseErr) {
-                    console.error('Error parsing JSON file:', parseErr);
-                    return reject(parseErr);
+                    console.warn('JSON file was invalid, starting fresh.');
+                    jsonData = {};
                 }
             }
+
+            // if (err) {
+            //     if (err.code === 'ENOENT') {  // File doesn't exist
+            //         console.log('File not found, creating new one.');
+            //     } else {
+            //         console.error('Error reading JSON file:', err);
+            //         return reject(err);
+            //     }
+            // } else {
+            //     try {
+            //         // Parse the existing data or initialize an empty array if it's not valid
+            //         jsonData = JSON.parse(fileData) || {};
+            //     } catch (parseErr) {
+            //         console.error('Error parsing JSON file:', parseErr);
+            //         return reject(parseErr);
+            //     }
+            // }
 
             // Merge new data into the existing data fields
             const updatedData = {
                 ...jsonData,
                 // These will overwrite if already present
-                DOT_CODE: data.DOT_Code || jsonData.DOT_Code,
-                ORIGIN: data.Origin_Airport_Code || jsonData.Origin_Airport_Code,
-                DEST: data.Dest_Airport_Code || jsonData.Dest_Airport_Code,
-                crs_dep_military_time: data.crs_dep_military_date || jsonData.crs_dep_military_date,
-                crs_arr_military_time: data.crs_arr_military_date || jsonData.crs_arr_military_date
+                DOT_CODE: data.DOT_Code ?? jsonData.DOT_Code,
+                ORIGIN: data.Origin_Airport_Code ?? jsonData.Origin_Airport_Code,
+                DEST: data.Dest_Airport_Code ?? jsonData.Dest_Airport_Code,
+                crs_dep_military_time: data.crs_dep_military_date ?? jsonData.crs_dep_military_date,
+                crs_arr_military_time: data.crs_arr_military_date ?? jsonData.crs_arr_military_date
             }
 
             // // Only store specific fields
