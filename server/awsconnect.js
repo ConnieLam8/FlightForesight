@@ -162,11 +162,11 @@ function saveToJSON(data) {
             const updatedData = {
                 ...jsonData,
                 // These will overwrite if already present
-                DOT_CODE: data.DOT_Code ?? jsonData.DOT_Code,
-                ORIGIN: data.Origin_Airport_Code ?? jsonData.Origin_Airport_Code,
-                DEST: data.Dest_Airport_Code ?? jsonData.Dest_Airport_Code,
-                crs_dep_military_time: data.crs_dep_military_date ?? jsonData.crs_dep_military_date,
-                crs_arr_military_time: data.crs_arr_military_date ?? jsonData.crs_arr_military_date
+                ...(data.DOT_Code !== undefined && { DOT_CODE: data.DOT_Code }),
+                ...(data.Origin_Airport_Code !== undefined && { ORIGIN: data.Origin_Airport_Code }),
+                ...(data.Dest_Airport_Code !== undefined && { DEST: data.Dest_Airport_Code }),
+                ...(data.crs_dep_military_date !== undefined && { crs_dep_military_time: data.crs_dep_military_date }),
+                ...(data.crs_arr_military_date !== undefined && { crs_arr_military_time: data.crs_arr_military_date })
             }
 
             // // Only store specific fields
