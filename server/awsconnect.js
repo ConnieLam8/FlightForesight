@@ -129,7 +129,7 @@ function saveToJSON(data) {
     return new Promise((resolve, reject) => {
         // First, ensure that the JSON file exists, and create it if it doesn't
         fs.readFile('airportData.json', 'utf8', (err, fileData) => {
-            let jsonData = {};
+            let jsonData = [];
 
             // Read the current file
             if (!err && fileData.trim() !== '') {
@@ -137,7 +137,7 @@ function saveToJSON(data) {
                     jsonData = JSON.parse(fileData)
                 } catch (parseErr) {
                     console.warn('JSON file was invalid, starting fresh.');
-                    jsonData = {};
+                    jsonData = [];
                 }
             }
 
