@@ -129,9 +129,7 @@ function saveToJSON(data) {
     return new Promise((resolve, reject) => {
         // First, ensure that the JSON file exists, and create it if it doesn't
         fs.readFile('airportData.json', 'utf8', (err, fileData) => {
-            let jsonData = [];
-
-            console.log("JSON DATA TO CHECK:", jsonData)
+            let jsonData = {};
 
             if (err) {
                 if (err.code === 'ENOENT') {  // File doesn't exist
@@ -143,7 +141,7 @@ function saveToJSON(data) {
             } else {
                 try {
                     // Parse the existing data or initialize an empty array if it's not valid
-                    jsonData = JSON.parse(fileData) || [];
+                    jsonData = JSON.parse(fileData) || {};
                 } catch (parseErr) {
                     console.error('Error parsing JSON file:', parseErr);
                     return reject(parseErr);
